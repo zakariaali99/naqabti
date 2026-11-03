@@ -9,8 +9,8 @@ A screen recording captured on a physical iPhone running the latest iOS is avail
 It starts from launching the app and shows registration, sign-in, the main features, changing the password, and deleting the account (Profile → Delete Account).
 
 **2. Purpose and audience**
-Naqabti is the official member app of the `<legal name of the syndicate>`, the professional body that registers physicians.
-It is used by physicians, medical students and health institutions that are, or want to become, members of the syndicate.
+Naqabti is the app of the `<legal name of the syndicate>`, the professional body that registers physicians.
+Anyone can download it and create an account: physicians, medical students and health institutions, as well as members of the public who want the syndicate's news, events, library and branch information.
 It replaces paper and in-person paperwork: members register, upload their degree and identity documents, request or renew their membership, see their payment records and certificates, receive official news and notifications, submit complaints and medical reports to the syndicate, and browse the syndicate's library, courses, events and branches.
 
 **3. How to access the main features**
@@ -39,11 +39,10 @@ New accounts can be created with "Create account" on the sign-in screen. Registr
 **User-generated content:** complaints and medical reports are private submissions from a member to the syndicate's staff. They are never shown to other users, so there is no public user-generated content.
 
 **5. Regional differences**
-The app works the same in all regions. Its content (Arabic and English) is aimed at physicians registered with the syndicate in Libya.
+The app works the same in all regions, in Arabic and English. There are no regional differences in features or content.
 
-**6. Regulated industry**
-The app is published by `<developer account holder>` on behalf of the `<legal name of the syndicate>`. Authorization letter: `<attach / link>`.
-Medical reports are submitted by licensed physicians to their own professional syndicate; the app does not provide medical advice or diagnosis.
+**6. Third-party material**
+The app contains no protected third-party material. All content is published by the syndicate. Medical reports are submitted by physicians to the syndicate; the app does not provide medical advice or diagnosis.
 
 **Privacy**
 Privacy policy: https://my.naqabti.ly/privacy
