@@ -263,9 +263,9 @@ export default {
   // Danger zone / Account deletion
   dangerZone: "Danger Zone",
   deleteAccount: "Delete Account",
-  deleteAccountDesc: "Once you delete your account, your profile will be deactivated and you will no longer have access to this portal.",
+  deleteAccountDesc: "Deleting your account permanently removes your personal data (name, contact details, photo and documents) and signs you out everywhere. Membership and payment records the syndicate must keep are retained without your personal details.",
   deleteAccountConfirmTitle: "Confirm Account Deletion",
-  deleteAccountConfirmMessage: "Are you sure you want to delete your account? This will deactivate your account and log you out immediately.",
+  deleteAccountConfirmMessage: "Are you sure you want to delete your account? Your personal data will be permanently deleted and you will not be able to sign in again. This cannot be undone.",
   confirmDelete: "Delete My Account",
   deleteSuccess: "Your account has been deleted successfully",
   deleteError: "Failed to delete account. Please try again later.",
