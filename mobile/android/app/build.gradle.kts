@@ -21,7 +21,7 @@ if (keystorePropertiesFile.exists()) {
 
 
 android {
-    namespace = "ly.taif.naqabti"
+    namespace = "ly.naqabti.naqabti"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "28.2.13676358" //flutter.ndkVersion
 
@@ -34,7 +34,7 @@ android {
 
     defaultConfig { 
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "ly.taif.naqabti"
+        applicationId = "ly.naqabti.naqabti"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion //flutter.minSdkVersion

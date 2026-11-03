@@ -1,4 +1,4 @@
-package ly.taif.naqabti
+package ly.naqabti.naqabti
 
 import io.flutter.embedding.android.FlutterActivity
 

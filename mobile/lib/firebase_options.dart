@@ -69,7 +69,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '311580333570',
     projectId: 'naqabti-742bb',
     storageBucket: 'naqabti-742bb.firebasestorage.app',
-    iosBundleId: 'ly.taif.naqabti',
+    iosBundleId: 'ly.naqabti.naqabti',
   );
 
 }
