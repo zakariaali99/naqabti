@@ -29,7 +29,7 @@ abstract class AuthApiClient extends BaseApiClient {
   /// Sends a 6-digit code by email. The response carries `user_id` when an
   /// account matched, which the next two calls need.
   @POST('auth/reset-password/')
-  Future<Map<String, dynamic>> requestPasswordReset(
+  Future<PasswordResetResponse> requestPasswordReset(
     @Body() Map<String, dynamic> email,
   );
 
@@ -114,5 +114,20 @@ class TokenRefreshResponse {
 
   Map<String, dynamic> toJson() {
     return {'access': access, if (refresh != null) 'refresh': refresh};
+  }
+}
+
+class PasswordResetResponse {
+  /// Set only when an account matched the email; needed to confirm the reset.
+  final int? userId;
+
+  PasswordResetResponse({this.userId});
+
+  factory PasswordResetResponse.fromJson(Map<String, dynamic> json) {
+    return PasswordResetResponse(userId: json['user_id'] as int?);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {if (userId != null) 'user_id': userId};
   }
 }

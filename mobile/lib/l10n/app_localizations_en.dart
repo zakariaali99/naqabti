@@ -1377,20 +1377,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteAccountConfirmationTitle => 'Delete Account';
 
   @override
-  String get deleteAccountConfirmationMessage => 'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.';
+  String get deleteAccountConfirmationMessage =>
+      'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.';
 
   @override
   String get deleteAccountSuccess =>
       'Your account has been deleted successfully';
 
   @override
-  String get forgotPasswordCodeDescription => 'Enter your email and we will send you a 6-digit code to reset your password.';
+  String get forgotPasswordCodeDescription =>
+      'Enter your email and we will send you a 6-digit code to reset your password.';
 
   @override
   String get sendResetCode => 'Send Code';
 
   @override
-  String get resetCodeSentDescription => 'We sent a 6-digit code to your email. Enter it below and choose a new password.';
+  String get resetCodeSentDescription =>
+      'We sent a 6-digit code to your email. Enter it below and choose a new password.';
 
   @override
   String get verificationCode => 'Verification code';
@@ -1402,13 +1405,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resendCode => 'Resend code';
 
   @override
-  String get resetCodeNotSent => 'If an account exists for this email, a code will arrive shortly. Check the address and try again.';
+  String get resetCodeNotSent =>
+      'If an account exists for this email, a code will arrive shortly. Check the address and try again.';
 
   @override
   String get invalidOrExpiredCode => 'The code is invalid or has expired';
 
   @override
-  String get passwordResetSuccess => 'Your password has been reset. You can now sign in.';
+  String get passwordResetSuccess =>
+      'Your password has been reset. You can now sign in.';
 
   @override
   String get currentPassword => 'Current Password';
@@ -1426,10 +1431,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get somethingWentWrong => 'Something went wrong. Please try again.';
 
   @override
-  String get checkInternetConnection => 'Check your internet connection and try again.';
+  String get checkInternetConnection =>
+      'Check your internet connection and try again.';
 
   @override
-  String get deleteAccountFailed => 'We could not delete your account. Please try again.';
+  String get deleteAccountFailed =>
+      'We could not delete your account. Please try again.';
 
   @override
   String get privacyPolicy => 'Privacy Policy';
@@ -1444,11 +1451,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get membershipRenewalRequested => 'Your renewal request has been sent';
 
   @override
-  String get membershipRenewalFailed => 'We could not send your renewal request. Please try again.';
+  String get membershipRenewalFailed =>
+      'We could not send your renewal request. Please try again.';
 
   @override
   String get notificationNotFound => 'Notification not found';
 
   @override
-  String get byRegisteringYouAgreeTo => 'By creating an account you agree to the';
+  String get byRegisteringYouAgreeTo =>
+      'By creating an account you agree to the';
 }

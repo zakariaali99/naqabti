@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:naqabti/config/api_config.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/user.dart';
 import '../models/doctors_membership.dart';

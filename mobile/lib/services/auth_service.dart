@@ -277,7 +277,7 @@ class AuthService extends GetxService {
   /// account matched the email.
   Future<int?> requestPasswordReset(String email) async {
     final response = await _authClient.requestPasswordReset({'email': email});
-    return response['user_id'] as int?;
+    return response.userId;
   }
 
   /// Set a new password using a verified reset code.
