@@ -4,10 +4,13 @@ class ApiConfig {
   // Private constructor to prevent instantiation
   ApiConfig._();
 
-  /// Base URL for API endpoints
-  /// Update this when deploying to production
-  // static const String baseUrl = 'https://my.naqabti.ly/api/';
-  static const String baseUrl = 'http://localhost:8000/api/';
+  /// Base URL for API endpoints.
+  /// Release builds talk to production; for local development pass
+  /// `--dart-define=API_BASE_URL=http://<host>:8000/api/`.
+  static const String baseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'https://my.naqabti.ly/api/',
+  );
 
   /// Connection timeout in seconds
   static const int connectTimeout = 30;

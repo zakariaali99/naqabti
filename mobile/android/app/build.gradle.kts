@@ -71,6 +71,22 @@ android {
             }
         }
     }
+
+    // A debug-signed bundle is rejected by Google Play, so refuse to build one.
+    if (!hasKeystore) {
+        gradle.taskGraph.whenReady {
+            val buildsRelease = allTasks.any {
+                (it.name.startsWith("bundle") || it.name.startsWith("assemble")) &&
+                    it.name.endsWith("Release")
+            }
+            if (buildsRelease) {
+                throw GradleException(
+                    "android/key.properties is missing or incomplete: release builds " +
+                        "must be signed with the Play upload key."
+                )
+            }
+        }
+    }
 }
 
 flutter {

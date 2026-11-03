@@ -2,12 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/course.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'course_api_client.g.dart';
 
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class CourseApiClient extends BaseApiClient {
   factory CourseApiClient(Dio dio, {String? baseUrl}) = _CourseApiClient;
 

@@ -12,7 +12,7 @@ import '../models/notification.dart';
 
 part 'api_client.g.dart';
 
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class ApiClient {
   factory ApiClient(Dio dio, {String? baseUrl}) = _ApiClient;
 

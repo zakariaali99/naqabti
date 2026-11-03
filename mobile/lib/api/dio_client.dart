@@ -24,7 +24,10 @@ class DioClient {
 
     // Add interceptors
     _dio.interceptors.addAll(extraInterceptors);
-    _dio.interceptors.add(_loggingInterceptor());
+    // Request/response logs contain tokens and personal data: debug only.
+    if (kDebugMode && ApiConfig.enableLogging) {
+      _dio.interceptors.add(_loggingInterceptor());
+    }
     _dio.interceptors.add(_authInterceptor());
   }
 
@@ -39,7 +42,8 @@ class DioClient {
         // Skip auth header for login/register/refresh endpoints
         if (!options.path.contains('auth/login') &&
             !options.path.contains('auth/register') &&
-            !options.path.contains('auth/password-reset') &&
+            !options.path.contains('auth/reset-password') &&
+            !options.path.contains('password-reset') &&
             !options.path.contains('auth/token/refresh')) {
           final token = await _authService.getAccessToken();
           if (token != null) {
@@ -85,35 +89,61 @@ class DioClient {
     );
   }
 
-  /// Logging Interceptor for debugging
+  /// Logging Interceptor for debugging (never installed in release builds)
   Interceptor _loggingInterceptor() {
     return InterceptorsWrapper(
       onRequest: (options, handler) {
         _logger.i(
           'REQUEST[${options.method}] => PATH: ${options.path}\n'
-          'Headers: ${options.headers}\n'
-          'Data: ${options.data}',
+          'Headers: ${_redact(options.headers)}\n'
+          'Data: ${_redact(options.data)}',
         );
         return handler.next(options);
       },
       onResponse: (response, handler) {
         _logger.i(
           'RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}\n'
-          'Data: ${response.data}',
+          'Data: ${_redact(response.data)}',
         );
-        debugPrint("Response: $response");
         return handler.next(response);
       },
       onError: (error, handler) {
         _logger.e(
           'ERROR[${error.response?.statusCode}] => PATH: ${error.requestOptions.path}\n'
           'Message: ${error.message}\n'
-          'Response: ${error.response?.data}',
+          'Response: ${_redact(error.response?.data)}',
         );
-        debugPrint("Error: $error");
         return handler.next(error);
       },
     );
+  }
+
+  static const _sensitiveKeys = {
+    'authorization',
+    'password',
+    'new_password',
+    'confirm_password',
+    'current_password',
+    'access',
+    'refresh',
+    'fcm_token',
+    'code',
+  };
+
+  /// Masks secrets in maps before they are logged.
+  static Object? _redact(Object? data) {
+    if (data is Map) {
+      return {
+        for (final entry in data.entries)
+          entry.key: _sensitiveKeys.contains('${entry.key}'.toLowerCase())
+              ? '***'
+              : _redact(entry.value),
+      };
+    }
+    if (data is FormData) {
+      return 'FormData(${data.fields.map((f) => f.key).join(', ')})';
+    }
+    return data;
   }
 
   /// Update base URL

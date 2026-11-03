@@ -31,7 +31,7 @@ class DeviceService extends GetxService {
 
       await _apiService.device.registerOrUpdateDevice(data);
       
-      debugPrint('FCM token registered successfully: ${fcmToken.substring(0, 20)}...');
+      debugPrint('FCM token registered successfully');
     } catch (e) {
       debugPrint('Error submitting FCM token: $e');
       rethrow;

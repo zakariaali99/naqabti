@@ -2,14 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/notification.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'notification_api_client.g.dart';
 
 /// Notification API Client
 /// Handles notification operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class NotificationApiClient extends BaseApiClient {
   factory NotificationApiClient(Dio dio, {String? baseUrl}) = _NotificationApiClient;
 

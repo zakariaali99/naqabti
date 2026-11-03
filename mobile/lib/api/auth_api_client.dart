@@ -1,15 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/user.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'auth_api_client.g.dart';
 
 /// Authentication API Client
 /// Handles login, register, logout, password reset, and token refresh
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class AuthApiClient extends BaseApiClient {
   factory AuthApiClient(Dio dio, {String? baseUrl}) = _AuthApiClient;
 
@@ -28,11 +26,21 @@ abstract class AuthApiClient extends BaseApiClient {
   @POST('auth/logout/')
   Future<void> logout();
 
-  @POST('auth/password-reset/')
-  Future<void> requestPasswordReset(@Body() Map<String, dynamic> email);
+  /// Sends a 6-digit code by email. The response carries `user_id` when an
+  /// account matched, which the next two calls need.
+  @POST('auth/reset-password/')
+  Future<Map<String, dynamic>> requestPasswordReset(
+    @Body() Map<String, dynamic> email,
+  );
 
-  @POST('auth/password-reset/confirm/')
+  @POST('auth/verify-password-reset/')
+  Future<void> verifyPasswordReset(@Body() Map<String, dynamic> data);
+
+  @POST('auth/confirm-password-reset/')
   Future<void> confirmPasswordReset(@Body() Map<String, dynamic> data);
+
+  @POST('auth/change-password/')
+  Future<void> changePassword(@Body() Map<String, dynamic> data);
 }
 
 // Response models for authentication
@@ -70,9 +78,6 @@ class RegisterResponse {
   RegisterResponse({this.message, this.email, this.userId, this.user});
 
   factory RegisterResponse.fromJson(Map<String, dynamic> json) {
-    debugPrint("======================= Response JSON =======================");
-    debugPrint(json.toString());
-    debugPrint("======================= Response JSON =======================");
     return RegisterResponse(
       message: json['message'] as String?,
       email: json['email'] as String?,

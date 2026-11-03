@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/device.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'device_api_client.g.dart';
 
 /// Device API Client
 /// Handles device FCM token registration and management
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class DeviceApiClient extends BaseApiClient {
   factory DeviceApiClient(Dio dio, {String? baseUrl}) = _DeviceApiClient;
 

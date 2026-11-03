@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 import '../../../models/registration/registration_data.dart';
 import '../../../services/auth_service.dart';
+import '../../../utils/external_links.dart';
 
 class CredentialsStep extends StatefulWidget {
   final RegistrationData data;
@@ -409,7 +410,29 @@ class _CredentialsStepState extends State<CredentialsStep> {
               return _phoneServerError;
             },
           ),
-          const SizedBox(height: 32),
+          const SizedBox(height: 24),
+
+          Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(
+                l10n.byRegisteringYouAgreeTo,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              TextButton(
+                onPressed: () =>
+                    ExternalLinks.open(Uri.parse(ExternalLinks.privacyPolicy)),
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(l10n.privacyPolicy),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
 
           Row(
             children: [

@@ -2,14 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/payment.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'payment_api_client.g.dart';
 
 /// Payment API Client
 /// Handles payment CRUD operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class PaymentApiClient extends BaseApiClient {
   factory PaymentApiClient(Dio dio, {String? baseUrl}) = _PaymentApiClient;
 

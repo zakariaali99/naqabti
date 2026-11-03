@@ -5,6 +5,7 @@ import '../../models/branch.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../widgets/app_drawer.dart';
+import '../../utils/external_links.dart';
 
 class BranchesPage extends StatefulWidget {
   const BranchesPage({super.key});
@@ -284,27 +285,49 @@ class _BranchesPageState extends State<BranchesPage> {
               const SizedBox(height: 32),
               _buildInfoItem(l10n.location, branch.address ?? l10n.notAvailable, Icons.location_on_rounded),
               _buildInfoItem(l10n.phone, branch.phone ?? l10n.notAvailable, Icons.phone_rounded),
-              _buildInfoItem('Email', branch.email ?? l10n.notAvailable, Icons.email_rounded),
+              _buildInfoItem(l10n.email, branch.email ?? l10n.notAvailable, Icons.email_rounded),
               _buildInfoItem(l10n.branchManager, branch.manager?.fullName ?? l10n.notAvailable, Icons.person_rounded),
               if (branch.city != null)
-                _buildInfoItem('City', branch.city!, Icons.location_city_rounded),
+                _buildInfoItem(l10n.city, branch.city!, Icons.location_city_rounded),
               const SizedBox(height: 24),
-              ElevatedButton.icon(
-                onPressed: () {
-                   // TODO: Open maps or call
-                },
-                icon: const Icon(Icons.directions),
-                label: Text(l10n.getDirections),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              if (branch.address != null && branch.address!.trim().isNotEmpty)
+                ElevatedButton.icon(
+                  onPressed: () => _openOrWarn(
+                    ExternalLinks.openInMaps(
+                      [branch.address!, if (branch.city != null) branch.city!].join(', '),
+                    ),
+                  ),
+                  icon: const Icon(Icons.directions),
+                  label: Text(l10n.getDirections),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
                 ),
-              ),
+              if (branch.phone != null && branch.phone!.trim().isNotEmpty) ...[
+                const SizedBox(height: 12),
+                OutlinedButton.icon(
+                  onPressed: () => _openOrWarn(ExternalLinks.call(branch.phone!)),
+                  icon: const Icon(Icons.phone),
+                  label: Text(l10n.callBranch),
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+              ],
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _openOrWarn(Future<bool> opening) async {
+    if (!await opening && mounted) {
+      final l10n = AppLocalizations.of(context)!;
+      Get.snackbar(l10n.error, l10n.couldNotOpenResource);
+    }
   }
 
   Widget _buildInfoItem(String label, String value, IconData icon) {

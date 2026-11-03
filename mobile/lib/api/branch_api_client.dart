@@ -2,12 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/branch.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'branch_api_client.g.dart';
 
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class BranchApiClient extends BaseApiClient {
   factory BranchApiClient(Dio dio, {String? baseUrl}) = _BranchApiClient;
 

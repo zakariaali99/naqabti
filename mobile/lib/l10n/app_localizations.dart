@@ -611,7 +611,7 @@ abstract class AppLocalizations {
   /// Application version
   ///
   /// In en, this message translates to:
-  /// **'1.0.0'**
+  /// **'1.0.4'**
   String get applicationVersion;
 
   /// Copyright text
@@ -2699,7 +2699,7 @@ abstract class AppLocalizations {
   /// Message warning user about account deletion
   ///
   /// In en, this message translates to:
-  /// **'Are you sure you want to delete your account? This action cannot be undone and your account will be deactivated.'**
+  /// **'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.'**
   String get deleteAccountConfirmationMessage;
 
   /// Success message after deleting account
@@ -2707,6 +2707,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your account has been deleted successfully'**
   String get deleteAccountSuccess;
+
+  /// Forgot password first step description
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email and we will send you a 6-digit code to reset your password.'**
+  String get forgotPasswordCodeDescription;
+
+  /// Button that requests a password reset code
+  ///
+  /// In en, this message translates to:
+  /// **'Send Code'**
+  String get sendResetCode;
+
+  /// Second step of password reset
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a 6-digit code to your email. Enter it below and choose a new password.'**
+  String get resetCodeSentDescription;
+
+  /// Label for the emailed verification code
+  ///
+  /// In en, this message translates to:
+  /// **'Verification code'**
+  String get verificationCode;
+
+  /// Validation for empty verification code
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the 6-digit code'**
+  String get pleaseEnterVerificationCode;
+
+  /// Button to send the reset code again
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code'**
+  String get resendCode;
+
+  /// Shown when the reset request did not identify an account
+  ///
+  /// In en, this message translates to:
+  /// **'If an account exists for this email, a code will arrive shortly. Check the address and try again.'**
+  String get resetCodeNotSent;
+
+  /// Error for a wrong or expired reset code
+  ///
+  /// In en, this message translates to:
+  /// **'The code is invalid or has expired'**
+  String get invalidOrExpiredCode;
+
+  /// Shown after a successful password reset
+  ///
+  /// In en, this message translates to:
+  /// **'Your password has been reset. You can now sign in.'**
+  String get passwordResetSuccess;
+
+  /// Label for the current password field
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get currentPassword;
+
+  /// Label for the new password field
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// Error when the current password is wrong
+  ///
+  /// In en, this message translates to:
+  /// **'Current password is incorrect'**
+  String get currentPasswordIncorrect;
+
+  /// Shown after changing the password
+  ///
+  /// In en, this message translates to:
+  /// **'Your password has been changed'**
+  String get passwordChangedSuccess;
+
+  /// Generic error message
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get somethingWentWrong;
+
+  /// Network error message
+  ///
+  /// In en, this message translates to:
+  /// **'Check your internet connection and try again.'**
+  String get checkInternetConnection;
+
+  /// Shown when account deletion fails
+  ///
+  /// In en, this message translates to:
+  /// **'We could not delete your account. Please try again.'**
+  String get deleteAccountFailed;
+
+  /// Privacy policy link
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// Button to call a branch
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get callBranch;
+
+  /// Button to open an address in maps
+  ///
+  /// In en, this message translates to:
+  /// **'Open in Maps'**
+  String get openInMaps;
+
+  /// Shown after requesting a membership renewal
+  ///
+  /// In en, this message translates to:
+  /// **'Your renewal request has been sent'**
+  String get membershipRenewalRequested;
+
+  /// Shown when a renewal request fails
+  ///
+  /// In en, this message translates to:
+  /// **'We could not send your renewal request. Please try again.'**
+  String get membershipRenewalFailed;
+
+  /// Shown when a notification cannot be loaded
+  ///
+  /// In en, this message translates to:
+  /// **'Notification not found'**
+  String get notificationNotFound;
+
+  /// Text before the privacy policy link on registration
+  ///
+  /// In en, this message translates to:
+  /// **'By creating an account you agree to the'**
+  String get byRegisteringYouAgreeTo;
 }
 
 class _AppLocalizationsDelegate

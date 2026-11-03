@@ -2,14 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/post.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'post_api_client.g.dart';
 
 /// Post API Client
 /// Handles post/news operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class PostApiClient extends BaseApiClient {
   factory PostApiClient(Dio dio, {String? baseUrl}) = _PostApiClient;
 

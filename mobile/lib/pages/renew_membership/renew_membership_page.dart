@@ -86,8 +86,8 @@ class _RenewMembershipPageState extends State<RenewMembershipPage> {
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Membership renewal requested successfully'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.membershipRenewalRequested),
             backgroundColor: Colors.green,
           ),
         );
@@ -95,10 +95,11 @@ class _RenewMembershipPageState extends State<RenewMembershipPage> {
         _loadMembership();
       }
     } catch (e) {
+      debugPrint('Membership renewal failed: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to renew membership: ${e.toString()}'),
+            content: Text(AppLocalizations.of(context)!.membershipRenewalFailed),
             backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );

@@ -511,9 +511,10 @@ class _ProfilePageState extends State<ProfilePage> {
           colorText: colorScheme.onErrorContainer,
         );
       } catch (e) {
+        debugPrint('Delete account failed: $e');
         Get.snackbar(
           l10n.deleteAccount,
-          e.toString(),
+          l10n.deleteAccountFailed,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: colorScheme.errorContainer,
           colorText: colorScheme.onErrorContainer,

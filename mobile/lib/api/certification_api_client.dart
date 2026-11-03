@@ -3,14 +3,13 @@ import 'package:retrofit/retrofit.dart';
 import '../models/certification.dart';
 import '../models/certification_type.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'certification_api_client.g.dart';
 
 /// Certification API Client
 /// Handles certification and certification type operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class CertificationApiClient extends BaseApiClient {
   factory CertificationApiClient(Dio dio, {String? baseUrl}) = _CertificationApiClient;
 

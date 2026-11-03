@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 import '../../services/settings_service.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/external_links.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -121,6 +122,14 @@ class _SettingsPageState extends State<SettingsPage> {
                 subtitle: '${l10n.version} ${l10n.applicationVersion}',
                 onTap: () {},
                 isFirst: true,
+              ),
+              Divider(height: 1, thickness: 1, indent: 60, color: Theme.of(context).dividerColor.withValues(alpha: 0.5)),
+              _buildSettingsTile(
+                context,
+                icon: Icons.privacy_tip_outlined,
+                title: l10n.privacyPolicy,
+                subtitle: 'my.naqabti.ly/privacy',
+                onTap: () => ExternalLinks.open(Uri.parse(ExternalLinks.privacyPolicy)),
                 isLast: true,
               ),
             ],

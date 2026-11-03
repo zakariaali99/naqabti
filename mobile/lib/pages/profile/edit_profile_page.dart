@@ -13,6 +13,7 @@ import '../../models/city.dart';
 import '../../models/nationality.dart';
 import '../../models/academic_degree.dart';
 import '../../utils/profile_completion.dart';
+import 'change_password_page.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -356,10 +357,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
         });
       }
     } catch (e) {
+      debugPrint('Failed to pick image: $e');
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${l10n.failedToPickImage}: $e')),
+          SnackBar(content: Text(l10n.failedToPickImage)),
         );
       }
     }
@@ -379,10 +381,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
         });
       }
     } catch (e) {
+      debugPrint('Failed to pick file: $e');
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${l10n.failedToPickFile}: $e')),
+          SnackBar(content: Text(l10n.failedToPickFile)),
         );
       }
     }
@@ -887,18 +890,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 width: double.infinity,
                 height: 56,
                 child: OutlinedButton.icon(
-                  onPressed: () {
-                    // TODO: Navigate to change password page
-                    Get.snackbar(
-                      l10n.comingSoon,
-                      l10n.changePasswordSoon,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.grey[800],
-                      colorText: Colors.white,
-                      borderRadius: 12,
-                      margin: const EdgeInsets.all(16),
-                    );
-                  },
+                  onPressed: () => Get.to(() => const ChangePasswordPage()),
                   icon: const Icon(Icons.lock_outline),
                   label: Text(l10n.changePassword),
                   style: OutlinedButton.styleFrom(
