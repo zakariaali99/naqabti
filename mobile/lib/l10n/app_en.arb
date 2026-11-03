@@ -1,5 +1,5 @@
 {
-  "appTitle": "Niqabaty",
+  "appTitle": "Naqabti",
   "@appTitle": {
     "description": "Application title"
   },
@@ -63,7 +63,7 @@
   "@createAccount": {
     "description": "Create account page title"
   },
-  "joinNiqabaty": "Join Niqabaty",
+  "joinNiqabaty": "Join Naqabti",
   "@joinNiqabaty": {
     "description": "Register page heading"
   },
@@ -942,7 +942,7 @@
   "@submit": {
     "description": "Submit button"
   },
-  "welcomeToNiqabaty": "Welcome to Niqabaty!",
+  "welcomeToNiqabaty": "Welcome to Naqabti!",
   "@welcomeToNiqabaty": {
     "description": "Welcome page title"
   },

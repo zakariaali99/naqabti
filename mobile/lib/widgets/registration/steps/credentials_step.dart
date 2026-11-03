@@ -24,6 +24,8 @@ class CredentialsStep extends StatefulWidget {
 
 class _CredentialsStepState extends State<CredentialsStep> {
   final _formKey = GlobalKey<FormState>();
+  late final TextEditingController _firstNameController;
+  late final TextEditingController _familyNameController;
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
   late final TextEditingController _confirmPasswordController;
@@ -33,6 +35,8 @@ class _CredentialsStepState extends State<CredentialsStep> {
   bool _isLoading = false;
 
   // Field-level errors returned by the backend, shown below the matching field.
+  String? _firstNameServerError;
+  String? _familyNameServerError;
   String? _emailServerError;
   String? _passwordServerError;
   String? _phoneServerError;
@@ -42,6 +46,8 @@ class _CredentialsStepState extends State<CredentialsStep> {
   @override
   void initState() {
     super.initState();
+    _firstNameController = TextEditingController(text: widget.data.firstName);
+    _familyNameController = TextEditingController(text: widget.data.familyName);
     _emailController = TextEditingController(text: widget.data.email);
     _passwordController = TextEditingController(text: widget.data.password);
     _confirmPasswordController = TextEditingController();
@@ -50,6 +56,8 @@ class _CredentialsStepState extends State<CredentialsStep> {
 
   @override
   void dispose() {
+    _firstNameController.dispose();
+    _familyNameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
@@ -68,6 +76,8 @@ class _CredentialsStepState extends State<CredentialsStep> {
       _isLoading = true;
     });
 
+    widget.data.firstName = _firstNameController.text.trim();
+    widget.data.familyName = _familyNameController.text.trim();
     widget.data.email = _emailController.text.trim();
     widget.data.password = _passwordController.text;
     widget.data.phoneNumber =
@@ -104,6 +114,9 @@ class _CredentialsStepState extends State<CredentialsStep> {
         final data = e.response!.data;
 
         if (data is Map) {
+          _firstNameServerError = _flattenErrorValueOrNull(data['first_name']);
+          _familyNameServerError =
+              _flattenErrorValueOrNull(data['family_name']);
           _emailServerError = _flattenErrorValueOrNull(data['email']);
           _passwordServerError = _flattenErrorValueOrNull(data['password']);
           _phoneServerError = _flattenErrorValueOrNull(data['phone_number']);
@@ -209,6 +222,10 @@ class _CredentialsStepState extends State<CredentialsStep> {
   /// humanized field name so the user can still tell which field failed.
   String _fieldLabel(String key, AppLocalizations l10n) {
     switch (key) {
+      case 'first_name':
+        return l10n.firstName;
+      case 'family_name':
+        return l10n.familyName;
       case 'email':
         return l10n.email;
       case 'password':
@@ -301,6 +318,52 @@ class _CredentialsStepState extends State<CredentialsStep> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 32),
+
+          TextFormField(
+            controller: _firstNameController,
+            decoration: _decoration(
+              label: l10n.firstName,
+              hint: l10n.firstName,
+              icon: Icons.person_outline,
+            ),
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            onChanged: (_) {
+              if (_firstNameServerError != null) {
+                setState(() => _firstNameServerError = null);
+              }
+            },
+            validator: (value) {
+              if (value == null || value.trim().isEmpty) {
+                return l10n.pleaseEnterFirstName;
+              }
+              return _firstNameServerError;
+            },
+          ),
+          const SizedBox(height: 20),
+
+          TextFormField(
+            controller: _familyNameController,
+            decoration: _decoration(
+              label: l10n.familyName,
+              hint: l10n.familyName,
+              icon: Icons.badge_outlined,
+            ),
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            onChanged: (_) {
+              if (_familyNameServerError != null) {
+                setState(() => _familyNameServerError = null);
+              }
+            },
+            validator: (value) {
+              if (value == null || value.trim().isEmpty) {
+                return l10n.pleaseEnterFamilyName;
+              }
+              return _familyNameServerError;
+            },
+          ),
+          const SizedBox(height: 20),
 
           TextFormField(
             controller: _emailController,

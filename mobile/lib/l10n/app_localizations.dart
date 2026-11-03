@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// Application title
   ///
   /// In en, this message translates to:
-  /// **'Niqabaty'**
+  /// **'Naqabti'**
   String get appTitle;
 
   /// Login page subtitle
@@ -197,7 +197,7 @@ abstract class AppLocalizations {
   /// Register page heading
   ///
   /// In en, this message translates to:
-  /// **'Join Niqabaty'**
+  /// **'Join Naqabti'**
   String get joinNiqabaty;
 
   /// Register page subtitle
@@ -1553,7 +1553,7 @@ abstract class AppLocalizations {
   /// Welcome page title
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Niqabaty!'**
+  /// **'Welcome to Naqabti!'**
   String get welcomeToNiqabaty;
 
   /// Doctor account success message

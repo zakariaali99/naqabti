@@ -256,7 +256,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   Widget _buildResetStep(AppLocalizations l10n) {
     final visibilityToggle = IconButton(
-      icon: Icon(_obscure ? Icons.visibility_off : Icons.visibility),
+      icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off),
       onPressed: () => setState(() => _obscure = !_obscure),
     );
 

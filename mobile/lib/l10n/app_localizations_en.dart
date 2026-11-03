@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Niqabaty';
+  String get appTitle => 'Naqabti';
 
   @override
   String get signInToContinue => 'Sign in to continue';
@@ -58,7 +58,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createAccount => 'Create Account';
 
   @override
-  String get joinNiqabaty => 'Join Niqabaty';
+  String get joinNiqabaty => 'Join Naqabti';
 
   @override
   String get createYourAccountToGetStarted =>
@@ -767,7 +767,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get submit => 'Submit';
 
   @override
-  String get welcomeToNiqabaty => 'Welcome to Niqabaty!';
+  String get welcomeToNiqabaty => 'Welcome to Naqabti!';
 
   @override
   String get yourDoctorAccountCreatedSuccessfully =>
