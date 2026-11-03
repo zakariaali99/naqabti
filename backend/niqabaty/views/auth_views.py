@@ -4,7 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.exceptions import InvalidToken
 from django.utils import timezone
 from niqabaty.serializers.auth import (
     LoginSerializer,
@@ -209,6 +210,64 @@ class LogoutView(APIView):
         except Exception:
             return Response({'detail': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'message': 'Logged out successfully'})
+
+class SafeTokenRefreshView(TokenRefreshView):
+    """Token refresh that answers 401 instead of 500 when the account is gone.
+
+    simplejwt looks the user up with the default (soft-delete filtered)
+    manager, so a refresh token belonging to a deleted account raises
+    User.DoesNotExist.
+    """
+
+    def post(self, request, *args, **kwargs):
+        try:
+            return super().post(request, *args, **kwargs)
+        except User.DoesNotExist:
+            raise InvalidToken('User not found')
+
+
+class ChangePasswordView(APIView):
+    """Change the password of the signed-in user (web and mobile)."""
+
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        current_password = request.data.get('current_password')
+        new_password = request.data.get('new_password')
+        confirm_password = request.data.get('confirm_password')
+
+        if not current_password or not new_password or not confirm_password:
+            return Response({
+                'error': 'current_password, new_password, and confirm_password are required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        user = request.user
+        if not user.check_password(current_password):
+            return Response({
+                'error': 'Current password is incorrect'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        if new_password != confirm_password:
+            return Response({
+                'error': 'Passwords do not match'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        from django.contrib.auth.password_validation import validate_password
+        from django.core.exceptions import ValidationError as DjangoValidationError
+        try:
+            validate_password(new_password, user)
+        except DjangoValidationError as e:
+            return Response({
+                'error': ' '.join(e.messages)
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        user.set_password(new_password)
+        user.save()
+
+        return Response({
+            'message': 'Password changed successfully'
+        }, status=status.HTTP_200_OK)
+
 
 class ResetPasswordView(APIView):
     permission_classes = [permissions.AllowAny]

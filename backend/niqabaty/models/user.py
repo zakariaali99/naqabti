@@ -226,26 +226,66 @@ class User(BaseModel, AbstractUser):
             self.phone_number = None
         super().save(*args, **kwargs)
 
+    # Personal fields wiped when a member deletes their account. Membership,
+    # payment and certification records stay (the syndicate must keep them),
+    # but they no longer point at an identifiable person.
+    ANONYMIZED_FIELDS = (
+        'first_name_field', 'father_name', 'grandfather_name', 'family_name',
+        'first_name_en', 'father_name_en', 'grandfather_name_en', 'family_name_en',
+        'email', 'phone_number', 'birthdate', 'area', 'area_latitude',
+        'area_longitude', 'fcm_token', 'verification_code',
+        'verification_code_created',
+    )
+
     def delete(self, using=None, keep_parents=False):
-        """Soft delete the user account while keeping the record in database.
+        """Soft delete the account and anonymize its personal data.
 
-        Marks is_deleted=True, sets is_active=False to revoke access immediately,
-        clears FCM push notification token, and removes Device registrations.
+        The row is kept (is_deleted=True, is_active=False) so related syndicate
+        records stay intact, but names, contact details, images, documents and
+        earlier history snapshots are removed, every refresh token is
+        blacklisted and push devices are dropped.
         """
-        self.is_deleted = True
-        self.is_active = False
-        self.fcm_token = None
-        self.save()
+        from django.db import transaction
+        from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
+        from niqabaty.models.device import Device
 
-        # Remove push notification devices
-        try:
-            from niqabaty.models.device import Device
+        with transaction.atomic():
+            for field in self.ANONYMIZED_FIELDS:
+                setattr(self, field, None)
+            self.full_name = 'Deleted account'
+            self.address = ''
+            self.bio = ''
+            self.username = self._deleted_username()
+            self.set_unusable_password()
+            if self.profile_image:
+                self.profile_image.delete(save=False)
+            if self.passport_image:
+                self.passport_image.delete(save=False)
+
+            self.is_deleted = True
+            self.is_active = False
+            self.save()
+
+            self.dynamic_field_values.all().delete()
             Device.objects.filter(user=self).delete()
-        except Exception:
-            pass
+            for token in OutstandingToken.objects.filter(user=self):
+                BlacklistedToken.objects.get_or_create(token=token)
+
+            # Drop history snapshots that still hold the personal data
+            latest = self.history.order_by('-history_date').first()
+            if latest is not None:
+                self.history.exclude(pk=latest.pk).delete()
+
+    def _deleted_username(self):
+        import uuid
+        return f'deleted_{self.pk}_{uuid.uuid4().hex[:8]}'
 
     def restore(self):
-        """Restore a soft-deleted user account."""
+        """Re-activate a soft-deleted account.
+
+        Personal data wiped by delete() is not recoverable; the member has to
+        fill in their profile and set a new password again.
+        """
         self.is_deleted = False
         self.is_active = True
         self.save()

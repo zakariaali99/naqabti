@@ -18,6 +18,8 @@ from .auth_views import (
     ResendVerificationView,
     VerifyPasswordResetView,
     ConfirmPasswordResetView,
+    ChangePasswordView,
+    SafeTokenRefreshView,
 )
 from .dashboard_view import DashboardSummaryView
 from .doctor_distribution_view import DoctorDistributionView
@@ -57,6 +59,8 @@ __all__ = [
     'DoctorsMembershipRenewHistoryViewSet',
     'VerifyPasswordResetView',
     'ConfirmPasswordResetView',
+    'ChangePasswordView',
+    'SafeTokenRefreshView',
     'MedicalReportViewSet',
     'NationalityViewSet',
     'AcademicDegreeViewSet',
