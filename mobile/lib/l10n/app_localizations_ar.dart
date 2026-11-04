@@ -1456,4 +1456,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordTooSimilar => 'كلمة المرور قريبة جداً من بياناتك الشخصية.';
+
+  @override
+  String get alreadyUsedByAnotherAccount => 'مستخدم في حساب آخر';
 }

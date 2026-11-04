@@ -1483,4 +1483,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get passwordTooSimilar =>
       'The password is too close to your personal details.';
+
+  @override
+  String get alreadyUsedByAnotherAccount =>
+      'is already used by another account';
 }

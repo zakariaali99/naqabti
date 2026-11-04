@@ -982,5 +982,6 @@
   "notificationNotFound": "الإشعار غير موجود",
   "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على",
   "passwordTooCommon": "كلمة المرور هذه شائعة جداً، اختر كلمة أصعب.",
-  "passwordTooSimilar": "كلمة المرور قريبة جداً من بياناتك الشخصية."
+  "passwordTooSimilar": "كلمة المرور قريبة جداً من بياناتك الشخصية.",
+  "alreadyUsedByAnotherAccount": "مستخدم في حساب آخر"
 }

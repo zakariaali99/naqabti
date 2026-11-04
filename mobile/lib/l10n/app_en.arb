@@ -1865,5 +1865,6 @@
     "description": "Text before the privacy policy link on registration"
   },
   "passwordTooCommon": "This password is too common. Choose a harder one.",
-  "passwordTooSimilar": "The password is too close to your personal details."
+  "passwordTooSimilar": "The password is too close to your personal details.",
+  "alreadyUsedByAnotherAccount": "is already used by another account"
 }

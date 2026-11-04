@@ -2881,6 +2881,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The password is too close to your personal details.'**
   String get passwordTooSimilar;
+
+  /// No description provided for @alreadyUsedByAnotherAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'is already used by another account'**
+  String get alreadyUsedByAnotherAccount;
 }
 
 class _AppLocalizationsDelegate
