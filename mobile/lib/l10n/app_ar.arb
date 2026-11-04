@@ -946,11 +946,11 @@
   "@deleteAccountConfirmationTitle": {
     "description": "Title of delete account confirmation dialog"
   },
-  "deleteAccountConfirmationMessage": "هل أنت متأكد من حذف حسابك؟ سيتم حذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً ولن تتمكن من تسجيل الدخول مرة أخرى. لا يمكن التراجع عن هذا الإجراء.",
+  "deleteAccountConfirmationMessage": "هل أنت متأكد من حذف حسابك؟ سيُعطَّل حسابك فوراً ولن تتمكن من تسجيل الدخول، وتُحذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً خلال 30 يوماً. للتراجع خلال هذه المدة تواصل مع النقابة.",
   "@deleteAccountConfirmationMessage": {
     "description": "Message warning user about account deletion"
   },
-  "deleteAccountSuccess": "تم حذف حسابك بنجاح",
+  "deleteAccountSuccess": "تم استلام طلب حذف حسابك، وسيُحذف خلال 30 يوماً",
   "@deleteAccountSuccess": {
     "description": "Success message after deleting account"
   },
@@ -970,6 +970,8 @@
   "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   "checkInternetConnection": "تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
   "deleteAccountFailed": "تعذّر حذف حسابك. يرجى المحاولة مرة أخرى.",
+  "accountDeletionPendingTitle": "الحساب قيد الحذف",
+  "accountDeletionPendingMessage": "طلبت حذف هذا الحساب، وسيُحذف نهائياً خلال 30 يوماً من تاريخ الطلب. لإلغاء الطلب تواصل مع النقابة.",
   "privacyPolicy": "سياسة الخصوصية",
   "callBranch": "اتصال",
   "openInMaps": "فتح في الخرائط",

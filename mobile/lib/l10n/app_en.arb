@@ -1760,11 +1760,11 @@
   "@deleteAccountConfirmationTitle": {
     "description": "Title of delete account confirmation dialog"
   },
-  "deleteAccountConfirmationMessage": "Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.",
+  "deleteAccountConfirmationMessage": "Are you sure you want to delete your account? It will be disabled right away and you will not be able to sign in; your personal data (name, contact details, photo and documents) is permanently deleted within 30 days. To withdraw the request during that time, contact the syndicate.",
   "@deleteAccountConfirmationMessage": {
     "description": "Message warning user about account deletion"
   },
-  "deleteAccountSuccess": "Your account has been deleted successfully",
+  "deleteAccountSuccess": "Your deletion request was received; your account will be deleted within 30 days",
   "@deleteAccountSuccess": {
     "description": "Success message after deleting account"
   },
@@ -1829,6 +1829,8 @@
     "description": "Network error message"
   },
   "deleteAccountFailed": "We could not delete your account. Please try again.",
+  "accountDeletionPendingTitle": "Account scheduled for deletion",
+  "accountDeletionPendingMessage": "You asked to delete this account. It will be permanently deleted within 30 days of your request. To cancel, contact the syndicate.",
   "@deleteAccountFailed": {
     "description": "Shown when account deletion fails"
   },

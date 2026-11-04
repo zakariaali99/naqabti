@@ -77,7 +77,7 @@ export default function MemberProfilePage() {
     try {
       setDeletingAccount(true);
       await usersApi.deleteMe();
-      toast.success(t("member.deleteSuccess", "Your account has been deleted successfully"));
+      toast.success(t("member.deleteSuccess"));
       await logout();
       navigate("/login");
     } catch (err: any) {

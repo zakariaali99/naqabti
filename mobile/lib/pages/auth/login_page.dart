@@ -110,6 +110,25 @@ class _LoginPageState extends State<LoginPage> {
           String errorMessage = 'Invalid username or password';
           bool isInactive = false;
 
+          if (e is dio.DioException &&
+              e.response?.data.toString().contains('deletion_requested') ==
+                  true) {
+            final l10n = AppLocalizations.of(context)!;
+            Get.dialog(
+              AlertDialog(
+                title: Text(l10n.accountDeletionPendingTitle),
+                content: Text(l10n.accountDeletionPendingMessage),
+                actions: [
+                  TextButton(
+                    onPressed: () => Get.back(),
+                    child: Text(l10n.close),
+                  ),
+                ],
+              ),
+            );
+            return;
+          }
+
           if (e is dio.DioException && e.response != null) {
             final data = e.response?.data;
             // Check for the specific inactive message

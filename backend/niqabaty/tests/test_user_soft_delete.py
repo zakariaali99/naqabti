@@ -62,29 +62,29 @@ class UserSoftDeleteTests(TestCase):
         self.assertTrue(restored.is_active)
 
     def test_user_can_delete_own_account_via_destroy(self):
-        """A user can delete their own account via DELETE /api/users/{id}/."""
+        """DELETE /api/users/{id}/ on yourself files a deletion request."""
         self.client.force_authenticate(user=self.doctor)
 
         response = self.client.delete(f"/api/users/{self.doctor.id}/")
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        # Check in database
+        # Disabled now, erased by staff after the grace period
         db_user = User.all_objects.get(id=self.doctor.id)
-        self.assertTrue(db_user.is_deleted)
+        self.assertIsNotNone(db_user.deletion_requested_at)
         self.assertFalse(db_user.is_active)
-        self.assertFalse(User.objects.filter(id=self.doctor.id).exists())
+        self.assertFalse(db_user.is_deleted)
 
     def test_user_can_delete_own_account_via_me_endpoint(self):
-        """A user can delete their own account via DELETE /api/users/me/."""
+        """DELETE /api/users/me/ files a deletion request."""
         self.client.force_authenticate(user=self.doctor)
 
         response = self.client.delete("/api/users/me/")
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         db_user = User.all_objects.get(id=self.doctor.id)
-        self.assertTrue(db_user.is_deleted)
+        self.assertIsNotNone(db_user.deletion_requested_at)
         self.assertFalse(db_user.is_active)
-        self.assertFalse(User.objects.filter(id=self.doctor.id).exists())
+        self.assertFalse(db_user.is_deleted)
 
     def test_user_cannot_delete_other_user_account(self):
         """A normal user cannot delete someone else's account."""
