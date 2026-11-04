@@ -1449,4 +1449,8 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get byRegisteringYouAgreeTo => 'بإنشاء حساب فإنك توافق على';
+
+  @override
+  String get phoneLoginHint =>
+      'إذا كنت تدخل برقم الهاتف، فاكتبه مع رمز الدولة، مثل ‎+218912345678.';
 }

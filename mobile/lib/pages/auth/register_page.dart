@@ -6,6 +6,7 @@ import '../../models/registration/registration_data.dart';
 import '../../widgets/registration/steps/account_type_step.dart';
 import '../../widgets/registration/steps/credentials_step.dart';
 import '../../widgets/registration/steps/welcome_step.dart';
+import '../../widgets/language_toggle_button.dart';
 
 enum _RegisterPhase { accountType, credentials, success }
 
@@ -62,6 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: GeneralAppBar(
         title: l10n.createAccount,
         showBackButton: _phase == _RegisterPhase.accountType,
+        actions: const [LanguageToggleButton()],
       ),
       body: SafeArea(
         child: Column(

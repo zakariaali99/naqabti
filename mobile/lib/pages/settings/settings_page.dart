@@ -4,6 +4,7 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../services/settings_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../utils/external_links.dart';
+import '../../utils/app_snackbar.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -79,19 +80,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     
                     setState(() {});
                     
-                    Get.snackbar(
+                    AppSnackbar.info(
                       value ? l10n.darkMode : l10n.lightMode,
                       value ? l10n.switchedToDarkMode : l10n.switchedToLightMode,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                      colorText: Theme.of(context).colorScheme.onPrimaryContainer,
-                      duration: const Duration(seconds: 2),
-                      margin: const EdgeInsets.all(16),
-                      borderRadius: 12,
-                      icon: Icon(
-                        value ? Icons.dark_mode : Icons.light_mode,
-                        color: const Color(0xFF4183D9),
-                      ),
+                      icon: value ? Icons.dark_mode : Icons.light_mode,
                     );
                   },
                 ),
@@ -311,21 +303,11 @@ class _SettingsPageState extends State<SettingsPage> {
         setState(() {});
         
         // Show confirmation snackbar
-        Get.snackbar(
+        AppSnackbar.success(
           l10n.languageChanged,
           code == 'ar'
               ? l10n.languageChangedToArabic
               : l10n.languageChangedToEnglish,
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-          colorText: Theme.of(context).colorScheme.onPrimaryContainer,
-          duration: const Duration(seconds: 2),
-          margin: const EdgeInsets.all(16),
-          borderRadius: 12,
-          icon: Icon(
-            Icons.check_circle,
-            color: const Color(0xFF4183D9),
-          ),
         );
       },
     );

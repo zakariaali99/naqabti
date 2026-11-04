@@ -980,5 +980,6 @@
   "membershipRenewalRequested": "تم إرسال طلب التجديد",
   "membershipRenewalFailed": "تعذّر إرسال طلب التجديد. يرجى المحاولة مرة أخرى.",
   "notificationNotFound": "الإشعار غير موجود",
-  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على"
+  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على",
+  "phoneLoginHint": "إذا كنت تدخل برقم الهاتف، فاكتبه مع رمز الدولة، مثل ‎+218912345678."
 }

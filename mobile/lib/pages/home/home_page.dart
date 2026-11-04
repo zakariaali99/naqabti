@@ -12,6 +12,7 @@ import '../../widgets/general_app_bar.dart';
 import '../../widgets/app_drawer.dart';
 import '../../widgets/main_bottom_nav_bar.dart';
 import '../../widgets/notification_popup.dart';
+import '../../widgets/language_toggle_button.dart';
 import '../profile/profile_page.dart';
 import 'widgets/profile_completion_card.dart';
 import 'widgets/profile_summary_card.dart';
@@ -203,7 +204,6 @@ class _HomePageState extends State<HomePage>
 
   List<Widget> _buildAppBarActions(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final currentLocale = Get.locale?.languageCode ?? 'en';
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return [
@@ -219,30 +219,7 @@ class _HomePageState extends State<HomePage>
           onPressed: () => _showNotificationPopup(context),
         );
       }),
-      IconButton(
-        icon: SizedBox(
-          width: 24,
-          height: 24,
-          child: Center(
-            // Shows the language the button switches to.
-            child: Text(
-              currentLocale == 'ar' ? 'EN' : 'ع',
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-                height: 1.0,
-              ),
-            ),
-          ),
-        ),
-        tooltip: currentLocale == 'ar' ? l10n.english : l10n.arabic,
-        onPressed: () {
-          final newLocale = currentLocale == 'ar'
-              ? const Locale('en')
-              : const Locale('ar');
-          SettingsService.to.saveLocale(newLocale);
-        },
-      ),
+      const LanguageToggleButton(),
       IconButton(
         icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
         tooltip: isDark ? l10n.lightMode : l10n.darkMode,

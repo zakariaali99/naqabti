@@ -1,6 +1,8 @@
 export default {
   signIn: "Sign in to your account",
   usernameOrPhone: "Username, Email, or Phone Number",
+  phoneLoginHint:
+    "If you are signing in with your phone number, write it with the country code, for example +218912345678.",
   usernameOrPhonePlaceholder: "Enter username, email, or phone number",
   usernameRequired: "Username, email, or phone number is required",
   passwordRequired: "Password is required",

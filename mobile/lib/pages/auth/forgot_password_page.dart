@@ -5,6 +5,8 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../services/auth_service.dart';
 import '../../utils/password_rules.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/app_snackbar.dart';
+import '../../widgets/language_toggle_button.dart';
 
 /// Two steps: request a 6-digit code by email, then enter the code with a
 /// new password (backed by auth/reset-password and auth/confirm-password-reset).
@@ -41,12 +43,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   void _showError(Object error) {
     final l10n = AppLocalizations.of(context)!;
-    Get.snackbar(
+    AppSnackbar.error(
       l10n.error,
       isConnectionError(error)
           ? l10n.checkInternetConnection
           : l10n.somethingWentWrong,
-      snackPosition: SnackPosition.BOTTOM,
     );
   }
 
@@ -63,10 +64,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           await _authService.requestPasswordReset(_emailController.text.trim());
       if (!mounted) return;
       if (userId == null) {
-        Get.snackbar(
+        AppSnackbar.error(
           l10n.resetPassword,
           l10n.resetCodeNotSent,
-          snackPosition: SnackPosition.BOTTOM,
         );
         return;
       }
@@ -99,10 +99,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       );
       if (!mounted) return;
       Get.back();
-      Get.snackbar(
+      AppSnackbar.success(
         l10n.success,
         l10n.passwordResetSuccess,
-        snackPosition: SnackPosition.BOTTOM,
       );
     } catch (e) {
       if (!mounted) return;
@@ -128,6 +127,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         title: l10n.resetPassword,
         showBackButton: true,
         onBackPressed: () => Get.back(),
+        actions: const [LanguageToggleButton()],
       ),
       body: SafeArea(
         child: Center(

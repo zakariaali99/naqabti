@@ -5,6 +5,7 @@ import '../../models/branch.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../utils/external_links.dart';
+import '../../utils/app_snackbar.dart';
 
 class BranchesPage extends StatefulWidget {
   const BranchesPage({super.key});
@@ -324,7 +325,10 @@ class _BranchesPageState extends State<BranchesPage> {
   Future<void> _openOrWarn(Future<bool> opening) async {
     if (!await opening && mounted) {
       final l10n = AppLocalizations.of(context)!;
-      Get.snackbar(l10n.error, l10n.couldNotOpenResource);
+      AppSnackbar.error(
+        l10n.error,
+        l10n.couldNotOpenResource,
+      );
     }
   }
 

@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/app_snackbar.dart';
 
 class ComplaintFormPage extends StatefulWidget {
   const ComplaintFormPage({super.key});
@@ -58,18 +59,14 @@ class _ComplaintFormPageState extends State<ComplaintFormPage> {
       );
       
       Get.back(result: true);
-      Get.snackbar(
-        'Success', 
+      AppSnackbar.success(
+        'Success',
         'Complaint submitted successfully',
-        backgroundColor: Colors.green.withValues(alpha: 0.1),
-        colorText: Colors.green,
       );
     } catch (e) {
-      Get.snackbar(
-        'Error', 
+      AppSnackbar.error(
+        'Error',
         'Failed to submit complaint: ${e.toString()}',
-        backgroundColor: Colors.red.withValues(alpha: 0.1),
-        colorText: Colors.red,
       );
     } finally {
       setState(() => _isSubmitting = false);

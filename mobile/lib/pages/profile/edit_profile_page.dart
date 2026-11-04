@@ -14,6 +14,7 @@ import '../../models/nationality.dart';
 import '../../models/academic_degree.dart';
 import '../../utils/profile_completion.dart';
 import 'change_password_page.dart';
+import '../../utils/app_snackbar.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -458,23 +459,17 @@ class _EditProfilePageState extends State<EditProfilePage> {
           final result = calculateProfileCompletion(updatedUser, isDoctor: isDoctor);
           _showProfileUpdatedModal(result.percentage);
         } else {
-          Get.snackbar(
+          AppSnackbar.success(
             l10n.success,
             l10n.profileUpdatedSuccessfully,
-            backgroundColor: Colors.green,
-            colorText: Colors.white,
-            snackPosition: SnackPosition.BOTTOM,
           );
         }
       }
     } catch (e) {
       if (mounted) {
-        Get.snackbar(
+        AppSnackbar.error(
           l10n.error,
           '${l10n.failedToUpdateProfile}: ${e.toString()}',
-          backgroundColor: Colors.red,
-          colorText: Colors.white,
-          snackPosition: SnackPosition.BOTTOM,
         );
       }
     } finally {
