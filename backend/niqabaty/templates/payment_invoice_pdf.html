@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فاتورة دفع</title>
+    <style>
+        body {
+            font-family: 'DejaVu Sans', 'Arial', sans-serif;
+            margin: 0;
+            padding: 30px;
+            color: #333333;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+            margin: 0 0 5px 0;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #666666;
+            margin: 0;
+        }
+        .invoice-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #222222;
+        }
+        .meta-table, .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+        .meta-table td {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+        .meta-label {
+            font-weight: bold;
+            color: #555555;
+            width: 20%;
+        }
+        .meta-value {
+            color: #222222;
+            width: 30%;
+        }
+        .details-table th {
+            background-color: #f2f2f2;
+            border: 1px solid #dddddd;
+            padding: 12px;
+            font-size: 14px;
+            text-align: right;
+            font-weight: bold;
+            color: #333333;
+        }
+        .details-table td {
+            border: 1px solid #dddddd;
+            padding: 12px;
+            font-size: 13px;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid #eeeeee;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 11px;
+            color: #777777;
+        }
+        .stamp-section {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .stamp-box {
+            text-align: center;
+            width: 200px;
+            font-size: 13px;
+            color: #555555;
+        }
+        .stamp-line {
+            margin-top: 50px;
+            border-top: 1px dashed #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-title">النقابة العامة للأطباء والمهن الطبية</div>
+        <div class="subtitle">نظام نقابتي لإدارة العضوية والخدمات الإلكترونية</div>
+    </div>
+
+    <div class="invoice-title">وصل استلام دفعة رقم: {{ payment.reference_number|default:payment.id }}</div>
+
+    <table class="meta-table">
+        <tr>
+            <td class="meta-label">اسم العضو:</td>
+            <td class="meta-value">{{ payment.user.full_name|default:payment.user.username }}</td>
+            <td class="meta-label">تاريخ الدفع:</td>
+            <td class="meta-value">{{ payment.payment_date|date:"Y-m-d H:i" }}</td>
+        </tr>
+        <tr>
+            <td class="meta-label">البريد الإلكتروني:</td>
+            <td class="meta-value">{{ payment.user.email|default:"-" }}</td>
+            <td class="meta-label">رقم الهاتف:</td>
+            <td class="meta-value">{{ payment.user.phone_number|default:"-" }}</td>
+        </tr>
+        <tr>
+            <td class="meta-label">التخصص:</td>
+            <td class="meta-value">{{ payment.user.specialty|default:"-" }}</td>
+            <td class="meta-label">الفرع:</td>
+            <td class="meta-value">
+                {% if payment.user.branches.all %}
+                    {{ payment.user.branches.all.0.name }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <table class="details-table">
+        <thead>
+            <tr>
+                <th>تفاصيل الدفعة</th>
+                <th>القيمة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {% if payment.membership %}
+                        رسوم اشتراك: {{ payment.membership.membership_type.name }}
+                    {% elif payment.professional_development_registration %}
+                        رسوم تسجيل دورة/برنامج: {{ payment.professional_development_registration.professional_development.title }}
+                    {% else %}
+                        دفعة عامة للنقابة
+                    {% endif %}
+                    <br/>
+                    <small style="color: #666666;">
+                        طريقة الدفع: 
+                        {% if payment.payment_method == 'cash' %}نقدًا
+                        {% elif payment.payment_method == 'card' %}بطاقة مصرفية
+                        {% elif payment.payment_method == 'bank_transfer' %}تحويل مصرفي
+                        {% elif payment.payment_method == 'online' %}دفع إلكتروني
+                        {% else %}أخرى
+                        {% endif %}
+                        {% if payment.reference_number %}
+                            | رقم المرجعي: {{ payment.reference_number }}
+                        {% endif %}
+                    </small>
+                </td>
+                <td>{{ payment.amount }} د.ل</td>
+            </tr>
+            <tr class="total-row">
+                <td>المجموع المدفوع</td>
+                <td>{{ payment.amount }} د.ل</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if payment.description %}
+    <div style="margin-top: 20px; font-size: 13px; background-color: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #eeeeee;">
+        <strong>ملاحظات:</strong> {{ payment.description }}
+    </div>
+    {% endif %}
+
+    <div class="stamp-section">
+        <div class="stamp-box" style="float: right;">
+            توكيل المستلم
+            <div class="stamp-line"></div>
+        </div>
+        <div class="stamp-box" style="float: left;">
+            ختم النقابة
+            <div class="stamp-line"></div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="footer">
+        تم إنشاء هذا الوصل تلقائيًا عبر نظام نقابتي في {{ generated_at }}
+    </div>
+</body>
+</html>

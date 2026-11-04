@@ -1,0 +1,54 @@
+PRIVACY POLICY
+
+Last Updated: May 13, 2026
+
+This Privacy Policy describes how Niqabaty ("we", "our", or "us") collects, uses, and discloses information when you use our system and mobile application (the "Service").
+
+1. INFORMATION WE COLLECT
+   - Personal Information: name, email address, phone number, profile picture
+   - Usage Data: IP address, device type, operating system, browser type, pages visited
+   - Location Data: GPS location (if permitted) for location-based features
+   - Content: messages, posts, comments, and other user-generated content
+   - Cookies and Tracking Technologies: to remember preferences and analyze usage
+
+2. HOW WE USE YOUR INFORMATION
+   - To provide and maintain the Service
+   - To improve and personalize user experience
+   - To communicate with you about updates, promotions, and support
+   - To monitor usage and analyze trends
+   - To prevent fraud and ensure security
+
+3. SHARING OF INFORMATION
+   - We do not sell your personal information to third parties.
+   - We may share information with:
+     * Service providers who assist us in operating the Service
+     * Business partners for joint offerings (with your consent)
+     * Legal authorities when required by law
+     * In connection with a merger, acquisition, or sale of assets
+
+4. DATA SECURITY
+   We implement reasonable security measures to protect your information, including encryption, secure servers, and access controls. However, no method is 100% secure.
+
+5. YOUR RIGHTS
+   Depending on your jurisdiction, you may have the right to:
+   - Access, correct, or delete your personal information
+   - Restrict or object to processing of your data
+   - Data portability
+   - Withdraw consent where processing is based on consent
+   To exercise these rights, contact us at privacy@niqabaty.com
+
+6. CHILDREN'S PRIVACY
+   Our Service is not directed to children under 13. We do not knowingly collect personal information from children under 13.
+
+7. INTERNATIONAL DATA TRANSFERS
+   Information may be transferred to and stored on servers located outside your country, where data protection laws may differ.
+
+8. CHANGES TO THIS POLICY
+   We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page.
+
+9. CONTACT US
+   If you have questions about this Privacy Policy, please contact us at:
+   Email: privacy@niqabaty.com
+   Address: Niqabaty Privacy Team, [Company Address]
+
+By using our Service, you acknowledge that you have read and understood this Privacy Policy.

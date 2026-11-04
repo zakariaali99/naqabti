@@ -1,0 +1,92 @@
+# HTI Finance Backend Requirements
+# Core dependencies for the Django backend with Odoo integration
+
+# Django and DRF
+Django>=4.2.0,<5.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.0.0
+django-filter>=23.0      # DjangoFilterBackend, used by nearly every viewset
+
+# Database
+psycopg2-binary>=2.9.0  # PostgreSQL adapter
+# or for MySQL: mysqlclient>=2.1.0
+
+# Authentication and Security
+djangorestframework-simplejwt>=5.2.0
+
+# API Documentation
+drf-yasg>=1.21.0
+django-rest-swagger>=2.2.0
+
+
+# Environment and Configuration
+python-dotenv>=1.0.0    # For .env file support
+django-environ>=0.10.0  # Alternative env management
+
+# Logging and Monitoring
+structlog>=23.1.0       # Structured logging
+sentry-sdk>=1.28.0      # Error monitoring (optional)
+
+# Testing
+pytest>=7.4.0
+pytest-django>=4.5.0
+pytest-cov>=4.1.0
+factory-boy>=3.2.0     # For test fixtures
+freezegun>=1.2.0       # For mocking time in tests
+
+# Development Tools
+django-debug-toolbar>=4.1.0
+django-extensions>=3.2.0
+ipython>=8.14.0
+black>=23.7.0           # Code formatting
+isort>=5.12.0           # Import sorting
+flake8>=6.0.0           # Linting
+
+# Production
+gunicorn>=21.0.0        # WSGI server
+whitenoise>=6.5.0       # Static file serving
+
+# Health Checks
+django-health-check>=3.17.0
+
+# Task Queue (optional)
+# celery>=5.3.0
+# redis>=4.5.0           # For celery broker
+
+# File Processing (optional)
+openpyxl>=3.1.0        # Excel file support
+xlsxwriter>=3.1.0      # Excel writing
+Pillow>=10.0.0         # Image processing
+pdfkit>=1.0.0          # PDF generation via wkhtmltopdf
+
+ # Time and Date
+pytz>=2023.3           # Timezone support
+
+# Browser automation for Odoo login
+selenium>=4.0.0
+
+# Validation
+cerberus>=1.3.0        # Data validation (alternative to DRF serializers)
+marshmallow>=3.20.0    # Another serialization option
+
+mysql-connector-python
+django-simple-history
+# Development dependencies (install with pip install -r requirements-dev.txt)
+# Create requirements-dev.txt with:
+# -r requirements.txt
+# pre-commit>=3.3.0
+# mypy>=1.5.0
+# types-requests>=2.31.0
+# coverage>=7.2.0
+# django-stubs>=4.2.0
+
+# Optional: If using async features
+# asgiref>=3.7.0
+# channels>=4.0.0
+# channels-redis>=4.1.0
+
+# Firebase
+firebase-admin
+
+# Excel
+openpyxl

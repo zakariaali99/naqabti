@@ -1,0 +1,33 @@
+export default {
+  "addPayment": "Add Payment",
+  "submitPayment": "Submit Payment",
+  "paymentInformation": "Payment Information",
+  "totalAmount": "Total Amount",
+  "paidAmount": "Paid Amount",
+  "remainingAmount": "Remaining Amount",
+  "amount": "Amount",
+  "enterAmount": "Enter payment amount",
+  "paymentMethod": "Payment Method",
+  "selectMethod": "Select payment method",
+  "method": "Method",
+  "paymentHistory": "Payment History",
+  "referenceNumber": "Reference Number",
+  "enterReference": "Enter reference or transaction number",
+  "description": "Description",
+  "enterDescription": "Enter payment description or notes",
+  "status": "Payment Status",
+  "methods": {
+    "cash": "Cash",
+    "card": "Card",
+    "bankTransfer": "Bank Transfer",
+    "bank_transfer": "Bank Transfer",
+    "online": "Online Payment",
+    "other": "Other"
+  },
+  errors: {
+    amountRequired: "Payment amount is required",
+    amountExceedsRemaining: "Payment amount cannot exceed remaining balance",
+  },
+  addSuccess: "Payment added successfully",
+  addError: "Failed to add payment",
+} as const;

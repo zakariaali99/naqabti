@@ -1,0 +1,130 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - link "Logo نقابتي" [ref=e7] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=e9]
+      - generic [ref=e10]: نقابتي
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - button "🇸🇦 العربية" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: 🇸🇦
+            - generic [ref=e17]: العربية
+          - img [ref=e18]
+        - generic "Switch to dark mode" [ref=e20] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=e22]
+          - img [ref=e24]
+      - button "AA admin admin admin admin موظف" [ref=e27] [cursor=pointer]:
+        - img "AA" [ref=e29]: A
+        - generic [ref=e30]:
+          - generic [ref=e31]: admin admin admin admin
+          - generic [ref=e32]: موظف
+        - img [ref=e34]
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - button [ref=e40]:
+        - img [ref=e41]
+      - navigation [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: لوحة التحكم
+          - button "الرئيسية" [ref=e48] [cursor=pointer]:
+            - img [ref=e49]
+            - generic [ref=e52]: الرئيسية
+          - button "خريطة الأطباء" [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+            - generic [ref=e57]: خريطة الأطباء
+        - generic [ref=e59]:
+          - generic [ref=e60]: الأعضاء
+          - button "العضويات" [ref=e62] [cursor=pointer]:
+            - img [ref=e63]
+            - generic [ref=e68]: العضويات
+          - button "الأطباء" [ref=e70] [cursor=pointer]:
+            - img [ref=e71]
+            - generic [ref=e73]: الأطباء
+          - button "الطلاب" [ref=e75] [cursor=pointer]:
+            - img [ref=e76]
+            - generic [ref=e78]: الطلاب
+          - button "المؤسسات" [ref=e80] [cursor=pointer]:
+            - img [ref=e81]
+            - generic [ref=e83]: المؤسسات
+        - generic [ref=e85]:
+          - generic [ref=e86]: الخدمات
+          - button "الشهادات" [ref=e88] [cursor=pointer]:
+            - img [ref=e89]
+            - generic [ref=e92]: الشهادات
+          - button "المدفوعات" [ref=e94] [cursor=pointer]:
+            - img [ref=e95]
+            - generic [ref=e97]: المدفوعات
+          - button "التطوير المهني" [ref=e99] [cursor=pointer]:
+            - img [ref=e100]
+            - generic [ref=e103]: التطوير المهني
+            - img [ref=e105]
+          - button "المكتبة" [ref=e108] [cursor=pointer]:
+            - img [ref=e109]
+            - generic [ref=e112]: المكتبة
+          - button "التقارير الطبية" [ref=e114] [cursor=pointer]:
+            - img [ref=e115]
+            - generic [ref=e117]: التقارير الطبية
+          - button "التأمين" [ref=e119] [cursor=pointer]:
+            - img [ref=e120]
+            - generic [ref=e122]: التأمين
+          - button "الإعلانات" [ref=e124] [cursor=pointer]:
+            - img [ref=e125]
+            - generic [ref=e127]: الإعلانات
+        - generic [ref=e129]:
+          - generic [ref=e130]: التواصل
+          - button "الإشعارات" [ref=e132] [cursor=pointer]:
+            - img [ref=e133]
+            - generic [ref=e136]: الإشعارات
+          - button "المقالات والأخبار" [ref=e138] [cursor=pointer]:
+            - img [ref=e139]
+            - generic [ref=e142]: المقالات والأخبار
+          - button "الفعاليات" [ref=e144] [cursor=pointer]:
+            - img [ref=e145]
+            - generic [ref=e147]: الفعاليات
+          - button "الشكاوي" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+            - generic [ref=e152]: الشكاوي
+        - generic [ref=e154]:
+          - generic [ref=e155]: الإعدادات
+          - generic [ref=e156]:
+            - button "النظام" [ref=e157] [cursor=pointer]:
+              - img [ref=e158]
+              - generic [ref=e161]: النظام
+              - img [ref=e163]
+            - generic [ref=e165]:
+              - button "أنواع العضوية" [ref=e166] [cursor=pointer]:
+                - img [ref=e167]
+                - generic [ref=e171]: أنواع العضوية
+              - button "أنواع الشهادات" [ref=e172] [cursor=pointer]:
+                - img [ref=e173]
+                - generic [ref=e175]: أنواع الشهادات
+              - button "المستخدمون" [ref=e176] [cursor=pointer]:
+                - img [ref=e177]
+                - generic [ref=e180]: المستخدمون
+              - button "مجموعات الصلاحيات" [ref=e181] [cursor=pointer]:
+                - img [ref=e182]
+                - generic [ref=e185]: مجموعات الصلاحيات
+              - button "الفروع" [ref=e186] [cursor=pointer]:
+                - img [ref=e187]
+                - generic [ref=e191]: الفروع
+              - button "المدن" [ref=e192] [cursor=pointer]:
+                - img [ref=e193]
+                - generic [ref=e196]: المدن
+              - button "الجنسيات" [ref=e197] [cursor=pointer]:
+                - img [ref=e198]
+                - generic [ref=e200]: الجنسيات
+              - button "الدرجات الأكاديمية" [ref=e201] [cursor=pointer]:
+                - img [ref=e202]
+                - generic [ref=e205]: الدرجات الأكاديمية
+              - button "تخصصات الأطباء" [ref=e206] [cursor=pointer]:
+                - generic [ref=e207]: تخصصات الأطباء
+      - generic [ref=e209]: نقابتي v1.0
+    - main [ref=e210]:
+      - generic "Loading..." [ref=e212]:
+        - generic [ref=e216]: Loading...
+  - contentinfo [ref=e217]:
+    - link "تم تطويره بواسطة الأريام" [ref=e218] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=e219]: تم تطويره بواسطة
+      - paragraph [ref=e220]: الأريام

@@ -1,0 +1,91 @@
+- generic [ref=f5e4]:
+  - banner [ref=f5e5]:
+    - link "Logo Naqabti" [ref=f5e7] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=f5e9]
+      - generic [ref=f5e10]: Naqabti
+    - generic [ref=f5e12]:
+      - generic [ref=f5e13]:
+        - button "🇺🇸 English" [ref=f5e14] [cursor=pointer]:
+          - generic [ref=f5e15]:
+            - generic [ref=f5e16]: 🇺🇸
+            - generic [ref=f5e17]: English
+          - img [ref=f5e18]
+        - generic "Switch to dark mode" [ref=f5e20] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=f5e22]
+          - img [ref=f5e24]
+      - button "A Staff" [ref=f5e27] [cursor=pointer]:
+        - img "A" [ref=f5e29]
+        - generic [ref=f5e31]: Staff
+        - img [ref=f5e33]
+  - generic [ref=f5e35]:
+    - generic [ref=f5e37]:
+      - button [ref=f5e39]:
+        - img [ref=f5e40]
+      - navigation [ref=f5e43]:
+        - generic [ref=f5e44]:
+          - button "Home" [ref=f5e46] [cursor=pointer]:
+            - img [ref=f5e47]
+            - generic [ref=f5e50]: Home
+          - button "Doctor Map" [ref=f5e52] [cursor=pointer]:
+            - img [ref=f5e53]
+            - generic [ref=f5e55]: Doctor Map
+        - generic [ref=f5e57]:
+          - button "Memberships" [ref=f5e59] [cursor=pointer]:
+            - img [ref=f5e60]
+            - generic [ref=f5e65]: Memberships
+          - button "Doctors" [ref=f5e67] [cursor=pointer]:
+            - img [ref=f5e68]
+            - generic [ref=f5e70]: Doctors
+          - button "Students" [ref=f5e72] [cursor=pointer]:
+            - img [ref=f5e73]
+            - generic [ref=f5e75]: Students
+          - button "Institutions" [ref=f5e77] [cursor=pointer]:
+            - img [ref=f5e78]
+            - generic [ref=f5e80]: Institutions
+        - generic [ref=f5e82]:
+          - button "Certifications" [ref=f5e84] [cursor=pointer]:
+            - img [ref=f5e85]
+            - generic [ref=f5e88]: Certifications
+          - button "Payments" [ref=f5e90] [cursor=pointer]:
+            - img [ref=f5e91]
+            - generic [ref=f5e93]: Payments
+          - button "Professional Development" [ref=f5e95] [cursor=pointer]:
+            - img [ref=f5e96]
+            - generic [ref=f5e99]: Professional Development
+          - button "Library" [ref=f5e101] [cursor=pointer]:
+            - img [ref=f5e102]
+            - generic [ref=f5e105]: Library
+          - button "Medical Reports" [ref=f5e107] [cursor=pointer]:
+            - img [ref=f5e108]
+            - generic [ref=f5e110]: Medical Reports
+          - button "Insurance" [ref=f5e112] [cursor=pointer]:
+            - img [ref=f5e113]
+            - generic [ref=f5e115]: Insurance
+          - button "Ads" [ref=f5e117] [cursor=pointer]:
+            - img [ref=f5e118]
+            - generic [ref=f5e120]: Ads
+        - generic [ref=f5e122]:
+          - button "Notifications" [ref=f5e124] [cursor=pointer]:
+            - img [ref=f5e125]
+            - generic [ref=f5e128]: Notifications
+          - button "Posts & News" [ref=f5e130] [cursor=pointer]:
+            - img [ref=f5e131]
+            - generic [ref=f5e134]: Posts & News
+          - button "Events" [ref=f5e136] [cursor=pointer]:
+            - img [ref=f5e137]
+            - generic [ref=f5e139]: Events
+          - button "Complaints" [ref=f5e141] [cursor=pointer]:
+            - img [ref=f5e142]
+            - generic [ref=f5e144]: Complaints
+        - button "System" [ref=f5e148] [cursor=pointer]:
+          - img [ref=f5e149]
+          - generic [ref=f5e152]: System
+    - main [ref=f5e153]:
+      - generic "Loading..." [ref=f5e155]:
+        - generic [ref=f5e159]: Loading...
+  - contentinfo [ref=f5e160]:
+    - link "Developed by ALaryam" [ref=f5e161] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=f5e162]: Developed by
+      - paragraph [ref=f5e163]: ALaryam

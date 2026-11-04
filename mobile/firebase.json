@@ -1,0 +1,41 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "naqabti-742bb",
+                    "appId": "1:311580333570:android:1ff515eb50dfe682dc791b",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "naqabti-742bb",
+                    "appId": "1:311580333570:ios:88284e308420b0ecdc791b",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "web": {
+                "default": {
+                    "projectId": "naqabti-742bb",
+                    "appId": "1:311580333570:web:d01beb1828a2bcccdc791b",
+                    "apiKey": "AIzaSyCkK8CY97q5K7SXmCRMO6d6WirrEDxpSIw",
+                    "authDomain": "naqabti-742bb.firebaseapp.com",
+                    "storageBucket": "naqabti-742bb.firebasestorage.app",
+                    "messagingSenderId": "311580333570"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "naqabti-742bb",
+                    "configurations": {
+                        "android": "1:311580333570:android:1ff515eb50dfe682dc791b",
+                        "ios": "1:311580333570:ios:88284e308420b0ecdc791b",
+                        "web": "1:311580333570:web:d01beb1828a2bcccdc791b"
+                    }
+                }
+            }
+        }
+    }
+}

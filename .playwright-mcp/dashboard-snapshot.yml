@@ -1,0 +1,71 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - link "Logo نقابتي" [ref=e7] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=e9]
+      - generic [ref=e10]: نقابتي
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - button "🇸🇦 العربية" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15]
+          - img [ref=e18]
+        - generic "Switch to dark mode" [ref=e20] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=e22]
+          - img [ref=e24]
+      - button "AA admin admin admin admin موظف" [ref=e27] [cursor=pointer]:
+        - img "AA" [ref=e29]: A
+        - generic [ref=e30]:
+          - generic [ref=e31]: admin admin admin admin
+          - generic [ref=e32]: موظف
+        - img [ref=e34]
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - button [ref=e40]:
+        - img [ref=e41]
+      - navigation [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: لوحة التحكم
+          - button "الرئيسية" [ref=e48] [cursor=pointer]
+          - button "خريطة الأطباء" [ref=e54] [cursor=pointer]
+        - generic [ref=e59]:
+          - generic [ref=e60]: الأعضاء
+          - button "العضويات" [ref=e62] [cursor=pointer]
+          - button "الأطباء" [ref=e70] [cursor=pointer]
+          - button "الطلاب" [ref=e75] [cursor=pointer]
+          - button "المؤسسات" [ref=e80] [cursor=pointer]
+        - generic [ref=e85]:
+          - generic [ref=e86]: الخدمات
+          - button "الشهادات" [ref=e88] [cursor=pointer]
+          - button "المدفوعات" [ref=e94] [cursor=pointer]
+          - button "التطوير المهني" [ref=e99] [cursor=pointer]
+          - button "المكتبة" [ref=e108] [cursor=pointer]
+          - button "التقارير الطبية" [ref=e114] [cursor=pointer]
+          - button "التأمين" [ref=e119] [cursor=pointer]
+          - button "الإعلانات" [ref=e124] [cursor=pointer]
+        - generic [ref=e129]:
+          - generic [ref=e130]: التواصل
+          - button "الإشعارات" [ref=e132] [cursor=pointer]
+          - button "المقالات والأخبار" [ref=e138] [cursor=pointer]
+          - button "الفعاليات" [ref=e144] [cursor=pointer]
+          - button "الشكاوي" [ref=e149] [cursor=pointer]
+        - generic [ref=e154]:
+          - generic [ref=e155]: الإعدادات
+          - generic [ref=e156]
+      - generic [ref=e209]: نقابتي v1.0
+    - main [ref=e210]:
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - generic [ref=e223] [cursor=pointer]
+          - generic [ref=e234] [cursor=pointer]
+          - generic [ref=e242] [cursor=pointer]
+        - generic [ref=e250]:
+          - generic [ref=e251]
+          - generic [ref=e304]
+        - generic [ref=e326]:
+          - generic [ref=e327]
+          - generic [ref=e397]
+  - contentinfo [ref=e217]:
+    - link "تم تطويره بواسطة الأريام" [ref=e218] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=e219]: تم تطويره بواسطة
+      - paragraph [ref=e220]: الأريام

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build:frontend": "cd frontend && npm run build",
+    "collect:static": "cd backend && python3 manage.py collectstatic --noinput --clear",
+    "sync:template": "cp backend/statics/index.html backend/templates/index.html",
+    "build:prod": "npm run build:frontend && npm run collect:static && npm run sync:template",
+    "dist-zip": "cd backend && rm -f ../dist.zip && zip -r ../dist.zip . -x '.env' '*/.env' 'db.sqlite3*' 'media/*' '*/__pycache__/*' '*.pyc' '*.pyo' '*.pyd' '.DS_Store' '*/.DS_Store' 'node_modules/*' '.git/*'",
+    "dist": "npm run build:prod && npm run dist-zip",
+    "deploy": "scripts/deploy.sh"
+  }
+}

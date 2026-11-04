@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.js";
+
+:is(.dark *) .logo-dark-white,
+.dark .logo-dark-white {
+  filter: brightness(0) invert(1);
+}
+
+

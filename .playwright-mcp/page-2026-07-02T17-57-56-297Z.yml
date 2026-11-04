@@ -1,0 +1,203 @@
+- generic [ref=f4e62]:
+  - banner [ref=f4e63]:
+    - link "Logo Naqabti" [ref=f4e65] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=f4e67]
+      - generic [ref=f4e68]: Naqabti
+    - generic [ref=f4e70]:
+      - generic [ref=f4e71]:
+        - button "🇺🇸 English" [ref=f4e72] [cursor=pointer]:
+          - generic [ref=f4e73]:
+            - generic [ref=f4e74]: 🇺🇸
+            - generic [ref=f4e75]: English
+          - img [ref=f4e76]
+        - generic "Switch to dark mode" [ref=f4e78] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=f4e80]
+          - img [ref=f4e82]
+      - button "A Staff" [ref=f4e85] [cursor=pointer]:
+        - img "A" [ref=f4e87]
+        - generic [ref=f4e89]: Staff
+        - img [ref=f4e91]
+  - generic [ref=f4e93]:
+    - generic [ref=f4e95]:
+      - button [ref=f4e97]:
+        - img [ref=f4e98]
+      - navigation [ref=f4e101]:
+        - generic [ref=f4e102]:
+          - button "Home" [ref=f4e104] [cursor=pointer]:
+            - img [ref=f4e105]
+            - generic [ref=f4e108]: Home
+          - button "Doctor Map" [ref=f4e110] [cursor=pointer]:
+            - img [ref=f4e111]
+            - generic [ref=f4e113]: Doctor Map
+        - generic [ref=f4e115]:
+          - button "Memberships" [ref=f4e117] [cursor=pointer]:
+            - img [ref=f4e118]
+            - generic [ref=f4e123]: Memberships
+          - button "Doctors" [ref=f4e125] [cursor=pointer]:
+            - img [ref=f4e126]
+            - generic [ref=f4e128]: Doctors
+          - button "Students" [ref=f4e130] [cursor=pointer]:
+            - img [ref=f4e131]
+            - generic [ref=f4e133]: Students
+          - button "Institutions" [ref=f4e135] [cursor=pointer]:
+            - img [ref=f4e136]
+            - generic [ref=f4e138]: Institutions
+        - generic [ref=f4e140]:
+          - button "Certifications" [ref=f4e142] [cursor=pointer]:
+            - img [ref=f4e143]
+            - generic [ref=f4e146]: Certifications
+          - button "Payments" [ref=f4e148] [cursor=pointer]:
+            - img [ref=f4e149]
+            - generic [ref=f4e151]: Payments
+          - button "Professional Development" [ref=f4e153] [cursor=pointer]:
+            - img [ref=f4e154]
+            - generic [ref=f4e157]: Professional Development
+          - button "Library" [ref=f4e159] [cursor=pointer]:
+            - img [ref=f4e160]
+            - generic [ref=f4e163]: Library
+          - button "Medical Reports" [ref=f4e165] [cursor=pointer]:
+            - img [ref=f4e166]
+            - generic [ref=f4e168]: Medical Reports
+          - button "Insurance" [ref=f4e170] [cursor=pointer]:
+            - img [ref=f4e171]
+            - generic [ref=f4e173]: Insurance
+          - button "Ads" [ref=f4e175] [cursor=pointer]:
+            - img [ref=f4e176]
+            - generic [ref=f4e178]: Ads
+        - generic [ref=f4e180]:
+          - button "Notifications" [ref=f4e182] [cursor=pointer]:
+            - img [ref=f4e183]
+            - generic [ref=f4e186]: Notifications
+          - button "Posts & News" [ref=f4e188] [cursor=pointer]:
+            - img [ref=f4e189]
+            - generic [ref=f4e192]: Posts & News
+          - button "Events" [ref=f4e194] [cursor=pointer]:
+            - img [ref=f4e195]
+            - generic [ref=f4e197]: Events
+          - button "Complaints" [ref=f4e199] [cursor=pointer]:
+            - img [ref=f4e200]
+            - generic [ref=f4e202]: Complaints
+        - button "System" [ref=f4e206] [cursor=pointer]:
+          - img [ref=f4e207]
+          - generic [ref=f4e210]: System
+    - main [ref=f4e211]:
+      - generic [ref=f4e212]:
+        - generic [ref=f4e213]:
+          - generic [ref=f4e214] [cursor=pointer]:
+            - img [ref=f4e217]
+            - paragraph [ref=f4e222]: Total Members
+            - heading "7799" [level=3] [ref=f4e223]
+          - generic [ref=f4e225] [cursor=pointer]:
+            - img [ref=f4e228]
+            - paragraph [ref=f4e230]: Active Members
+            - heading "3504" [level=3] [ref=f4e232]
+          - generic [ref=f4e233] [cursor=pointer]:
+            - img [ref=f4e236]
+            - paragraph [ref=f4e238]: Revenue
+            - heading "LYD 0.000" [level=3] [ref=f4e239]
+            - paragraph [ref=f4e240]: Total Values
+        - generic [ref=f4e241]:
+          - generic [ref=f4e242]:
+            - generic [ref=f4e243]:
+              - generic [ref=f4e244]:
+                - heading "Member Composition" [level=2] [ref=f4e245]:
+                  - img [ref=f4e247]
+                  - text: Member Composition
+                - paragraph [ref=f4e250]: Distribution of doctors, students, and institutions within the syndicate system.
+              - img [ref=f4e253] [cursor=pointer]
+            - generic [ref=f4e257]:
+              - generic [ref=f4e259]:
+                - img [ref=f4e260]
+                - generic:
+                  - generic: "7799"
+                  - generic: Total
+              - generic [ref=f4e265]:
+                - generic [ref=f4e266] [cursor=pointer]:
+                  - img [ref=f4e268]
+                  - generic [ref=f4e273]:
+                    - generic [ref=f4e274]: "5999"
+                    - generic [ref=f4e275]: Doctors
+                - generic [ref=f4e276] [cursor=pointer]:
+                  - img [ref=f4e278]
+                  - generic [ref=f4e281]:
+                    - generic [ref=f4e282]: "1200"
+                    - generic [ref=f4e283]: Students
+                - generic [ref=f4e284] [cursor=pointer]:
+                  - img [ref=f4e286]
+                  - generic [ref=f4e291]:
+                    - generic [ref=f4e292]: "600"
+                    - generic [ref=f4e293]: Institutions
+          - generic [ref=f4e295]:
+            - generic [ref=f4e296]:
+              - generic [ref=f4e297]:
+                - heading "Requests" [level=3] [ref=f4e298]
+                - img [ref=f4e300] [cursor=pointer]
+              - generic [ref=f4e303]:
+                - generic [ref=f4e304]:
+                  - generic [ref=f4e305]: "0"
+                  - text: Open Requests
+                - generic [ref=f4e306]:
+                  - generic [ref=f4e307]:
+                    - generic [ref=f4e308]: "0"
+                    - text: Resolved
+                  - generic [ref=f4e309]:
+                    - generic [ref=f4e310]: "0"
+                    - text: Pending Certs
+            - generic [ref=f4e311]:
+              - heading "Certifications" [level=3] [ref=f4e313]
+              - paragraph [ref=f4e315]: No pending certifications
+        - generic [ref=f4e317]:
+          - generic [ref=f4e318]:
+            - generic [ref=f4e319]:
+              - heading "Recent Memberships" [level=3] [ref=f4e320]
+              - button "View All" [ref=f4e321] [cursor=pointer]
+            - generic [ref=f4e322]:
+              - generic [ref=f4e323]:
+                - generic [ref=f4e324]:
+                  - img "حسين زكريا الهادي الزنتاني" [ref=f4e326]: حزاا
+                  - generic [ref=f4e327]:
+                    - paragraph [ref=f4e328]: حسين زكريا الهادي الزنتاني
+                    - paragraph [ref=f4e329]:
+                      - img [ref=f4e330]
+                - generic [ref=f4e335]:
+                  - generic [ref=f4e337]: Inactive
+                  - paragraph [ref=f4e338]: 8/17/2024
+              - generic [ref=f4e339]:
+                - generic [ref=f4e340]:
+                  - img "فوزي محمود وحيد الأطرش" [ref=f4e342]: فموا
+                  - generic [ref=f4e343]:
+                    - paragraph [ref=f4e344]: فوزي محمود وحيد الأطرش
+                    - paragraph [ref=f4e345]:
+                      - img [ref=f4e346]
+                - generic [ref=f4e351]:
+                  - generic [ref=f4e353]: Inactive
+                  - paragraph [ref=f4e354]: 2/12/2025
+              - generic [ref=f4e355]:
+                - generic [ref=f4e356]:
+                  - img "ياسين شعبان ضياء أبوشويرب" [ref=f4e358]: يشضأ
+                  - generic [ref=f4e359]:
+                    - paragraph [ref=f4e360]: ياسين شعبان ضياء أبوشويرب
+                    - paragraph [ref=f4e361]:
+                      - img [ref=f4e362]
+                - generic [ref=f4e367]:
+                  - generic [ref=f4e369]: Active
+                  - paragraph [ref=f4e370]: 6/26/2026
+              - generic [ref=f4e371]:
+                - generic [ref=f4e372]:
+                  - img "عبدالسلام الهادي ماجد الصواني" [ref=f4e374]: عاما
+                  - generic [ref=f4e375]:
+                    - paragraph [ref=f4e376]: عبدالسلام الهادي ماجد الصواني
+                    - paragraph [ref=f4e377]:
+                      - img [ref=f4e378]
+                - generic [ref=f4e383]:
+                  - generic [ref=f4e385]: Inactive
+                  - paragraph [ref=f4e386]: 11/25/2024
+          - generic [ref=f4e388]:
+            - heading "Recent Payments" [level=3] [ref=f4e389]
+            - button "View All" [ref=f4e390] [cursor=pointer]
+  - contentinfo [ref=f4e391]:
+    - link "Developed by ALaryam" [ref=f4e392] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=f4e393]: Developed by
+      - paragraph [ref=f4e394]: ALaryam

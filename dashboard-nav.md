@@ -1,0 +1,175 @@
+- generic [ref=e56]:
+  - banner [ref=e57]:
+    - link "Logo Naqabti" [ref=e59] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=e61]
+      - generic [ref=e62]: Naqabti
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - button "🇺🇸 English" [ref=e66] [cursor=pointer]:
+          - generic [ref=e67]:
+            - generic [ref=e68]: 🇺🇸
+            - generic [ref=e69]: English
+          - img [ref=e70]
+        - generic "Switch to dark mode" [ref=e72] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=e74]
+          - img [ref=e76]
+      - button "زع زكريا علي السويسي السويسي Member" [ref=e79] [cursor=pointer]:
+        - img "زع" [ref=e81]: ز
+        - generic [ref=e82]:
+          - generic [ref=e83]: زكريا علي السويسي السويسي
+          - generic [ref=e84]: Member
+        - img [ref=e86]
+  - generic [ref=e88]:
+    - generic [ref=e90]:
+      - button [ref=e92]:
+        - img [ref=e93]
+      - navigation [ref=e96]:
+        - generic [ref=e97]:
+          - button "Home" [ref=e99] [cursor=pointer]:
+            - img [ref=e100]
+            - generic [ref=e103]: Home
+          - button "Doctor Map" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106]: Doctor Map
+        - generic [ref=e108]:
+          - button "Library" [ref=e110] [cursor=pointer]:
+            - img [ref=e111]
+            - generic [ref=e114]: Library
+          - button "Medical Reports" [ref=e116] [cursor=pointer]:
+            - img [ref=e117]
+            - generic [ref=e119]: Medical Reports
+          - button "Insurance" [ref=e121] [cursor=pointer]:
+            - generic [ref=e122]: Insurance
+        - button "Complaints" [ref=e126] [cursor=pointer]:
+          - img [ref=e127]
+          - generic [ref=e129]: Complaints
+    - main [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133] [cursor=pointer]:
+            - img [ref=e136]
+            - paragraph [ref=e141]: Total Members
+            - heading "19616" [level=3] [ref=e142]
+          - generic [ref=e144] [cursor=pointer]:
+            - img [ref=e147]
+            - paragraph [ref=e149]: Active Members
+            - heading "10943" [level=3] [ref=e151]
+          - generic [ref=e152] [cursor=pointer]:
+            - img [ref=e155]
+            - paragraph [ref=e157]: Revenue
+            - heading "LYD 123.000" [level=3] [ref=e158]
+            - paragraph [ref=e159]: Total Values
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - heading "Member Composition" [level=2] [ref=e164]:
+                  - img [ref=e166]
+                  - text: Member Composition
+                - paragraph [ref=e169]: Distribution of doctors, students, and institutions within the syndicate system.
+              - img [ref=e172] [cursor=pointer]
+            - generic [ref=e176]:
+              - generic [ref=e178]:
+                - img [ref=e179]
+                - generic:
+                  - generic: "19616"
+                  - generic: Total
+              - generic [ref=e184]:
+                - generic [ref=e185] [cursor=pointer]:
+                  - img [ref=e187]
+                  - generic [ref=e192]:
+                    - generic [ref=e193]: "15088"
+                    - generic [ref=e194]: Doctors
+                - generic [ref=e195] [cursor=pointer]:
+                  - img [ref=e197]
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: "3020"
+                    - generic [ref=e202]: Students
+                - generic [ref=e203] [cursor=pointer]:
+                  - img [ref=e205]
+                  - generic [ref=e210]:
+                    - generic [ref=e211]: "1508"
+                    - generic [ref=e212]: Institutions
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - heading "Requests" [level=3] [ref=e217]
+                - img [ref=e219] [cursor=pointer]
+              - generic [ref=e222]:
+                - generic [ref=e223]:
+                  - generic [ref=e224]: "0"
+                  - text: Open Requests
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - generic [ref=e227]: "0"
+                    - text: Resolved
+                  - generic [ref=e228]:
+                    - generic [ref=e229]: "0"
+                    - text: Pending Certs
+            - generic [ref=e230]:
+              - heading "Certifications" [level=3] [ref=e232]
+              - paragraph [ref=e234]: No pending certifications
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - heading "Recent Memberships" [level=3] [ref=e238]
+              - button "View All" [ref=e239] [cursor=pointer]
+            - generic [ref=e240]:
+              - generic [ref=e241]:
+                - generic [ref=e242]:
+                  - img "إسماعيل توفيق عبدالسلام المزيني" [ref=e244]: إتعا
+                  - generic [ref=e245]:
+                    - paragraph [ref=e246]: إسماعيل توفيق عبدالسلام المزيني
+                    - paragraph [ref=e247]:
+                      - img [ref=e248]
+                - generic [ref=e253]:
+                  - generic [ref=e255]: Active
+                  - paragraph [ref=e256]: 9/6/2024
+              - generic [ref=e257]:
+                - generic [ref=e258]:
+                  - img "بشير تمام يحيى بومجدوب" [ref=e260]: بتيب
+                  - generic [ref=e261]:
+                    - paragraph [ref=e262]: بشير تمام يحيى بومجدوب
+                    - paragraph [ref=e263]:
+                      - img [ref=e264]
+                - generic [ref=e269]:
+                  - generic [ref=e271]: Inactive
+                  - paragraph [ref=e272]: 6/24/2024
+              - generic [ref=e273]:
+                - generic [ref=e274]:
+                  - img "معتز عبدالكريم أيمن الزوي" [ref=e276]: معأا
+                  - generic [ref=e277]:
+                    - paragraph [ref=e278]: معتز عبدالكريم أيمن الزوي
+                    - paragraph [ref=e279]:
+                      - img [ref=e280]
+                - generic [ref=e285]:
+                  - generic [ref=e287]: Active
+                  - paragraph [ref=e288]: 5/26/2026
+              - generic [ref=e289]:
+                - generic [ref=e290]:
+                  - img "عزالدين زهير عبدالله الكبير" [ref=e292]: عزعا
+                  - generic [ref=e293]:
+                    - paragraph [ref=e294]: عزالدين زهير عبدالله الكبير
+                    - paragraph [ref=e295]:
+                      - img [ref=e296]
+                - generic [ref=e301]:
+                  - generic [ref=e303]: Active
+                  - paragraph [ref=e304]: 7/25/2024
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - heading "Recent Payments" [level=3] [ref=e307]
+              - button "View All" [ref=e308] [cursor=pointer]
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]: $
+                - generic [ref=e313]:
+                  - paragraph [ref=e314]: Test User Test Account
+                  - paragraph [ref=e315]:
+                    - img [ref=e316]
+                    - text: cash
+              - paragraph [ref=e319]: LYD 123.000
+  - contentinfo [ref=e320]:
+    - link "Developed by ALaryam" [ref=e321] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=e322]: Developed by
+      - paragraph [ref=e323]: ALaryam

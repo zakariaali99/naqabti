@@ -1,0 +1,1771 @@
+{
+  "appTitle": "Niqabaty",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "signInToContinue": "Sign in to continue",
+  "@signInToContinue": {
+    "description": "Login page subtitle"
+  },
+  "username": "Username",
+  "@username": {
+    "description": "Username field label"
+  },
+  "enterYourUsername": "Enter your username",
+  "@enterYourUsername": {
+    "description": "Username field hint"
+  },
+  "pleaseEnterYourUsername": "Please enter your username",
+  "@pleaseEnterYourUsername": {
+    "description": "Username validation message"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password field label"
+  },
+  "enterYourPassword": "Enter your password",
+  "@enterYourPassword": {
+    "description": "Password field hint"
+  },
+  "pleaseEnterYourPassword": "Please enter your password",
+  "@pleaseEnterYourPassword": {
+    "description": "Password validation message"
+  },
+  "passwordMustBeAtLeast6Characters": "Password must be at least 6 characters",
+  "@passwordMustBeAtLeast6Characters": {
+    "description": "Password length validation message"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot password link text"
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Sign in button text"
+  },
+  "or": "OR",
+  "@or": {
+    "description": "Divider text"
+  },
+  "dontHaveAccount": "Don't have an account? ",
+  "@dontHaveAccount": {
+    "description": "Sign up prompt"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Sign up button text"
+  },
+  "loginSuccessful": "Login successful!",
+  "@loginSuccessful": {
+    "description": "Login success message"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create account page title"
+  },
+  "joinNiqabaty": "Join Niqabaty",
+  "@joinNiqabaty": {
+    "description": "Register page heading"
+  },
+  "createYourAccountToGetStarted": "Create your account to get started",
+  "@createYourAccountToGetStarted": {
+    "description": "Register page subtitle"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "firstName": "First Name",
+  "@firstName": {
+    "description": "First name field label"
+  },
+  "fatherName": "Father Name",
+  "@fatherName": {
+    "description": "Father name field label"
+  },
+  "grandfatherName": "Grandfather Name",
+  "@grandfatherName": {
+    "description": "Grandfather name field label"
+  },
+  "familyName": "Family Name",
+  "@familyName": {
+    "description": "Family name field label"
+  },
+  "firstNameEn": "First Name (English)",
+  "@firstNameEn": {
+    "description": "First name (English) field label"
+  },
+  "fatherNameEn": "Father Name (English)",
+  "@fatherNameEn": {
+    "description": "Father name (English) field label"
+  },
+  "grandfatherNameEn": "Grandfather Name (English)",
+  "@grandfatherNameEn": {
+    "description": "Grandfather name (English) field label"
+  },
+  "familyNameEn": "Family Name (English)",
+  "@familyNameEn": {
+    "description": "Family name (English) field label"
+  },
+  "enterFirstName": "Enter first name",
+  "enterFatherName": "Enter father name",
+  "enterGrandfatherName": "Enter grandfather name",
+  "enterFamilyName": "Enter family name",
+  "pleaseEnterFirstName": "Please enter first name",
+  "pleaseEnterFatherName": "Please enter father name",
+  "pleaseEnterGrandfatherName": "Please enter grandfather name",
+  "pleaseEnterFamilyName": "Please enter family name",
+  "arabicNames": "Arabic Names",
+  "englishNames": "English Names",
+  "enterYourFullName": "Enter your full name",
+  "@enterYourFullName": {
+    "description": "Full name field hint"
+  },
+  "pleaseEnterYourFullName": "Please enter your full name",
+  "@pleaseEnterYourFullName": {
+    "description": "Full name validation message"
+  },
+  "chooseAUsername": "Choose a username",
+  "@chooseAUsername": {
+    "description": "Username field hint for registration"
+  },
+  "pleaseEnterAUsername": "Please enter a username",
+  "@pleaseEnterAUsername": {
+    "description": "Username validation message for registration"
+  },
+  "usernameMustBeAtLeast3Characters": "Username must be at least 3 characters",
+  "@usernameMustBeAtLeast3Characters": {
+    "description": "Username length validation message"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email field label"
+  },
+  "enterYourEmail": "Enter your email",
+  "@enterYourEmail": {
+    "description": "Email field hint"
+  },
+  "pleaseEnterYourEmail": "Please enter your email",
+  "@pleaseEnterYourEmail": {
+    "description": "Email validation message"
+  },
+  "pleaseEnterAValidEmail": "Please enter a valid email",
+  "@pleaseEnterAValidEmail": {
+    "description": "Email format validation message"
+  },
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Phone number field label"
+  },
+  "enterYourPhoneNumber": "Enter your phone number",
+  "@enterYourPhoneNumber": {
+    "description": "Phone number field hint"
+  },
+  "pleaseEnterYourPhoneNumber": "Please enter your phone number",
+  "@pleaseEnterYourPhoneNumber": {
+    "description": "Phone number validation message"
+  },
+  "createAPassword": "Create a password",
+  "@createAPassword": {
+    "description": "Password field hint for registration"
+  },
+  "pleaseEnterAPassword": "Please enter a password",
+  "@pleaseEnterAPassword": {
+    "description": "Password validation message for registration"
+  },
+  "passwordMustBeAtLeast8Characters": "Password must be at least 8 characters",
+  "@passwordMustBeAtLeast8Characters": {
+    "description": "Password length validation message for registration"
+  },
+  "passwordCannotBeEntirelyNumeric": "Password can't be entirely numeric",
+  "@passwordCannotBeEntirelyNumeric": {
+    "description": "Validation message when the password contains only digits"
+  },
+  "passwordMustContainLetter": "Password must contain at least one letter",
+  "@passwordMustContainLetter": {
+    "description": "Validation message when the password has no letters"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password field label"
+  },
+  "reEnterYourPassword": "Re-enter your password",
+  "@reEnterYourPassword": {
+    "description": "Confirm password field hint"
+  },
+  "pleaseConfirmYourPassword": "Please confirm your password",
+  "@pleaseConfirmYourPassword": {
+    "description": "Confirm password validation message"
+  },
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Password mismatch validation message"
+  },
+  "iAgreeToThe": "I agree to the ",
+  "@iAgreeToThe": {
+    "description": "Terms agreement prefix"
+  },
+  "termsAndConditions": "Terms and Conditions",
+  "@termsAndConditions": {
+    "description": "Terms and conditions link text"
+  },
+  "pleaseAcceptTheTermsAndConditions": "Please accept the terms and conditions",
+  "@pleaseAcceptTheTermsAndConditions": {
+    "description": "Terms acceptance validation message"
+  },
+  "registrationSuccessful": "Registration successful!",
+  "@registrationSuccessful": {
+    "description": "Registration success message"
+  },
+  "alreadyHaveAnAccount": "Already have an account? ",
+  "@alreadyHaveAnAccount": {
+    "description": "Sign in prompt on registration page"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Reset password page title"
+  },
+  "forgotPasswordQuestion": "Forgot Password?",
+  "@forgotPasswordQuestion": {
+    "description": "Forgot password page heading"
+  },
+  "enterYourEmailAddressWeWillSendYouALink": "Enter your email address and we'll send you a link to reset your password.",
+  "@enterYourEmailAddressWeWillSendYouALink": {
+    "description": "Forgot password page description"
+  },
+  "enterYourEmailAddress": "Enter your email address",
+  "@enterYourEmailAddress": {
+    "description": "Email field hint for password reset"
+  },
+  "sendResetLink": "Send Reset Link",
+  "@sendResetLink": {
+    "description": "Send reset link button text"
+  },
+  "backToSignIn": "Back to Sign In",
+  "@backToSignIn": {
+    "description": "Back to sign in button text"
+  },
+  "checkYourEmail": "Check Your Email",
+  "@checkYourEmail": {
+    "description": "Email sent success heading"
+  },
+  "weSentAPasswordResetLinkTo": "We've sent a password reset link to",
+  "@weSentAPasswordResetLinkTo": {
+    "description": "Email sent success message"
+  },
+  "didntReceiveTheEmailCheckSpamFolder": "Didn't receive the email? Check your spam folder or try again.",
+  "@didntReceiveTheEmailCheckSpamFolder": {
+    "description": "Email not received help text"
+  },
+  "resendEmail": "Resend Email",
+  "@resendEmail": {
+    "description": "Resend email button text"
+  },
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "loginFailed": "Login Failed",
+  "@loginFailed": {
+    "description": "Login error title"
+  },
+  "invalidCredentials": "Invalid username or password",
+  "@invalidCredentials": {
+    "description": "Invalid credentials error message"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home menu item"
+  },
+  "payments": "Payments",
+  "@payments": {
+    "description": "Payments menu item"
+  },
+  "certifications": "Certifications",
+  "@certifications": {
+    "description": "Certifications menu item"
+  },
+  "memberships": "Memberships",
+  "@memberships": {
+    "description": "Memberships menu item"
+  },
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit profile menu item"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About menu item"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout menu item"
+  },
+  "user": "User",
+  "@user": {
+    "description": "Default user name"
+  },
+  "naqabti": "Naqabti",
+  "@naqabti": {
+    "description": "Application name"
+  },
+  "applicationVersion": "1.0.0",
+  "@applicationVersion": {
+    "description": "Application version"
+  },
+  "allRightsReserved": "© 2025 Naqabti. All rights reserved.",
+  "@allRightsReserved": {
+    "description": "Copyright text"
+  },
+  "comprehensiveMembershipManagement": "A comprehensive membership management system for doctors and medical professionals.",
+  "@comprehensiveMembershipManagement": {
+    "description": "Application description"
+  },
+  "logoutTitle": "Logout",
+  "@logoutTitle": {
+    "description": "Logout dialog title"
+  },
+  "areYouSureYouWantToLogout": "Are you sure you want to logout?",
+  "@areYouSureYouWantToLogout": {
+    "description": "Logout confirmation message"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "failedToLoadData": "Failed to load data: {error}",
+  "@failedToLoadData": {
+    "description": "Error message when data loading fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button"
+  },
+  "contactInformation": "Contact Information",
+  "@contactInformation": {
+    "description": "Contact information section title"
+  },
+  "emailLabel": "Email",
+  "@emailLabel": {
+    "description": "Email label"
+  },
+  "noEmail": "No email",
+  "@noEmail": {
+    "description": "No email placeholder"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "Phone label"
+  },
+  "accountDetails": "Account Details",
+  "@accountDetails": {
+    "description": "Account details section title"
+  },
+  "userId": "User ID",
+  "@userId": {
+    "description": "User ID label"
+  },
+  "accountType": "Account Type",
+  "@accountType": {
+    "description": "Account type label"
+  },
+  "doctor": "Doctor",
+  "@doctor": {
+    "description": "Doctor account type"
+  },
+  "staffMember": "Staff Member",
+  "@staffMember": {
+    "description": "Staff member account type"
+  },
+  "memberSince": "Member Since",
+  "@memberSince": {
+    "description": "Member since label"
+  },
+  "aboutLabel": "About",
+  "@aboutLabel": {
+    "description": "About section label"
+  },
+  "noUserDataAvailable": "No user data available",
+  "@noUserDataAvailable": {
+    "description": "No user data message"
+  },
+  "membership": "Membership",
+  "@membership": {
+    "description": "Membership section title"
+  },
+  "active": "ACTIVE",
+  "@active": {
+    "description": "Active status"
+  },
+  "pending": "PENDING",
+  "@pending": {
+    "description": "Pending status"
+  },
+  "membershipNumber": "Membership Number",
+  "@membershipNumber": {
+    "description": "Membership number label"
+  },
+  "type": "Type",
+  "@type": {
+    "description": "Type label"
+  },
+  "city": "City",
+  "@city": {
+    "description": "City label"
+  },
+  "startDate": "Start Date",
+  "@startDate": {
+    "description": "Start date label"
+  },
+  "endDate": "End Date",
+  "@endDate": {
+    "description": "End date label"
+  },
+  "noPaymentsFound": "No Payments Found",
+  "@noPaymentsFound": {
+    "description": "Empty payments message title"
+  },
+  "yourPaymentHistoryWillAppearHere": "Your payment history will appear here",
+  "@yourPaymentHistoryWillAppearHere": {
+    "description": "Empty payments message description"
+  },
+  "failedToLoadPayments": "Failed to load payments",
+  "@failedToLoadPayments": {
+    "description": "Payment loading error prefix"
+  },
+  "payment": "Payment",
+  "@payment": {
+    "description": "Payment label"
+  },
+  "amount": "Amount",
+  "@amount": {
+    "description": "Amount label"
+  },
+  "method": "Method",
+  "@method": {
+    "description": "Method label"
+  },
+  "paymentDetails": "Payment Details",
+  "@paymentDetails": {
+    "description": "Payment details title"
+  },
+  "paymentId": "Payment ID",
+  "@paymentId": {
+    "description": "Payment ID label"
+  },
+  "date": "Date",
+  "@date": {
+    "description": "Date label"
+  },
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Payment method label"
+  },
+  "referenceNumber": "Reference Number",
+  "@referenceNumber": {
+    "description": "Reference number label"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Description label"
+  },
+  "cash": "Cash",
+  "@cash": {
+    "description": "Cash payment method"
+  },
+  "card": "Card",
+  "@card": {
+    "description": "Card payment method"
+  },
+  "bankTransfer": "Bank Transfer",
+  "@bankTransfer": {
+    "description": "Bank transfer payment method"
+  },
+  "onlinePayment": "Online Payment",
+  "@onlinePayment": {
+    "description": "Online payment method"
+  },
+  "other": "Other",
+  "@other": {
+    "description": "Other payment method"
+  },
+  "noCertificationsFound": "No Certifications Found",
+  "@noCertificationsFound": {
+    "description": "Empty certifications message title"
+  },
+  "yourCertificationsWillAppearHere": "Your certifications will appear here",
+  "@yourCertificationsWillAppearHere": {
+    "description": "Empty certifications message description"
+  },
+  "failedToLoadCertifications": "Failed to load certifications",
+  "@failedToLoadCertifications": {
+    "description": "Certification loading error prefix"
+  },
+  "certification": "Certification",
+  "@certification": {
+    "description": "Certification label"
+  },
+  "certificationDetails": "Certification Details",
+  "@certificationDetails": {
+    "description": "Certification details title"
+  },
+  "certificationId": "Certification ID",
+  "@certificationId": {
+    "description": "Certification ID label"
+  },
+  "issued": "Issued",
+  "@issued": {
+    "description": "Issued label"
+  },
+  "expires": "Expires",
+  "@expires": {
+    "description": "Expires label"
+  },
+  "issueDate": "Issue Date",
+  "@issueDate": {
+    "description": "Issue date label"
+  },
+  "expiryDate": "Expiry Date",
+  "@expiryDate": {
+    "description": "Expiry date label"
+  },
+  "issuedFrom": "Issued From",
+  "@issuedFrom": {
+    "description": "Issued from label"
+  },
+  "viewDocument": "View Document",
+  "@viewDocument": {
+    "description": "View document button"
+  },
+  "expired": "Expired",
+  "@expired": {
+    "description": "Expired status"
+  },
+  "expiringSoon": "Expiring Soon",
+  "@expiringSoon": {
+    "description": "Expiring soon status"
+  },
+  "valid": "Valid",
+  "@valid": {
+    "description": "Valid status"
+  },
+  "noMembershipsFound": "No Memberships Found",
+  "@noMembershipsFound": {
+    "description": "Empty memberships message title"
+  },
+  "yourMembershipsWillAppearHere": "Your memberships will appear here",
+  "@yourMembershipsWillAppearHere": {
+    "description": "Empty memberships message description"
+  },
+  "failedToLoadMemberships": "Failed to load memberships",
+  "@failedToLoadMemberships": {
+    "description": "Membership loading error prefix"
+  },
+  "membershipDetails": "Membership Details",
+  "@membershipDetails": {
+    "description": "Membership details title"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Status label"
+  },
+  "validUntil": "Valid Until",
+  "@validUntil": {
+    "description": "Valid until label"
+  },
+  "totalAmount": "Total Amount",
+  "@totalAmount": {
+    "description": "Total amount label"
+  },
+  "paidAmount": "Paid Amount",
+  "@paidAmount": {
+    "description": "Paid amount label"
+  },
+  "remainingAmount": "Remaining Amount",
+  "@remainingAmount": {
+    "description": "Remaining amount label"
+  },
+  "developedByMuwaija": "Developed by Muwaija Company for Information Technology",
+  "@developedByMuwaija": {
+    "description": "Developer credit text"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Success title"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error title"
+  },
+  "profileUpdatedSuccessfully": "Profile updated successfully",
+  "@profileUpdatedSuccessfully": {
+    "description": "Profile update success message"
+  },
+  "failedToUpdateProfile": "Failed to update profile",
+  "@failedToUpdateProfile": {
+    "description": "Profile update error message"
+  },
+  "usernameRequired": "Username is required",
+  "@usernameRequired": {
+    "description": "Username validation message"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Email required validation message"
+  },
+  "pleaseEnterValidEmail": "Please enter a valid email",
+  "@pleaseEnterValidEmail": {
+    "description": "Email format validation message"
+  },
+  "specialty": "Specialty",
+  "@specialty": {
+    "description": "Specialty field label"
+  },
+  "bio": "Bio",
+  "@bio": {
+    "description": "Bio field label"
+  },
+  "saveChanges": "Save Changes",
+  "@saveChanges": {
+    "description": "Save changes button"
+  },
+  "changePassword": "Change Password",
+  "@changePassword": {
+    "description": "Change password button"
+  },
+  "comingSoon": "Coming Soon",
+  "@comingSoon": {
+    "description": "Coming soon title"
+  },
+  "profilePictureUploadSoon": "Profile picture upload will be available soon",
+  "@profilePictureUploadSoon": {
+    "description": "Profile picture upload coming soon message"
+  },
+  "changePasswordSoon": "Change password feature will be available soon",
+  "@changePasswordSoon": {
+    "description": "Change password coming soon message"
+  },
+  "selectAccountType": "Select Account Type",
+  "@selectAccountType": {
+    "description": "Account type selection title"
+  },
+  "chooseTheTypeOfAccount": "Choose the type of account you want to create",
+  "@chooseTheTypeOfAccount": {
+    "description": "Account type selection subtitle"
+  },
+  "student": "Student",
+  "@student": {
+    "description": "Student account type"
+  },
+  "forStudentsPursuingEducation": "For students pursuing their education",
+  "@forStudentsPursuingEducation": {
+    "description": "Student account type description"
+  },
+  "forMedicalProfessionals": "For medical professionals and practitioners",
+  "@forMedicalProfessionals": {
+    "description": "Doctor account type description"
+  },
+  "institution": "Institution",
+  "@institution": {
+    "description": "Institution account type"
+  },
+  "forEducationalAndMedicalInstitutions": "For educational and medical institutions",
+  "@forEducationalAndMedicalInstitutions": {
+    "description": "Institution account type description"
+  },
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Continue button"
+  },
+  "back": "Back",
+  "@back": {
+    "description": "Back button"
+  },
+  "personalInformation": "Personal Information",
+  "@personalInformation": {
+    "description": "Personal information step title"
+  },
+  "institutionInformation": "Institution Information",
+  "@institutionInformation": {
+    "description": "Institution information step title"
+  },
+  "enterYourPersonalDetails": "Enter your personal details",
+  "@enterYourPersonalDetails": {
+    "description": "Personal information step subtitle"
+  },
+  "enterYourInstitutionDetails": "Enter your institution details",
+  "@enterYourInstitutionDetails": {
+    "description": "Institution information step subtitle"
+  },
+  "institutionName": "Institution Name",
+  "@institutionName": {
+    "description": "Institution name field label"
+  },
+  "enterInstitutionName": "Enter institution name",
+  "@enterInstitutionName": {
+    "description": "Institution name field hint"
+  },
+  "pleaseEnterInstitutionName": "Please enter institution name",
+  "@pleaseEnterInstitutionName": {
+    "description": "Institution name validation message"
+  },
+  "usernameCanOnlyContain": "Username can only contain letters, numbers, and underscores",
+  "@usernameCanOnlyContain": {
+    "description": "Username character validation message"
+  },
+  "birthdate": "Birthdate",
+  "@birthdate": {
+    "description": "Birthdate field label"
+  },
+  "selectYourBirthdate": "Select your birthdate",
+  "@selectYourBirthdate": {
+    "description": "Birthdate field hint"
+  },
+  "pleaseSelectYourBirthdate": "Please select your birthdate",
+  "@pleaseSelectYourBirthdate": {
+    "description": "Birthdate validation message"
+  },
+  "locationInformation": "Location Information",
+  "@locationInformation": {
+    "description": "Location information step title"
+  },
+  "enterYourLocationDetails": "Enter your location details",
+  "@enterYourLocationDetails": {
+    "description": "Location information step subtitle"
+  },
+  "selectYourCity": "Select your city",
+  "@selectYourCity": {
+    "description": "City field hint"
+  },
+  "pleaseSelectACity": "Please select a city",
+  "@pleaseSelectACity": {
+    "description": "City validation message"
+  },
+  "pleaseSelectCity": "Please select a city",
+  "@pleaseSelectCity": {
+    "description": "Alternate city validation message key used in code"
+  },
+  "address": "Address",
+  "@address": {
+    "description": "Address field label"
+  },
+  "enterYourAddress": "Enter your address",
+  "@enterYourAddress": {
+    "description": "Address field hint"
+  },
+  "pleaseEnterYourAddress": "Please enter your address",
+  "@pleaseEnterYourAddress": {
+    "description": "Address validation message"
+  },
+  "enterPhoneNumber": "Enter phone number",
+  "@enterPhoneNumber": {
+    "description": "Phone number field hint for institutions"
+  },
+  "pleaseEnterPhoneNumber": "Please enter phone number",
+  "@pleaseEnterPhoneNumber": {
+    "description": "Phone number validation message for institutions"
+  },
+  "nationality": "Nationality",
+  "@nationality": {
+    "description": "Nationality field label"
+  },
+  "selectYourNationality": "Select your nationality",
+  "@selectYourNationality": {
+    "description": "Nationality field hint"
+  },
+  "pleaseSelectYourNationality": "Please select your nationality",
+  "@pleaseSelectYourNationality": {
+    "description": "Nationality validation message"
+  },
+  "passportImage": "Passport Image",
+  "@passportImage": {
+    "description": "Passport image section title"
+  },
+  "tapToUploadPassportImage": "Tap to upload passport image",
+  "@tapToUploadPassportImage": {
+    "description": "Passport image upload hint"
+  },
+  "tapToChangePassportImage": "Tap to change passport image",
+  "@tapToChangePassportImage": {
+    "description": "Passport image change hint"
+  },
+  "requiredForNonLibyanNationals": "Required for non-Libyan nationals",
+  "@requiredForNonLibyanNationals": {
+    "description": "Passport image requirement note"
+  },
+  "pleaseUploadYourPassportImage": "Please upload your passport image",
+  "@pleaseUploadYourPassportImage": {
+    "description": "Passport image validation message"
+  },
+  "failedToPickImage": "Failed to pick image",
+  "@failedToPickImage": {
+    "description": "Generic error when image picker fails"
+  },
+  "choosePassportSource": "Choose Passport Document",
+  "@choosePassportSource": {
+    "description": "Bottom sheet title for passport upload source selection"
+  },
+  "uploadFromGallery": "Upload from Gallery",
+  "@uploadFromGallery": {
+    "description": "Option to pick a photo from gallery"
+  },
+  "uploadPdfDocument": "Upload PDF Document",
+  "@uploadPdfDocument": {
+    "description": "Option to pick a PDF file"
+  },
+  "pdfFileSelected": "PDF file selected",
+  "@pdfFileSelected": {
+    "description": "Label shown when a PDF has been chosen"
+  },
+  "tapToChangePdfDocument": "Tap to change PDF document",
+  "@tapToChangePdfDocument": {
+    "description": "Hint when a PDF is already selected"
+  },
+  "failedToPickFile": "Failed to pick file",
+  "@failedToPickFile": {
+    "description": "Generic error when file picker fails"
+  },
+  "educationInformation": "Education Information",
+  "@educationInformation": {
+    "description": "Education information step title"
+  },
+  "tellUsAboutYourEducation": "Tell us about your education",
+  "@tellUsAboutYourEducation": {
+    "description": "Education information step subtitle"
+  },
+  "universityName": "University Name",
+  "@universityName": {
+    "description": "University name field label"
+  },
+  "enterYourUniversityName": "Enter your university name",
+  "@enterYourUniversityName": {
+    "description": "University name field hint"
+  },
+  "pleaseEnterYourUniversityName": "Please enter your university name",
+  "@pleaseEnterYourUniversityName": {
+    "description": "University name validation message"
+  },
+  "currentDegree": "Current Degree",
+  "@currentDegree": {
+    "description": "Current degree section title"
+  },
+  "bachelorsDegree": "Bachelor's Degree",
+  "@bachelorsDegree": {
+    "description": "Bachelor's degree option"
+  },
+  "phdDoctorate": "PhD / Doctorate",
+  "@phdDoctorate": {
+    "description": "PhD/Doctorate option"
+  },
+  "otherDegree": "Other",
+  "@otherDegree": {
+    "description": "Other degree option"
+  },
+  "pleaseSelectYourCurrentDegree": "Please select your current degree",
+  "@pleaseSelectYourCurrentDegree": {
+    "description": "Degree validation message"
+  },
+  "doctorInformation": "Doctor Information",
+  "@doctorInformation": {
+    "description": "Doctor information step title"
+  },
+  "additionalInformationForDoctors": "Additional information for doctors",
+  "@additionalInformationForDoctors": {
+    "description": "Doctor information step subtitle"
+  },
+  "enterYourMembershipNumber": "Enter your membership number",
+  "@enterYourMembershipNumber": {
+    "description": "Membership number field hint"
+  },
+  "pleaseEnterYourMembershipNumber": "Please enter your membership number",
+  "@pleaseEnterYourMembershipNumber": {
+    "description": "Membership number validation message"
+  },
+  "selectBranch": "Select Branch",
+  "@selectBranch": {
+    "description": "Branch section title"
+  },
+  "branch": "Branch",
+  "@branch": {
+    "description": "Branch field label"
+  },
+  "selectYourBranch": "Select your branch",
+  "@selectYourBranch": {
+    "description": "Branch field hint"
+  },
+  "pleaseSelectABranch": "Please select a branch",
+  "@pleaseSelectABranch": {
+    "description": "Branch validation message"
+  },
+  "reviewAndSubmit": "Review & Submit",
+  "@reviewAndSubmit": {
+    "description": "Review and submit step title"
+  },
+  "reviewYourInformationAndCreateAccount": "Review your information and create your account",
+  "@reviewYourInformationAndCreateAccount": {
+    "description": "Review and submit step subtitle"
+  },
+  "registrationSummary": "Registration Summary",
+  "@registrationSummary": {
+    "description": "Registration summary section title"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name label"
+  },
+  "emailOptional": "Email (Optional)",
+  "@emailOptional": {
+    "description": "Email field label optional"
+  },
+  "phoneOptional": "Phone Number (Optional)",
+  "@phoneOptional": {
+    "description": "Phone field label optional"
+  },
+  "accountCredentials": "Account Credentials",
+  "@accountCredentials": {
+    "description": "Registration credentials step title"
+  },
+  "enterEmailAndChoosePassword": "Enter your email and choose a password to sign in with.",
+  "@enterEmailAndChoosePassword": {
+    "description": "Registration credentials step subtitle"
+  },
+  "submit": "Submit",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "welcomeToNiqabaty": "Welcome to Niqabaty!",
+  "@welcomeToNiqabaty": {
+    "description": "Welcome page title"
+  },
+  "yourDoctorAccountCreatedSuccessfully": "Your doctor account has been successfully created! You can now access all professional features.",
+  "@yourDoctorAccountCreatedSuccessfully": {
+    "description": "Doctor account success message"
+  },
+  "yourStudentAccountCreatedSuccessfully": "Your student account has been successfully created! Start your learning journey today.",
+  "@yourStudentAccountCreatedSuccessfully": {
+    "description": "Student account success message"
+  },
+  "yourInstitutionAccountPendingApproval": "Your institution account has been created and is pending approval. We'll notify you once it's approved.",
+  "@yourInstitutionAccountPendingApproval": {
+    "description": "Institution account success message"
+  },
+  "yourAccountCreatedSuccessfully": "Your account has been successfully created!",
+  "@yourAccountCreatedSuccessfully": {
+    "description": "Generic account success message"
+  },
+  "yourMembershipWillBeVerified": "Your membership will be verified shortly. You'll receive a notification once approved.",
+  "@yourMembershipWillBeVerified": {
+    "description": "Doctor verification info message"
+  },
+  "youCanNowAccessEducationalResources": "You can now access educational resources and connect with professionals.",
+  "@youCanNowAccessEducationalResources": {
+    "description": "Student info message"
+  },
+  "ourTeamWillReviewYourApplication": "Our team will review your application within 24-48 hours.",
+  "@ourTeamWillReviewYourApplication": {
+    "description": "Institution approval info message"
+  },
+  "checkYourEmailForVerification": "Check your email for verification instructions.",
+  "@checkYourEmailForVerification": {
+    "description": "Generic verification info message"
+  },
+  "verifiedAccount": "Verified Account",
+  "@verifiedAccount": {
+    "description": "Verified account feature title"
+  },
+  "yourAccountIsSecureAndVerified": "Your account is secure and verified",
+  "@yourAccountIsSecureAndVerified": {
+    "description": "Verified account feature description"
+  },
+  "exploreFeatures": "Explore Features",
+  "@exploreFeatures": {
+    "description": "Explore features title"
+  },
+  "accessAllPlatformFeatures": "Access all platform features",
+  "@accessAllPlatformFeatures": {
+    "description": "Explore features description"
+  },
+  "support247": "24/7 Support",
+  "@support247": {
+    "description": "24/7 support feature title"
+  },
+  "getHelpWheneverYouNeedIt": "Get help whenever you need it",
+  "@getHelpWheneverYouNeedIt": {
+    "description": "24/7 support feature description"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button"
+  }
+  ,
+  "continueLabel": "Continue",
+  "@continueLabel": {
+    "description": "Continue button alternate key"
+  },
+
+  "pleaseAcceptTermsAndConditions": "Please accept the terms and conditions",
+  "@pleaseAcceptTermsAndConditions": {
+    "description": "Terms acceptance validation message used in review step"
+  },
+
+  "registrationFailed": "Registration failed",
+  "@registrationFailed": {
+    "description": "Generic registration failure message"
+  },
+
+  "connectionTimeoutPleaseTryAgain": "Connection timed out. Please try again.",
+  "@connectionTimeoutPleaseTryAgain": {
+    "description": "Connection timeout error message"
+  },
+
+  "noInternetConnection": "No internet connection. Please check your network.",
+  "@noInternetConnection": {
+    "description": "No internet connection error message"
+  },
+
+  "unexpectedErrorOccurred": "An unexpected error occurred",
+  "@unexpectedErrorOccurred": {
+    "description": "Generic unexpected error message"
+  },
+
+  "reviewYourInformationAndCreateYourAccount": "Review your information and create your account",
+  "@reviewYourInformationAndCreateYourAccount": {
+    "description": "Review and submit subtitle (alternate key used in code)"
+  },
+
+  "createPassword": "Create a password",
+  "@createPassword": {
+    "description": "Password field hint for registration (alternate key used in code)"
+  },
+
+  "pleaseEnterPassword": "Please enter a password",
+  "@pleaseEnterPassword": {
+    "description": "Password required validation message (alternate key used in code)"
+  },
+
+  "university": "University",
+  "@university": {
+    "description": "University label (alternate key used in summary)"
+  }
+,
+  "accountCreatedLoginToComplete": "Your account has been created! Log in to complete your profile and start using the app.",
+  "@accountCreatedLoginToComplete": {
+    "description": "Success message shown after registration, prompting the user to log in"
+  },
+
+  "profileCompletion": "Profile Completion",
+  "@profileCompletion": {
+    "description": "Label for the profile completion percentage indicator"
+  },
+
+  "profileUpdatedModalTitle": "Profile Updated",
+  "@profileUpdatedModalTitle": {
+    "description": "Title of the modal shown after successfully saving the edit-profile form"
+  },
+
+  "close": "Close",
+  "@close": {
+    "description": "Generic close button label"
+  },
+
+  "completeProfileModalTitle": "Complete Your Profile",
+  "@completeProfileModalTitle": {
+    "description": "Title of the complete-your-profile modal"
+  },
+
+  "completeProfileModalMessage": "Please complete your profile information to get the most out of the app.",
+  "@completeProfileModalMessage": {
+    "description": "Body message of the complete-your-profile modal"
+  },
+
+  "completeProfileModalCta": "Complete Profile",
+  "@completeProfileModalCta": {
+    "description": "Call-to-action button on the complete-your-profile modal and profile completion card"
+  },
+
+  "missingFieldsHint": "Still needed:",
+  "@missingFieldsHint": {
+    "description": "Heading for the list of missing profile fields"
+  },
+
+  "completedFieldsHint": "Completed:",
+  "@completedFieldsHint": {
+    "description": "Heading for the list of completed profile fields"
+  },
+
+  "fieldNeededForCompletion": "Needed to complete your profile",
+  "@fieldNeededForCompletion": {
+    "description": "Semantic label for the missing-field warning icon on the edit-profile form"
+  },
+
+  "profilePhoto": "Profile Photo",
+  "@profilePhoto": {
+    "description": "Label for the profile photo field"
+  },
+
+  "pleaseSelectDegree": "Please select your current degree",
+  "@pleaseSelectDegree": {
+    "description": "Validation message for the current degree dropdown"
+  },
+
+  "doctorMembershipVerificationMessage": "Your membership will be verified shortly. You'll receive a notification once approved.",
+  "@doctorMembershipVerificationMessage": {
+    "description": "Info message about membership verification for doctors"
+  },
+
+  "studentAccessResourcesMessage": "You can now access educational resources and connect with professionals.",
+  "@studentAccessResourcesMessage": {
+    "description": "Info message shown to students after registration"
+  },
+
+  "institutionReviewTimeMessage": "Our team will review your application within 24-48 hours.",
+  "@institutionReviewTimeMessage": {
+    "description": "Info message for institutions about review timing"
+  },
+
+  "verifiedAccountTitle": "Verified Account",
+  "@verifiedAccountTitle": {
+    "description": "Feature title: verified account"
+  },
+
+  "verifiedAccountDescription": "Your account is secure and verified",
+  "@verifiedAccountDescription": {
+    "description": "Feature description: verified account"
+  },
+
+  "exploreFeaturesTitle": "Explore Features",
+  "@exploreFeaturesTitle": {
+    "description": "Feature title: explore features"
+  },
+
+  "exploreFeaturesDescription": "Access all platform features",
+  "@exploreFeaturesDescription": {
+    "description": "Feature description: explore features"
+  },
+
+  "supportTitle": "24/7 Support",
+  "@supportTitle": {
+    "description": "Feature title: support"
+  },
+
+  "supportDescription": "Get help whenever you need it",
+  "@supportDescription": {
+    "description": "Feature description: support"
+  }
+
+,
+
+  "accountPendingNotice": "Your account was created and is waiting for activation. Check your email for updates.",
+  "@accountPendingNotice": {
+    "description": "Prominent notice shown to institutions after registration"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications menu item"
+  },
+  "courses": "Courses",
+  "@courses": {
+    "description": "Courses menu item"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile menu item"
+  },
+  "professionalInformation": "Professional Information",
+  "@professionalInformation": {
+    "description": "Professional information section title"
+  },
+  "notProvided": "Not Provided",
+  "@notProvided": {
+    "description": "Placeholder for missing data"
+  },
+  "renewMembership": "Renew",
+  "@renewMembership": {
+    "description": "Renew membership action label"
+  },
+  "events": "Events",
+  "@events": {
+    "description": "Events action label"
+  },
+  "news": "News",
+  "@news": {
+    "description": "News action label"
+  },
+  "announcements": "Announcements",
+  "@announcements": {
+    "description": "Announcements action label"
+  },
+  "quickActions": "Quick Actions",
+  "complaints": "Complaints",
+  "myComplaints": "My Complaints",
+  "addComplaint": "Submit New Complaint",
+  "subject": "Subject",
+  "description": "Description",
+  "statusTerm": "Status",
+  "priority": "Priority",
+  "electronicLibrary": "Electronic Library",
+  "library": "Library",
+  "download": "Download",
+  "open": "Open",
+  "category": "Category",
+  "author": "Author",
+  "year": "Year",
+  "type": "Type",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name label"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language setting label"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language name"
+  },
+  "arabic": "Arabic",
+  "@arabic": {
+    "description": "Arabic language name"
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode setting label"
+  },
+  "on": "On",
+  "@on": {
+    "description": "On status"
+  },
+  "off": "Off",
+  "@off": {
+    "description": "Off status"
+  },
+  "switchedToDarkMode": "Switched to dark mode",
+  "@switchedToDarkMode": {
+    "description": "Message when switching to dark mode"
+  },
+  "switchedToLightMode": "Switched to light mode",
+  "@switchedToLightMode": {
+    "description": "Message when switching to light mode"
+  },
+  "lightMode": "Light Mode",
+  "@lightMode": {
+    "description": "Light mode label"
+  },
+  "enabled": "Enabled",
+  "@enabled": {
+    "description": "Enabled status"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language dialog title"
+  },
+  "languageChanged": "Language Changed",
+  "@languageChanged": {
+    "description": "Language changed success title"
+  },
+  "languageChangedToEnglish": "Language changed to English",
+  "@languageChangedToEnglish": {
+    "description": "Language changed to English message"
+  },
+  "languageChangedToArabic": "Language changed to Arabic",
+  "@languageChangedToArabic": {
+    "description": "Language changed to Arabic message"
+  },
+  "version": "Version",
+  "@version": {
+    "description": "Version label"
+  },
+  "general": "General",
+  "@general": {
+    "description": "General settings section title"
+  },
+  "preferences": "Preferences",
+  "@preferences": {
+    "description": "Preferences settings section title"
+  },
+  "appInfo": "App Info",
+  "@appInfo": {
+    "description": "App info settings section title"
+  },
+  "renewMembershipTitle": "Renew Membership",
+  "@renewMembershipTitle": {
+    "description": "Title for renew membership page"
+  },
+  "userNotLoggedIn": "User not logged in",
+  "@userNotLoggedIn": {
+    "description": "Error message when user is not logged in"
+  },
+  "failedToLoadMembershipDetails": "Failed to load membership details",
+  "@failedToLoadMembershipDetails": {
+    "description": "Error message when loading membership details fails"
+  },
+  "noActiveMembershipFound": "No active membership found",
+  "@noActiveMembershipFound": {
+    "description": "Message when no active membership is found"
+  },
+  "contactAdminToCreateMembership": "Contact administration to create a membership",
+  "@contactAdminToCreateMembership": {
+    "description": "Instruction to contact admin"
+  },
+  "requestRenewal": "Request Renewal",
+  "@requestRenewal": {
+    "description": "Button text to request renewal"
+  },
+  "renewalRequestSent": "Membership renewal requested successfully",
+  "@renewalRequestSent": {
+    "description": "Success message for renewal request"
+  },
+  "failedToRenewMembership": "Failed to renew membership",
+  "@failedToRenewMembership": {
+    "description": "Error message for renewal failure"
+  },
+  "renewalRequestReviewMessage": "A renewal request will be sent to the administration for review.",
+  "@renewalRequestReviewMessage": {
+    "description": "Info message about renewal process"
+  },
+  "membershipActiveNoRenewalNeeded": "Your membership is currently active and does not need renewal yet.",
+  "@membershipActiveNoRenewalNeeded": {
+    "description": "Message when membership doesn't need renewal"
+  },
+  "paymentStatus": "Payment Status",
+  "@paymentStatus": {
+    "description": "Payment status label"
+  },
+  "cost": "Cost",
+  "@cost": {
+    "description": "Cost label"
+  },
+  "myMemberships": "My Memberships",
+  "@myMemberships": {
+    "description": "Title for memberships page"
+  },
+  "activeMembership": "Active Membership",
+  "@activeMembership": {
+    "description": "Label for active membership"
+  },
+  "iHaveAnActiveMembershipNumber": "I have an active membership number",
+  "@iHaveAnActiveMembershipNumber": {
+    "description": "Toggle label for doctor membership number"
+  },
+  "membershipHistory": "Membership History",
+  "@membershipHistory": {
+    "description": "Label for membership history"
+  },
+  "viewDetails": "View Details",
+  "@viewDetails": {
+    "description": "Button text to view details"
+  },
+  "noMembershipHistory": "No membership history found.",
+  "@noMembershipHistory": {
+    "description": "Message when history is empty"
+  },
+  "failedToLoadCourses": "Failed to load courses",
+  "@failedToLoadCourses": {
+    "description": "Error message when loading courses"
+  },
+  "noCoursesAvailable": "No courses available",
+  "@noCoursesAvailable": {
+    "description": "Message when no courses are found"
+  },
+  "free": "Free",
+  "@free": {
+    "description": "Label for free courses"
+  },
+  "instructor": "Instructor",
+  "@instructor": {
+    "description": "Label for instructor"
+  },
+  "courseInstructor": "Course Instructor",
+  "@courseInstructor": {
+    "description": "Subtitle for instructor"
+  },
+  "aboutThisCourse": "About this course",
+  "@aboutThisCourse": {
+    "description": "Title for course description"
+  },
+  "enrollNow": "Enroll Now",
+  "@enrollNow": {
+    "description": "Button to enroll in a course"
+  },
+  "enrollment": "Enrollment",
+  "@enrollment": {
+    "description": "Title for enrollment dialog/snackbar"
+  },
+  "confirmEnrollmentTitle": "Confirm Enrollment",
+  "@confirmEnrollmentTitle": {
+    "description": "Title for enrollment confirmation dialog"
+  },
+  "confirmEnrollmentMessage": "Are you sure you want to enroll in this course?",
+  "@confirmEnrollmentMessage": {
+    "description": "Message for enrollment confirmation dialog"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "enrolling": "Enrolling...",
+  "@enrolling": {
+    "description": "Message while enrollment is in progress"
+  },
+  "pending": "Pending",
+  "@pending": {
+    "description": "Pending status"
+  },
+  "confirmed": "Confirmed",
+  "@confirmed": {
+    "description": "Confirmed status"
+  },
+  "enrollmentFeatureComingSoon": "Enrollment feature coming soon",
+  "@enrollmentFeatureComingSoon": {
+    "description": "Message for feature availability"
+  },
+  "alreadyRegistered": "You are already registered for this course",
+  "@alreadyRegistered": {
+    "description": "Error message when user is already registered"
+  },
+  "registrationClosed": "Registration is closed for this course",
+  "@registrationClosed": {
+    "description": "Error message when registration is closed"
+  },
+  "enrollmentSuccess": "Successfully enrolled in {courseName}",
+  "@enrollmentSuccess": {
+    "description": "Success message after enrollment",
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "enrollmentFailed": "Failed to enroll. Please try again",
+  "@enrollmentFailed": {
+    "description": "Generic error message for enrollment failure"
+  },
+  "failedToLoadAnnouncements": "Failed to load announcements",
+  "@failedToLoadAnnouncements": {
+    "description": "Error message when announcements fail to load"
+  },
+  "noAnnouncementsAvailable": "No announcements available",
+  "@noAnnouncementsAvailable": {
+    "description": "Message when there are no announcements"
+  },
+  "featured": "FEATURED",
+  "@featured": {
+    "description": "Featured badge label"
+  },
+  "failedToLoadNews": "Failed to load news",
+  "@failedToLoadNews": {
+    "description": "Error message when news fails to load"
+  },
+  "noNewsAvailable": "No news available",
+  "@noNewsAvailable": {
+    "description": "Message when there is no news"
+  },
+  "author": "Author",
+  "@author": {
+    "description": "Author label"
+  },
+  "failedToLoadEvents": "Failed to load events",
+  "@failedToLoadEvents": {
+    "description": "Error message when events fail to load"
+  },
+  "noEventsAvailable": "No events available",
+  "@noEventsAvailable": {
+    "description": "Message when there are no events"
+  },
+  "day": "Day",
+  "@day": {
+    "description": "Day field label"
+  },
+  "month": "Month",
+  "@month": {
+    "description": "Month field label"
+  },
+  "year": "Year",
+  "@year": {
+    "description": "Year field label"
+  },
+  "pleaseEnterDay": "Please enter the day",
+  "@pleaseEnterDay": {
+    "description": "Day validation message"
+  },
+  "dayMustBeBetween1And31": "Day must be between 1 and 31",
+  "@dayMustBeBetween1And31": {
+    "description": "Day range validation message"
+  },
+  "pleaseEnterMonth": "Please enter the month",
+  "@pleaseEnterMonth": {
+    "description": "Month validation message"
+  },
+  "monthMustBeBetween1And12": "Month must be between 1 and 12",
+  "@monthMustBeBetween1And12": {
+    "description": "Month range validation message"
+  },
+  "pleaseEnterYear": "Please enter the year",
+  "@pleaseEnterYear": {
+    "description": "Year validation message"
+  },
+  "yearMustBeBetween1900AndCurrentYear": "Year must be between 1900 and {currentYear}",
+  "@yearMustBeBetween1900AndCurrentYear": {
+    "description": "Year range validation message",
+    "placeholders": {
+      "currentYear": {
+        "type": "String"
+      }
+    }
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "confirmDeleteNotification": "Are you sure you want to delete this notification?",
+  "@confirmDeleteNotification": {
+    "description": "Confirmation message for deleting a notification"
+  },
+  "branches": "Syndicates & Branches",
+  "@branches": {
+    "description": "Title for branches and syndicates page"
+  },
+  "branchDetails": "Branch Details",
+  "@branchDetails": {
+    "description": "Title for branch details page"
+  },
+  "syndicate": "Syndicate",
+  "@syndicate": {
+    "description": "Label for syndicate"
+  },
+  "branchManager": "Branch Manager",
+  "@branchManager": {
+    "description": "Label for branch manager"
+  },
+  "location": "Location",
+  "@location": {
+    "description": "Label for location"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "Label for phone number"
+  },
+  "noBranchesFound": "No branches found",
+  "@noBranchesFound": {
+    "description": "Message when no branches are found"
+  },
+  "failedToLoadBranches": "Failed to load branches",
+  "@failedToLoadBranches": {
+    "description": "Error message when branches fail to load"
+  },
+  "medicalReports": "Medical Reports",
+  "@medicalReports": {
+    "description": "Medical reports title"
+  },
+  "createMedicalReport": "Create Medical Report",
+  "@createMedicalReport": {
+    "description": "Create medical report title"
+  },
+  "medicalReportDetails": "Medical Report Details",
+  "@medicalReportDetails": {
+    "description": "Medical report details title"
+  },
+  "patientName": "Patient Name",
+  "@patientName": {
+    "description": "Patient name label"
+  },
+  "patientId": "Patient ID / National ID",
+  "@patientId": {
+    "description": "Patient ID label"
+  },
+  "diagnosis": "Diagnosis",
+  "@diagnosis": {
+    "description": "Diagnosis label"
+  },
+  "treatment": "Treatment",
+  "@treatment": {
+    "description": "Treatment label"
+  },
+  "recommendations": "Recommendations",
+  "@recommendations": {
+    "description": "Recommendations label"
+  },
+  "notes": "Notes",
+  "@notes": {
+    "description": "Notes label"
+  },
+  "noReportsFound": "No medical reports found.",
+  "@noReportsFound": {
+    "description": "Message when no reports are found"
+  },
+  "failedToLoadData": "Failed to load data",
+  "@failedToLoadData": {
+    "description": "Error message when loading fails"
+  },
+  "requiredField": "This field is required",
+  "@requiredField": {
+    "description": "Validation message for required fields"
+  },
+  "dataSavedSuccessfully": "Data saved successfully",
+  "@dataSavedSuccessfully": {
+    "description": "Success message when saving data"
+  },
+  "attachments": "Attachments",
+  "@attachments": {
+    "description": "Attachments label"
+  },
+  "noFileSelected": "No file selected",
+  "@noFileSelected": {
+    "description": "No file selected label"
+  },
+  "create": "Create",
+  "@create": {
+    "description": "Create button label"
+  },
+  "getDirections": "Get Directions",
+  "@getDirections": {
+    "description": "Button to open maps"
+  },
+  "notAvailable": "N/A",
+  "@notAvailable": {
+    "description": "Fallback for missing data"
+  },
+  "searchPlaceholder": "Search library...",
+  "@searchPlaceholder": {
+    "description": "Library search hint"
+  },
+  "all": "All",
+  "@all": {
+    "description": "Filter all"
+  },
+  "links": "Links",
+  "@links": {
+    "description": "Filter links"
+  },
+  "noResults": "No resources found",
+  "@noResults": {
+    "description": "Empty library message"
+  },
+  "noComplaints": "No complaints submitted yet",
+  "@noComplaints": {
+    "description": "Empty complaints message"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Label for description"
+  },
+  "failedToLoadNotifications": "Failed to load notifications",
+  "@failedToLoadNotifications": {
+    "description": "Error message when loading notifications fails"
+  },
+  "notification": "Notification",
+  "@notification": {
+    "description": "Singular notification label"
+  },
+  "markAsUnread": "Mark as unread",
+  "@markAsUnread": {
+    "description": "Context menu action to mark notification as unread"
+  },
+  "markAsRead": "Mark as read",
+  "@markAsRead": {
+    "description": "Context menu action to mark notification as read"
+  },
+  "markAllRead": "Mark all read",
+  "@markAllRead": {
+    "description": "Button label to mark all notifications as read"
+  },
+  "noNotifications": "No notifications",
+  "@noNotifications": {
+    "description": "Header text for empty notifications screen"
+  },
+  "youAreAllCaughtUp": "You're all caught up!",
+  "@youAreAllCaughtUp": {
+    "description": "Subtitle text for empty notifications screen"
+  },
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "Time ago text for immediate notifications"
+  },
+  "daysAgo": "{count}d ago",
+  "@daysAgo": {
+    "description": "Days ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "hoursAgo": "{count}h ago",
+  "@hoursAgo": {
+    "description": "Hours ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "minutesAgo": "{count}m ago",
+  "@minutesAgo": {
+    "description": "Minutes ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotOpenResource": "Could not open resource",
+  "@couldNotOpenResource": {
+    "description": "Error message when resource URL fails to open"
+  },
+  "pdf": "PDF",
+  "@pdf": {
+    "description": "PDF format label"
+  },
+  "video": "Video",
+  "@video": {
+    "description": "Video format label"
+  },
+  "link": "Link",
+  "@link": {
+    "description": "Link format label"
+  },
+  "failedToLoadItems": "Failed to load items",
+  "@failedToLoadItems": {
+    "description": "Error message when loading library items fails"
+  },
+  "unknownError": "Unknown error",
+  "@unknownError": {
+    "description": "Unknown error placeholder"
+  },
+  "deleteAccount": "Delete Account",
+  "@deleteAccount": {
+    "description": "Button to delete user account"
+  },
+  "deleteAccountConfirmationTitle": "Delete Account",
+  "@deleteAccountConfirmationTitle": {
+    "description": "Title of delete account confirmation dialog"
+  },
+  "deleteAccountConfirmationMessage": "Are you sure you want to delete your account? This action cannot be undone and your account will be deactivated.",
+  "@deleteAccountConfirmationMessage": {
+    "description": "Message warning user about account deletion"
+  },
+  "deleteAccountSuccess": "Your account has been deleted successfully",
+  "@deleteAccountSuccess": {
+    "description": "Success message after deleting account"
+  }
+}

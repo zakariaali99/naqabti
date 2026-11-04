@@ -1,0 +1,53 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - link "Logo Naqabti" [ref=e7] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=e9]
+      - generic [ref=e10]: Naqabti
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - button "🇺🇸 English" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: 🇺🇸
+            - generic [ref=e17]: English
+          - img [ref=e18]
+        - generic "Switch to dark mode" [ref=e20] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=e22]
+          - img [ref=e24]
+      - button "زع زكريا علي السويسي السويسي Member" [ref=e27] [cursor=pointer]:
+        - img "زع" [ref=e29]: ز
+        - generic [ref=e30]:
+          - generic [ref=e31]: زكريا علي السويسي السويسي
+          - generic [ref=e32]: Member
+        - img [ref=e34]
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - button [ref=e40]:
+        - img [ref=e41]
+      - navigation [ref=e44]:
+        - generic [ref=e45]:
+          - button "Home" [ref=e47] [cursor=pointer]:
+            - img [ref=e48]
+            - generic [ref=e51]: Home
+          - button "Doctor Map" [ref=e53] [cursor=pointer]:
+            - generic [ref=e54]: Doctor Map
+        - generic [ref=e56]:
+          - button "Library" [ref=e58] [cursor=pointer]:
+            - img [ref=e59]
+            - generic [ref=e62]: Library
+          - button "Medical Reports" [ref=e64] [cursor=pointer]:
+            - img [ref=e65]
+            - generic [ref=e67]: Medical Reports
+          - button "Insurance" [ref=e69] [cursor=pointer]:
+            - generic [ref=e70]: Insurance
+        - button "Complaints" [ref=e74] [cursor=pointer]:
+          - img [ref=e75]
+          - generic [ref=e77]: Complaints
+    - main [ref=e78]:
+      - generic "Loading dashboard..." [ref=e80]:
+        - generic [ref=e84]: Loading dashboard...
+  - contentinfo [ref=e85]:
+    - link "Developed by ALaryam" [ref=e86] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=e87]: Developed by
+      - paragraph [ref=e88]: ALaryam

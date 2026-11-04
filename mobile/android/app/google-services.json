@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "311580333570",
+    "project_id": "naqabti-742bb",
+    "storage_bucket": "naqabti-742bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311580333570:android:1ff515eb50dfe682dc791b",
+        "android_client_info": {
+          "package_name": "com.muwaija.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiqXAI4RJaHUU4ivKfh4lAigEDSCU5va4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311580333570:android:0a92c47f15b0144bdc791b",
+        "android_client_info": {
+          "package_name": "ly.taif.naqabti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiqXAI4RJaHUU4ivKfh4lAigEDSCU5va4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

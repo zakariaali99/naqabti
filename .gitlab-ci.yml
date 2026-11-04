@@ -1,0 +1,143 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  # backend/db.sqlite3.gz is 30 MB of committed history — don't clone it all
+  GIT_DEPTH: "1"
+  # The repo has no pnpm lockfile; keep Corepack from enforcing packageManager
+  COREPACK_ENABLE_STRICT: "0"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+.test_rules: &test_rules
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+test:backend:
+  stage: test
+  image: python:3.11-bookworm
+  cache:
+    - key: pip-$CI_COMMIT_REF_SLUG
+      paths:
+        - .cache/pip
+  before_script:
+    - pip install --quiet --upgrade pip
+    - pip install --quiet -r backend/requirements.txt
+  script:
+    # Django's test runner builds its own test_ database; DJANGO_DB_NAME stays
+    # unset so it never sees the committed db.sqlite3.
+    - cd backend && python manage.py test niqabaty --verbosity 2
+  <<: *test_rules
+
+test:e2e:
+  stage: test
+  # Pinned to the @playwright/test version in tests/web-frontend/package.json.
+  image: mcr.microsoft.com/playwright:v1.58.2-noble
+  cache:
+    - key:
+        files:
+          - frontend/package-lock.json
+      paths:
+        - frontend/node_modules
+    - key:
+        files:
+          - tests/web-frontend/package-lock.json
+      paths:
+        - tests/web-frontend/node_modules
+    - key: pip-$CI_COMMIT_REF_SLUG
+      paths:
+        - .cache/pip
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y -qq --no-install-recommends python3 python3-pip python3-venv
+    - python3 -m venv /opt/venv
+    - export PATH="/opt/venv/bin:$PATH"
+    - pip install --quiet --upgrade pip
+    - pip install --quiet -r backend/requirements.txt
+    - npm ci --prefix frontend
+    - npm ci --prefix tests/web-frontend
+  script:
+    # playwright.config.ts starts Django and Vite itself on ports 8011/5183.
+    - export PATH="/opt/venv/bin:$PATH"
+    - cd tests/web-frontend && npx playwright test --project=chromium
+  artifacts:
+    when: always
+    expire_in: 1 week
+    reports:
+      junit: tests/web-frontend/results.xml
+    paths:
+      - tests/web-frontend/playwright-report
+      - tests/web-frontend/test-results
+  <<: *test_rules
+
+build:
+  stage: build
+  needs:
+    - test:backend
+    - test:e2e
+  # Debian 12 → apt python3 is 3.11, matching the server virtualenv
+  image: node:20-bookworm
+  cache:
+    - key:
+        files:
+          - frontend/package-lock.json
+      paths:
+        - frontend/node_modules
+    - key: pip-$CI_COMMIT_REF_SLUG
+      paths:
+        - .cache/pip
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y -qq --no-install-recommends python3 python3-pip python3-venv zip
+    - python3 -m venv /opt/venv
+    - export PATH="/opt/venv/bin:$PATH"
+    - pip install --quiet --upgrade pip
+    - pip install --quiet -r backend/requirements.txt
+    - npm ci --prefix frontend
+  script:
+    # collect:static shells out to `python3`, so the venv must be on PATH here too
+    - export PATH="/opt/venv/bin:$PATH"
+    - npm run dist
+  artifacts:
+    paths:
+      - dist.zip
+    expire_in: 1 week
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+deploy:
+  stage: deploy
+  image: alpine:3.20
+  needs:
+    - build
+  environment:
+    name: production
+    url: https://my.naqabti.ly
+  before_script:
+    - apk add --no-cache openssh-client
+    - eval $(ssh-agent -s)
+    # SSH_PRIVATE_KEY / SSH_KNOWN_HOSTS are File-type CI variables: they hold a path
+    - chmod 400 "$SSH_PRIVATE_KEY"
+    - ssh-add "$SSH_PRIVATE_KEY"
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - cp "$SSH_KNOWN_HOSTS" ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+  script:
+    - scp -P "$DEPLOY_PORT" dist.zip "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/dist.zip"
+    # Unzip over the top: passenger_wsgi.py, .htaccess, .env, db.sqlite3 and media/
+    # live only on the server and must survive. statics/ is pure build output, so
+    # wipe it first to keep stale hashed bundles from piling up.
+    - |
+      ssh -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" "
+        set -e
+        cd $DEPLOY_PATH
+        rm -rf statics
+        unzip -o -q dist.zip -d $DEPLOY_PATH
+        rm -f dist.zip
+        $REMOTE_PYTHON manage.py migrate --noinput
+        mkdir -p tmp && touch tmp/restart.txt
+      "
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"

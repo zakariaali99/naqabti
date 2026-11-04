@@ -1,0 +1,957 @@
+{
+  "appTitle": "نقابتي",
+  "signInToContinue": "قم بتسجيل الدخول للمتابعة",
+  "username": "اسم المستخدم",
+  "enterYourUsername": "أدخل اسم المستخدم",
+  "pleaseEnterYourUsername": "الرجاء إدخال اسم المستخدم",
+  "password": "كلمة المرور",
+  "enterYourPassword": "أدخل كلمة المرور",
+  "pleaseEnterYourPassword": "الرجاء إدخال كلمة المرور",
+  "passwordMustBeAtLeast6Characters": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "signIn": "تسجيل الدخول",
+  "or": "أو",
+  "dontHaveAccount": "ليس لديك حساب؟ ",
+  "signUp": "إنشاء حساب",
+  "loginSuccessful": "تم تسجيل الدخول بنجاح!",
+  "createAccount": "إنشاء حساب",
+  "joinNiqabaty": "انضم إلى نقابتي",
+  "createYourAccountToGetStarted": "أنشئ حسابك للبدء",
+  "fullName": "الاسم الكامل",
+  "firstName": "الاسم الأول",
+  "fatherName": "اسم الأب",
+  "grandfatherName": "اسم الجد",
+  "familyName": "اسم العائلة",
+  "firstNameEn": "الاسم الأول (إنجليزي)",
+  "fatherNameEn": "اسم الأب (إنجليزي)",
+  "grandfatherNameEn": "اسم الجد (إنجليزي)",
+  "familyNameEn": "اسم العائلة (إنجليزي)",
+  "enterFirstName": "أدخل الاسم الأول",
+  "enterFatherName": "أدخل اسم الأب",
+  "enterGrandfatherName": "أدخل اسم الجد",
+  "enterFamilyName": "أدخل اسم العائلة",
+  "pleaseEnterFirstName": "الرجاء إدخال الاسم الأول",
+  "pleaseEnterFatherName": "الرجاء إدخال اسم الأب",
+  "pleaseEnterGrandfatherName": "الرجاء إدخال اسم الجد",
+  "pleaseEnterFamilyName": "الرجاء إدخال اسم العائلة",
+  "arabicNames": "الأسماء بالعربية",
+  "englishNames": "الأسماء بالإنجليزية",
+  "enterYourFullName": "أدخل اسمك الكامل",
+  "pleaseEnterYourFullName": "الرجاء إدخال اسمك الكامل",
+  "chooseAUsername": "اختر اسم مستخدم",
+  "pleaseEnterAUsername": "الرجاء إدخال اسم مستخدم",
+  "usernameMustBeAtLeast3Characters": "يجب أن يتكون اسم المستخدم من 3 أحرف على الأقل",
+  "email": "البريد الإلكتروني",
+  "enterYourEmail": "أدخل بريدك الإلكتروني",
+  "pleaseEnterYourEmail": "الرجاء إدخال بريدك الإلكتروني",
+  "pleaseEnterAValidEmail": "الرجاء إدخال بريد إلكتروني صالح",
+  "phoneNumber": "رقم الهاتف",
+  "enterYourPhoneNumber": "أدخل رقم هاتفك",
+  "pleaseEnterYourPhoneNumber": "الرجاء إدخال رقم هاتفك",
+  "createAPassword": "أنشئ كلمة مرور",
+  "pleaseEnterAPassword": "الرجاء إدخال كلمة مرور",
+  "passwordMustBeAtLeast8Characters": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+  "passwordCannotBeEntirelyNumeric": "لا يمكن أن تتكون كلمة المرور من أرقام فقط",
+  "passwordMustContainLetter": "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "reEnterYourPassword": "أعد إدخال كلمة المرور",
+  "pleaseConfirmYourPassword": "الرجاء تأكيد كلمة المرور",
+  "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
+  "iAgreeToThe": "أوافق على ",
+  "termsAndConditions": "الشروط والأحكام",
+  "pleaseAcceptTheTermsAndConditions": "الرجاء قبول الشروط والأحكام",
+  "registrationSuccessful": "تم التسجيل بنجاح!",
+  "alreadyHaveAnAccount": "لديك حساب بالفعل؟ ",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "forgotPasswordQuestion": "هل نسيت كلمة المرور؟",
+  "enterYourEmailAddressWeWillSendYouALink": "أدخل عنوان بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور.",
+  "enterYourEmailAddress": "أدخل عنوان بريدك الإلكتروني",
+  "sendResetLink": "إرسال رابط إعادة التعيين",
+  "backToSignIn": "العودة إلى تسجيل الدخول",
+  "checkYourEmail": "تحقق من بريدك الإلكتروني",
+  "weSentAPasswordResetLinkTo": "لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى",
+  "didntReceiveTheEmailCheckSpamFolder": "لم تتلقَ البريد الإلكتروني؟ تحقق من مجلد البريد العشوائي أو حاول مرة أخرى.",
+  "resendEmail": "إعادة إرسال البريد الإلكتروني",
+  "welcome": "مرحباً",
+  "loginFailed": "فشل تسجيل الدخول",
+  "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+  "home": "الرئيسية",
+  "payments": "المدفوعات",
+  "certifications": "الشهادات",
+  "memberships": "العضويات",
+  "editProfile": "تعديل الملف الشخصي",
+  "about": "حول",
+  "logout": "تسجيل الخروج",
+  "user": "مستخدم",
+  "naqabti": "نقابتي",
+  "applicationVersion": "1.0.0",
+  "allRightsReserved": "© 2025 نقابتي. جميع الحقوق محفوظة.",
+  "comprehensiveMembershipManagement": "نظام إدارة عضويات شامل للأطباء والمهنيين الطبيين.",
+  "logoutTitle": "تسجيل الخروج",
+  "areYouSureYouWantToLogout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "cancel": "إلغاء",
+  "failedToLoadData": "فشل تحميل البيانات: {error}",
+  "retry": "إعادة المحاولة",
+  "contactInformation": "معلومات الاتصال",
+  "emailLabel": "البريد الإلكتروني",
+  "noEmail": "لا يوجد بريد إلكتروني",
+  "phone": "الهاتف",
+  "accountDetails": "تفاصيل الحساب",
+  "userId": "معرف المستخدم",
+  "accountType": "نوع الحساب",
+  "doctor": "طبيب",
+  "staffMember": "عضو الموظفين",
+  "memberSince": "عضو منذ",
+  "aboutLabel": "حول",
+  "noUserDataAvailable": "لا توجد بيانات مستخدم متاحة",
+  "membership": "العضوية",
+  "active": "نشط",
+  "pending": "قيد الانتظار",
+  "membershipNumber": "رقم العضوية",
+  "type": "النوع",
+  "city": "المدينة",
+  "startDate": "تاريخ البدء",
+  "endDate": "تاريخ الانتهاء",
+  "noPaymentsFound": "لم يتم العثور على مدفوعات",
+  "yourPaymentHistoryWillAppearHere": "سيظهر سجل مدفوعاتك هنا",
+  "failedToLoadPayments": "فشل تحميل المدفوعات",
+  "payment": "الدفع",
+  "amount": "المبلغ",
+  "method": "الطريقة",
+  "paymentDetails": "تفاصيل الدفع",
+  "paymentId": "معرف الدفع",
+  "date": "التاريخ",
+  "paymentMethod": "طريقة الدفع",
+  "referenceNumber": "الرقم المرجعي",
+  "description": "الوصف",
+  "cash": "نقدي",
+  "card": "بطاقة",
+  "bankTransfer": "تحويل بنكي",
+  "onlinePayment": "دفع إلكتروني",
+  "other": "أخرى",
+  "noCertificationsFound": "لم يتم العثور على شهادات",
+  "yourCertificationsWillAppearHere": "ستظهر شهاداتك هنا",
+  "failedToLoadCertifications": "فشل تحميل الشهادات",
+  "certification": "الشهادة",
+  "certificationDetails": "تفاصيل الشهادة",
+  "certificationId": "معرف الشهادة",
+  "issued": "تاريخ الإصدار",
+  "expires": "تاريخ الانتهاء",
+  "issueDate": "تاريخ الإصدار",
+  "expiryDate": "تاريخ الانتهاء",
+  "issuedFrom": "صادر من",
+  "viewDocument": "عرض المستند",
+  "expired": "منتهية الصلاحية",
+  "expiringSoon": "تنتهي قريباً",
+  "valid": "صالحة",
+  "noMembershipsFound": "لم يتم العثور على عضويات",
+  "yourMembershipsWillAppearHere": "ستظهر عضوياتك هنا",
+  "failedToLoadMemberships": "فشل تحميل العضويات",
+  "membershipDetails": "تفاصيل العضوية",
+  "status": "الحالة",
+  "validUntil": "صالحة حتى",
+  "totalAmount": "المبلغ الإجمالي",
+  "paidAmount": "المبلغ المدفوع",
+  "remainingAmount": "المبلغ المتبقي",
+  "developedByMuwaija": "تم التطوير بواسطة شركة مويجة لتقنية المعلومات",
+  "save": "حفظ",
+  "success": "نجح",
+  "error": "خطأ",
+  "profileUpdatedSuccessfully": "تم تحديث الملف الشخصي بنجاح",
+  "failedToUpdateProfile": "فشل تحديث الملف الشخصي",
+  "usernameRequired": "اسم المستخدم مطلوب",
+  "emailRequired": "البريد الإلكتروني مطلوب",
+  "pleaseEnterValidEmail": "الرجاء إدخال بريد إلكتروني صالح",
+  "specialty": "التخصص",
+  "bio": "نبذة تعريفية",
+  "saveChanges": "حفظ التغييرات",
+  "changePassword": "تغيير كلمة المرور",
+  "comingSoon": "قريباً",
+  "profilePictureUploadSoon": "سيتوفر تحميل صورة الملف الشخصي قريباً",
+  "changePasswordSoon": "ستتوفر ميزة تغيير كلمة المرور قريباً"
+  ,
+  "selectAccountType": "اختر نوع الحساب",
+  "@selectAccountType": {
+    "description": "Account type selection title"
+  },
+  "chooseTheTypeOfAccount": "اختر نوع الحساب الذي تريد إنشاؤه",
+  "@chooseTheTypeOfAccount": {
+    "description": "Account type selection subtitle"
+  },
+  "student": "طالب",
+  "@student": {
+    "description": "Student account type"
+  },
+  "forStudentsPursuingEducation": "للطلاب الذين يتابعون دراستهم",
+  "@forStudentsPursuingEducation": {
+    "description": "Student account type description"
+  },
+  "forMedicalProfessionals": "للمهنيين والممارسين الطبيين",
+  "@forMedicalProfessionals": {
+    "description": "Doctor account type description"
+  },
+  "institution": "مؤسسة",
+  "@institution": {
+    "description": "Institution account type"
+  },
+  "forEducationalAndMedicalInstitutions": "للمؤسسات التعليمية والطبية",
+  "@forEducationalAndMedicalInstitutions": {
+    "description": "Institution account type description"
+  },
+  "continueButton": "متابعة",
+  "@continueButton": {
+    "description": "Continue button"
+  },
+  "back": "رجوع",
+  "@back": {
+    "description": "Back button"
+  },
+  "personalInformation": "معلومات شخصية",
+  "@personalInformation": {
+    "description": "Personal information step title"
+  },
+  "institutionInformation": "معلومات المؤسسة",
+  "@institutionInformation": {
+    "description": "Institution information step title"
+  },
+  "enterYourPersonalDetails": "أدخل بياناتك الشخصية",
+  "@enterYourPersonalDetails": {
+    "description": "Personal information step subtitle"
+  },
+  "enterYourInstitutionDetails": "أدخل بيانات المؤسسة",
+  "@enterYourInstitutionDetails": {
+    "description": "Institution information step subtitle"
+  },
+  "institutionName": "اسم المؤسسة",
+  "@institutionName": {
+    "description": "Institution name field label"
+  },
+  "enterInstitutionName": "أدخل اسم المؤسسة",
+  "@enterInstitutionName": {
+    "description": "Institution name field hint"
+  },
+  "pleaseEnterInstitutionName": "الرجاء إدخال اسم المؤسسة",
+  "@pleaseEnterInstitutionName": {
+    "description": "Institution name validation message"
+  },
+  "usernameCanOnlyContain": "اسم المستخدم يمكن أن يحتوي فقط على أحرف، أرقام، وواصل سفلية",
+  "@usernameCanOnlyContain": {
+    "description": "Username character validation message"
+  },
+  "birthdate": "تاريخ الميلاد",
+  "@birthdate": {
+    "description": "Birthdate field label"
+  },
+  "selectYourBirthdate": "اختر تاريخ ميلادك",
+  "@selectYourBirthdate": {
+    "description": "Birthdate field hint"
+  },
+  "pleaseSelectYourBirthdate": "الرجاء اختيار تاريخ الميلاد",
+  "@pleaseSelectYourBirthdate": {
+    "description": "Birthdate validation message"
+  },
+  "locationInformation": "معلومات الموقع",
+  "@locationInformation": {
+    "description": "Location information step title"
+  },
+  "enterYourLocationDetails": "أدخل تفاصيل موقعك",
+  "@enterYourLocationDetails": {
+    "description": "Location information step subtitle"
+  },
+  "selectYourCity": "اختر مدينتك",
+  "@selectYourCity": {
+    "description": "City field hint"
+  },
+  "pleaseSelectACity": "الرجاء اختيار مدينة",
+  "@pleaseSelectACity": {
+    "description": "City validation message"
+  },
+  "pleaseSelectCity": "الرجاء اختيار مدينة",
+  "@pleaseSelectCity": {
+    "description": "Alternate city validation message key used in code"
+  },
+  "address": "العنوان",
+  "@address": {
+    "description": "Address field label"
+  },
+  "enterYourAddress": "أدخل عنوانك",
+  "@enterYourAddress": {
+    "description": "Address field hint"
+  },
+  "pleaseEnterYourAddress": "الرجاء إدخال عنوانك",
+  "@pleaseEnterYourAddress": {
+    "description": "Address validation message"
+  },
+  "enterPhoneNumber": "أدخل رقم الهاتف",
+  "@enterPhoneNumber": {
+    "description": "Phone number field hint for institutions"
+  },
+  "pleaseEnterPhoneNumber": "الرجاء إدخال رقم الهاتف",
+  "@pleaseEnterPhoneNumber": {
+    "description": "Phone number validation message for institutions"
+  },
+  "nationality": "الجنسية",
+  "@nationality": {
+    "description": "Nationality field label"
+  },
+  "selectYourNationality": "اختر جنسيتك",
+  "@selectYourNationality": {
+    "description": "Nationality field hint"
+  },
+  "pleaseSelectYourNationality": "الرجاء اختيار الجنسية",
+  "@pleaseSelectYourNationality": {
+    "description": "Nationality validation message"
+  },
+  "passportImage": "صورة جواز السفر",
+  "@passportImage": {
+    "description": "Passport image section title"
+  },
+  "tapToUploadPassportImage": "اضغط لتحميل صورة جواز السفر",
+  "@tapToUploadPassportImage": {
+    "description": "Passport image upload hint"
+  },
+  "tapToChangePassportImage": "اضغط لتغيير صورة جواز السفر",
+  "@tapToChangePassportImage": {
+    "description": "Passport image change hint"
+  },
+  "requiredForNonLibyanNationals": "مطلوب لغير المواطنين الليبيين",
+  "@requiredForNonLibyanNationals": {
+    "description": "Passport image requirement note"
+  },
+  "pleaseUploadYourPassportImage": "الرجاء تحميل صورة جواز السفر",
+  "@pleaseUploadYourPassportImage": {
+    "description": "Passport image validation message"
+  },
+  "failedToPickImage": "فشل في اختيار الصورة",
+  "@failedToPickImage": {
+    "description": "Generic error when image picker fails"
+  },
+  "choosePassportSource": "اختر وثيقة جواز السفر",
+  "uploadFromGallery": "رفع من المعرض",
+  "uploadPdfDocument": "رفع ملف PDF",
+  "pdfFileSelected": "تم اختيار ملف PDF",
+  "tapToChangePdfDocument": "اضغط لتغيير ملف PDF",
+  "failedToPickFile": "فشل في اختيار الملف",
+  "educationInformation": "معلومات التعليم",
+  "@educationInformation": {
+    "description": "Education information step title"
+  },
+  "tellUsAboutYourEducation": "أخبرنا عن تعليمك",
+  "@tellUsAboutYourEducation": {
+    "description": "Education information step subtitle"
+  },
+  "universityName": "اسم الجامعة",
+  "@universityName": {
+    "description": "University name field label"
+  },
+  "enterYourUniversityName": "أدخل اسم جامعتك",
+  "@enterYourUniversityName": {
+    "description": "University name field hint"
+  },
+  "pleaseEnterYourUniversityName": "الرجاء إدخال اسم الجامعة",
+  "@pleaseEnterYourUniversityName": {
+    "description": "University name validation message"
+  },
+  "currentDegree": "الدرجة الحالية",
+  "@currentDegree": {
+    "description": "Current degree section title"
+  },
+  "bachelorsDegree": "بكالوريوس",
+  "@bachelorsDegree": {
+    "description": "Bachelor's degree option"
+  },
+  "phdDoctorate": "دكتوراه",
+  "@phdDoctorate": {
+    "description": "PhD/Doctorate option"
+  },
+  "otherDegree": "أخرى",
+  "@otherDegree": {
+    "description": "Other degree option"
+  },
+  "pleaseSelectYourCurrentDegree": "الرجاء اختيار درجتك الحالية",
+  "@pleaseSelectYourCurrentDegree": {
+    "description": "Degree validation message"
+  },
+  "doctorInformation": "معلومات الطبيب",
+  "@doctorInformation": {
+    "description": "Doctor information step title"
+  },
+  "additionalInformationForDoctors": "معلومات إضافية للأطباء",
+  "@additionalInformationForDoctors": {
+    "description": "Doctor information step subtitle"
+  },
+  "enterYourMembershipNumber": "أدخل رقم عضويتك",
+  "@enterYourMembershipNumber": {
+    "description": "Membership number field hint"
+  },
+  "pleaseEnterYourMembershipNumber": "الرجاء إدخال رقم العضوية",
+  "@pleaseEnterYourMembershipNumber": {
+    "description": "Membership number validation message"
+  },
+  "selectBranch": "اختر الفرع",
+  "@selectBranch": {
+    "description": "Branch section title"
+  },
+  "branch": "الفرع",
+  "@branch": {
+    "description": "Branch field label"
+  },
+  "selectYourBranch": "اختر فرعك",
+  "@selectYourBranch": {
+    "description": "Branch field hint"
+  },
+  "pleaseSelectABranch": "الرجاء اختيار فرع",
+  "@pleaseSelectABranch": {
+    "description": "Branch validation message"
+  },
+  "reviewAndSubmit": "مراجعة وإرسال",
+  "@reviewAndSubmit": {
+    "description": "Review and submit step title"
+  },
+  "reviewYourInformationAndCreateAccount": "راجع معلوماتك وأنشئ حسابك",
+  "@reviewYourInformationAndCreateAccount": {
+    "description": "Review and submit step subtitle"
+  },
+  "registrationSummary": "ملخص التسجيل",
+  "@registrationSummary": {
+    "description": "Registration summary section title"
+  },
+  "name": "الاسم",
+  "@name": {
+    "description": "Name label"
+  },
+  "emailOptional": "البريد الإلكتروني (اختياري)",
+  "@emailOptional": {
+    "description": "Email field label optional"
+  },
+  "phoneOptional": "رقم الهاتف (اختياري)",
+  "@phoneOptional": {
+    "description": "Phone field label optional"
+  },
+  "accountCredentials": "بيانات الحساب",
+  "@accountCredentials": {
+    "description": "Registration credentials step title"
+  },
+  "enterEmailAndChoosePassword": "أدخل بريدك الإلكتروني واختر كلمة مرور لتسجيل الدخول بهما.",
+  "@enterEmailAndChoosePassword": {
+    "description": "Registration credentials step subtitle"
+  },
+  "submit": "إرسال",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "welcomeToNiqabaty": "مرحبًا بك في نقابتي!",
+  "@welcomeToNiqabaty": {
+    "description": "Welcome page title"
+  },
+  "yourDoctorAccountCreatedSuccessfully": "تم إنشاء حساب الطبيب بنجاح! يمكنك الآن الوصول إلى جميع الميزات المهنية.",
+  "@yourDoctorAccountCreatedSuccessfully": {
+    "description": "Doctor account success message"
+  },
+  "yourStudentAccountCreatedSuccessfully": "تم إنشاء حساب الطالب بنجاح! ابدأ رحلتك التعليمية اليوم.",
+  "@yourStudentAccountCreatedSuccessfully": {
+    "description": "Student account success message"
+  },
+  "yourInstitutionAccountPendingApproval": "تم إنشاء حساب المؤسسة وهو قيد الموافقة. سنخطرك عند الموافقة.",
+  "@yourInstitutionAccountPendingApproval": {
+    "description": "Institution account success message"
+  },
+  "yourAccountCreatedSuccessfully": "تم إنشاء حسابك بنجاح!",
+  "@yourAccountCreatedSuccessfully": {
+    "description": "Generic account success message"
+  },
+  "yourMembershipWillBeVerified": "سيتم التحقق من عضويتك قريبًا. ستتلقى إشعارًا عند الموافقة.",
+  "@yourMembershipWillBeVerified": {
+    "description": "Doctor verification info message"
+  },
+  "youCanNowAccessEducationalResources": "يمكنك الآن الوصول إلى الموارد التعليمية والتواصل مع المهنيين.",
+  "@youCanNowAccessEducationalResources": {
+    "description": "Student info message"
+  },
+  "ourTeamWillReviewYourApplication": "سيراجع فريقنا طلبك خلال 24-48 ساعة.",
+  "@ourTeamWillReviewYourApplication": {
+    "description": "Institution approval info message"
+  },
+  "checkYourEmailForVerification": "تحقق من بريدك الإلكتروني للحصول على تعليمات التحقق.",
+  "@checkYourEmailForVerification": {
+    "description": "Generic verification info message"
+  },
+  "verifiedAccount": "حساب موثق",
+  "@verifiedAccount": {
+    "description": "Verified account feature title"
+  },
+  "yourAccountIsSecureAndVerified": "حسابك آمن وموثق",
+  "@yourAccountIsSecureAndVerified": {
+    "description": "Verified account feature description"
+  },
+  "exploreFeatures": "استكشف الميزات",
+  "@exploreFeatures": {
+    "description": "Explore features title"
+  },
+  "accessAllPlatformFeatures": "الوصول إلى جميع ميزات المنصة",
+  "@accessAllPlatformFeatures": {
+    "description": "Explore features description"
+  },
+  "support247": "الدعم على مدار الساعة",
+  "@support247": {
+    "description": "24/7 support feature title"
+  },
+  "getHelpWheneverYouNeedIt": "احصل على المساعدة متى احتجت إليها",
+  "@getHelpWheneverYouNeedIt": {
+    "description": "24/7 support feature description"
+  },
+  "getStarted": "ابدأ الآن",
+  "@getStarted": {
+    "description": "Get started button"
+  }
+  ,
+  "continueLabel": "متابعة",
+  "@continueLabel": {
+    "description": "Continue button alternate key"
+  },
+
+  "pleaseAcceptTermsAndConditions": "الرجاء قبول الشروط والأحكام",
+  "@pleaseAcceptTermsAndConditions": {
+    "description": "Terms acceptance validation message used in review step"
+  },
+
+  "registrationFailed": "فشل التسجيل",
+  "@registrationFailed": {
+    "description": "Generic registration failure message"
+  },
+
+  "connectionTimeoutPleaseTryAgain": "انتهت مهلة الاتصال. الرجاء المحاولة مرة أخرى.",
+  "@connectionTimeoutPleaseTryAgain": {
+    "description": "Connection timeout error message"
+  },
+
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.",
+  "@noInternetConnection": {
+    "description": "No internet connection error message"
+  },
+
+  "unexpectedErrorOccurred": "حدث خطأ غير متوقع",
+  "@unexpectedErrorOccurred": {
+    "description": "Generic unexpected error message"
+  },
+
+  "reviewYourInformationAndCreateYourAccount": "راجع معلوماتك وأنشئ حسابك",
+  "@reviewYourInformationAndCreateYourAccount": {
+    "description": "Review and submit subtitle (alternate key used in code)"
+  },
+
+  "createPassword": "أنشئ كلمة مرور",
+  "@createPassword": {
+    "description": "Password field hint for registration (alternate key used in code)"
+  },
+
+  "pleaseEnterPassword": "الرجاء إدخال كلمة مرور",
+  "@pleaseEnterPassword": {
+    "description": "Password required validation message (alternate key used in code)"
+  },
+
+  "university": "الجامعة",
+  "@university": {
+    "description": "University label (alternate key used in summary)"
+  },
+
+  "accountCreatedLoginToComplete": "تم إنشاء حسابك! سجّل الدخول لإكمال ملفك الشخصي والبدء باستخدام التطبيق.",
+  "@accountCreatedLoginToComplete": {
+    "description": "Success message shown after registration, prompting the user to log in"
+  },
+
+  "profileCompletion": "اكتمال الملف الشخصي",
+  "@profileCompletion": {
+    "description": "Label for the profile completion percentage indicator"
+  },
+
+  "profileUpdatedModalTitle": "تم تحديث الملف الشخصي",
+  "@profileUpdatedModalTitle": {
+    "description": "Title of the modal shown after successfully saving the edit-profile form"
+  },
+
+  "close": "إغلاق",
+  "@close": {
+    "description": "Generic close button label"
+  },
+
+  "completeProfileModalTitle": "أكمل ملفك الشخصي",
+  "@completeProfileModalTitle": {
+    "description": "Title of the complete-your-profile modal"
+  },
+
+  "completeProfileModalMessage": "يرجى إكمال معلومات ملفك الشخصي للاستفادة الكاملة من التطبيق.",
+  "@completeProfileModalMessage": {
+    "description": "Body message of the complete-your-profile modal"
+  },
+
+  "completeProfileModalCta": "إكمال الملف الشخصي",
+  "@completeProfileModalCta": {
+    "description": "Call-to-action button on the complete-your-profile modal and profile completion card"
+  },
+
+  "missingFieldsHint": "الحقول المطلوبة:",
+  "@missingFieldsHint": {
+    "description": "Heading for the list of missing profile fields"
+  },
+
+  "completedFieldsHint": "المكتمل:",
+  "@completedFieldsHint": {
+    "description": "Heading for the list of completed profile fields"
+  },
+
+  "fieldNeededForCompletion": "مطلوب لإكمال ملفك الشخصي",
+  "@fieldNeededForCompletion": {
+    "description": "Semantic label for the missing-field warning icon on the edit-profile form"
+  },
+
+  "profilePhoto": "الصورة الشخصية",
+  "@profilePhoto": {
+    "description": "Label for the profile photo field"
+  },
+
+  "pleaseSelectDegree": "يرجى اختيار مؤهلك العلمي الحالي",
+  "@pleaseSelectDegree": {
+    "description": "Validation message for the current degree dropdown"
+  },
+
+  "doctorMembershipVerificationMessage": "سيتم التحقق من عضويتك قريبًا. ستتلقى إشعارًا عند الموافقة.",
+  "@doctorMembershipVerificationMessage": {
+    "description": "Info message about membership verification for doctors"
+  },
+
+  "studentAccessResourcesMessage": "يمكنك الآن الوصول إلى الموارد التعليمية والتواصل مع المهنيين.",
+  "@studentAccessResourcesMessage": {
+    "description": "Info message shown to students after registration"
+  },
+
+  "institutionReviewTimeMessage": "سيراجع فريقنا طلبك خلال 24-48 ساعة.",
+  "@institutionReviewTimeMessage": {
+    "description": "Info message for institutions about review timing"
+  },
+
+  "verifiedAccountTitle": "حساب موثق",
+  "@verifiedAccountTitle": {
+    "description": "Feature title: verified account"
+  },
+
+  "verifiedAccountDescription": "حسابك آمن وموثق",
+  "@verifiedAccountDescription": {
+    "description": "Feature description: verified account"
+  },
+
+  "exploreFeaturesTitle": "استكشف الميزات",
+  "@exploreFeaturesTitle": {
+    "description": "Feature title: explore features"
+  },
+
+  "exploreFeaturesDescription": "الوصول إلى جميع ميزات المنصة",
+  "@exploreFeaturesDescription": {
+    "description": "Feature description: explore features"
+  },
+
+  "supportTitle": "الدعم على مدار الساعة",
+  "@supportTitle": {
+    "description": "Feature title: support"
+  },
+
+  "supportDescription": "احصل على المساعدة متى احتجت إليها",
+  "@supportDescription": {
+    "description": "Feature description: support"
+  }
+
+,
+
+  "accountPendingNotice": "تم إنشاء حسابك وهو الآن في انتظار التفعيل. تحقق من بريدك الإلكتروني لمزيد من التحديثات.",
+  "@accountPendingNotice": {
+    "description": "Prominent notice shown to institutions after registration"
+  }
+  ,
+  "notifications": "الإشعارات",
+  "@notifications": {
+    "description": "Notifications menu item"
+  },
+  "courses": "الدورات",
+  "@courses": {
+    "description": "Courses menu item"
+  },
+  "profile": "الملف الشخصي",
+  "@profile": {
+    "description": "Profile menu item"
+  },
+  "professionalInformation": "المعلومات المهنية",
+  "notProvided": "غير متوفر",
+  "renewMembership": "تجديد",
+  "events": "الفعاليات",
+  "news": "الأخبار",
+  "announcements": "الإعلانات",
+  "quickActions": "الوصول السريع",
+  "complaints": "الشكاوي",
+  "myComplaints": "شكاويّ",
+  "addComplaint": "ارسال شكوى جديدة",
+  "subject": "الموضوع",
+  "description": "الوصف",
+  "statusTerm": "الحالة",
+  "priority": "الأهمية",
+  "electronicLibrary": "المكتبة الإلكترونية",
+  "library": "المكتبة",
+  "download": "تحميل",
+  "open": "فتح",
+  "category": "الفئة",
+  "author": "المؤلف",
+  "year": "السنة",
+  "type": "النوع",
+  "name": "الاسم",
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "english": "English",
+  "arabic": "العربية",
+  "darkMode": "الوضع الداكن",
+  "on": "تشغيل",
+  "off": "إيقاف",
+  "switchedToDarkMode": "تم التبديل إلى الوضع الداكن",
+  "switchedToLightMode": "تم التبديل إلى الوضع الفاتح",
+  "lightMode": "الوضع الفاتح",
+  "enabled": "مفعل",
+  "selectLanguage": "اختر اللغة",
+  "languageChanged": "تم تغيير اللغة",
+  "languageChangedToEnglish": "تم تغيير اللغة إلى الإنجليزية",
+  "languageChangedToArabic": "تم تغيير اللغة إلى العربية",
+  "version": "الإصدار",
+  "general": "عام",
+  "preferences": "التفضيلات",
+  "appInfo": "معلومات التطبيق",
+  "renewMembershipTitle": "تجديد العضوية",
+  "userNotLoggedIn": "المستخدم غير مسجل الدخول",
+  "failedToLoadMembershipDetails": "فشل تحميل تفاصيل العضوية",
+  "noActiveMembershipFound": "لم يتم العثور على عضوية نشطة",
+  "contactAdminToCreateMembership": "تواصل مع الإدارة لإنشاء عضوية",
+  "requestRenewal": "طلب تجديد",
+  "renewalRequestSent": "تم إرسال طلب تجديد العضوية بنجاح",
+  "failedToRenewMembership": "فشل تجديد العضوية",
+  "renewalRequestReviewMessage": "سيتم إرسال طلب التجديد إلى الإدارة للمراجعة.",
+  "membershipActiveNoRenewalNeeded": "عضويتك نشطة حالياً ولا تحتاج إلى تجديد.",
+  "paymentStatus": "حالة الدفع",
+  "cost": "التكلفة",
+  "myMemberships": "عضوياتي",
+  "activeMembership": "العضوية النشطة",
+  "iHaveAnActiveMembershipNumber": "لدي رقم عضوية نشط",
+  "membershipHistory": "سجل العضوية",
+  "viewDetails": "عرض التفاصيل",
+  "noMembershipHistory": "لم يتم العثور على سجل العضوية.",
+  "failedToLoadCourses": "فشل تحميل الدورات",
+  "noCoursesAvailable": "لا توجد دورات متاحة",
+  "free": "مجاني",
+  "instructor": "المدرب",
+  "courseInstructor": "مدرب الدورة",
+  "aboutThisCourse": "حول هذه الدورة",
+  "enrollNow": "سجل الآن",
+  "enrollment": "تم التسجيل بنجاح",
+  "enrolling": "جاري التسجيل...",
+  "pending": "قيد الانتظار",
+  "confirmed": "مؤكد",
+  "enrollmentFeatureComingSoon": "ميزة التسجيل قريباً",
+  "confirmEnrollmentTitle": "تأكيد التسجيل",
+  "confirmEnrollmentMessage": "هل أنت متأكد أنك تريد التسجيل في هذه الدورة؟",
+  "confirm": "تأكيد",
+  "alreadyRegistered": "أنت مسجل بالفعل في هذه الدورة",
+  "registrationClosed": "التسجيل مغلق لهذه الدورة",
+  "enrollmentSuccess": "تم التسجيل بنجاح في {courseName}",
+  "enrollmentFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى",
+  "failedToLoadAnnouncements": "فشل تحميل الإعلانات",
+  "noAnnouncementsAvailable": "لا توجد إعلانات متاحة",
+  "featured": "مميز",
+  "failedToLoadNews": "فشل تحميل الأخبار",
+  "noNewsAvailable": "لا توجد أخبار متاحة",
+  "author": "الكاتب",
+  "failedToLoadEvents": "فشل تحميل الفعاليات",
+  "noEventsAvailable": "لا توجد فعاليات متاحة",
+  "day": "اليوم",
+  "@day": {
+    "description": "Day field label"
+  },
+  "month": "الشهر",
+  "@month": {
+    "description": "Month field label"
+  },
+  "year": "السنة",
+  "@year": {
+    "description": "Year field label"
+  },
+  "pleaseEnterDay": "الرجاء إدخال اليوم",
+  "@pleaseEnterDay": {
+    "description": "Day validation message"
+  },
+  "dayMustBeBetween1And31": "يجب أن يكون اليوم بين 1 و 31",
+  "@dayMustBeBetween1And31": {
+    "description": "Day range validation message"
+  },
+  "pleaseEnterMonth": "الرجاء إدخال الشهر",
+  "@pleaseEnterMonth": {
+    "description": "Month validation message"
+  },
+  "monthMustBeBetween1And12": "يجب أن يكون الشهر بين 1 و 12",
+  "@monthMustBeBetween1And12": {
+    "description": "Month range validation message"
+  },
+  "pleaseEnterYear": "الرجاء إدخال السنة",
+  "@pleaseEnterYear": {
+    "description": "Year validation message"
+  },
+  "yearMustBeBetween1900AndCurrentYear": "يجب أن تكون السنة بين 1900 و {currentYear}",
+  "@yearMustBeBetween1900AndCurrentYear": {
+    "description": "Year range validation message",
+    "placeholders": {
+      "currentYear": {
+        "type": "String"
+      }
+    }
+  },
+  "delete": "حذف",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "confirmDeleteNotification": "هل أنت متأكد من حذف هذا الإشعار؟",
+  "@confirmDeleteNotification": {
+    "description": "Confirmation message for deleting a notification"
+  },
+  "failedToLoadNotifications": "فشل تحميل الإشعارات",
+  "@failedToLoadNotifications": {
+    "description": "Error message when loading notifications fails"
+  },
+  "notification": "إشعار",
+  "@notification": {
+    "description": "Singular notification label"
+  },
+  "markAsUnread": "تحديد كغير مقروء",
+  "@markAsUnread": {
+    "description": "Context menu action to mark notification as unread"
+  },
+  "markAsRead": "تحديد كمقروء",
+  "@markAsRead": {
+    "description": "Context menu action to mark notification as read"
+  },
+  "markAllRead": "تحديد الكل كمقروء",
+  "@markAllRead": {
+    "description": "Button label to mark all notifications as read"
+  },
+  "noNotifications": "لا توجد إشعارات",
+  "@noNotifications": {
+    "description": "Header text for empty notifications screen"
+  },
+  "youAreAllCaughtUp": "لقد اطلعت على كل شيء!",
+  "@youAreAllCaughtUp": {
+    "description": "Subtitle text for empty notifications screen"
+  },
+  "justNow": "الآن",
+  "@justNow": {
+    "description": "Time ago text for immediate notifications"
+  },
+  "daysAgo": "قبل {count} يوم",
+  "@daysAgo": {
+    "description": "Days ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "hoursAgo": "قبل {count} ساعة",
+  "@hoursAgo": {
+    "description": "Hours ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "minutesAgo": "قبل {count} دقيقة",
+  "@minutesAgo": {
+    "description": "Minutes ago indicator",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "branches": "النقابات والفروع",
+  "@branches": {
+    "description": "Title for branches and syndicates page"
+  },
+  "branchDetails": "تفاصيل الفرع",
+  "@branchDetails": {
+    "description": "Title for branch details page"
+  },
+  "syndicate": "النقابة",
+  "@syndicate": {
+    "description": "Label for syndicate"
+  },
+  "branchManager": "مدير الفرع",
+  "@branchManager": {
+    "description": "Label for branch manager"
+  },
+  "noBranchesFound": "لم يتم العثور على فروع",
+  "@noBranchesFound": {
+    "description": "Message when no branches are found"
+  },
+  "failedToLoadBranches": "فشل تحميل الفروع",
+  "@failedToLoadBranches": {
+    "description": "Error message when branches fail to load"
+  },
+  "medicalReports": "التقارير الطبية",
+  "@medicalReports": {
+    "description": "Medical reports title"
+  },
+  "all": "الكل",
+  "@all": {
+    "description": "Filter all"
+  },
+  "links": "الروابط",
+  "@links": {
+    "description": "Filter links"
+  },
+  "couldNotOpenResource": "تعذر فتح الملف/الرابط",
+  "@couldNotOpenResource": {
+    "description": "Error message when resource URL fails to open"
+  },
+  "pdf": "PDF",
+  "@pdf": {
+    "description": "PDF format label"
+  },
+  "video": "فيديو",
+  "@video": {
+    "description": "Video format label"
+  },
+  "link": "رابط",
+  "@link": {
+    "description": "Link format label"
+  },
+  "failedToLoadItems": "فشل تحميل العناصر",
+  "@failedToLoadItems": {
+    "description": "Error message when loading library items fails"
+  },
+  "unknownError": "خطأ غير معروف",
+  "@unknownError": {
+    "description": "Unknown error placeholder"
+  },
+  "searchPlaceholder": "البحث في المكتبة...",
+  "@searchPlaceholder": {
+    "description": "Library search hint"
+  },
+  "deleteAccount": "حذف الحساب",
+  "@deleteAccount": {
+    "description": "Button to delete user account"
+  },
+  "deleteAccountConfirmationTitle": "حذف الحساب",
+  "@deleteAccountConfirmationTitle": {
+    "description": "Title of delete account confirmation dialog"
+  },
+  "deleteAccountConfirmationMessage": "هل أنت متأكد من رغبتك في حذف حسابك؟ سيتم تعطيل حسابك ولن تتمكن من تسجيل الدخول به مرة أخرى.",
+  "@deleteAccountConfirmationMessage": {
+    "description": "Message warning user about account deletion"
+  },
+  "deleteAccountSuccess": "تم حذف حسابك بنجاح",
+  "@deleteAccountSuccess": {
+    "description": "Success message after deleting account"
+  }
+}

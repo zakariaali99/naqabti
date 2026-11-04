@@ -1,0 +1,42 @@
+- generic [ref=f4e10]:
+  - banner [ref=f4e11]:
+    - link "Logo Naqabti" [ref=f4e13] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=f4e15]
+      - generic [ref=f4e16]: Naqabti
+    - generic [ref=f4e18]:
+      - generic [ref=f4e19]:
+        - button "🇺🇸 English" [ref=f4e20] [cursor=pointer]:
+          - generic [ref=f4e21]:
+            - generic [ref=f4e22]: 🇺🇸
+            - generic [ref=f4e23]: English
+          - img [ref=f4e24]
+        - generic "Switch to dark mode" [ref=f4e26] [cursor=pointer]:
+          - switch "Switch to dark mode" [checked] [ref=f4e28]
+          - img [ref=f4e30]
+      - button "Login to your account" [ref=f4e32] [cursor=pointer]
+  - main [ref=f4e33]:
+    - generic [ref=f4e36]:
+      - heading "Sign in to your account" [level=5] [ref=f4e37]
+      - generic [ref=f4e38]:
+        - generic [ref=f4e39]: Username, Email, or Phone Number
+        - textbox "Enter username, email, or phone number" [active] [ref=f4e44]: admin
+      - generic [ref=f4e45]:
+        - generic [ref=f4e46]: Password
+        - generic [ref=f4e50]:
+          - textbox "••••••••" [ref=f4e51]
+          - button "toggle password visibility" [ref=f4e52]:
+            - img
+      - button "Login to your account" [ref=f4e53] [cursor=pointer]
+      - generic [ref=f4e54]:
+        - generic [ref=f4e55]:
+          - text: Not registered?
+          - link "Create account" [ref=f4e56] [cursor=pointer]:
+            - /url: /auth/register
+        - link "Forgot Password?" [ref=f4e57] [cursor=pointer]:
+          - /url: /auth/reset-password
+  - contentinfo [ref=f4e58]:
+    - link "Developed by ALaryam" [ref=f4e59] [cursor=pointer]:
+      - /url: http://alaryam.ly/
+      - generic [ref=f4e60]: Developed by
+      - paragraph [ref=f4e61]: ALaryam

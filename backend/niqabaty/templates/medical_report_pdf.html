@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Geeza Pro', 'Damascus', 'Noto Naskh Arabic', 'Times New Roman', serif;
+  font-size: 10.5pt;
+  line-height: 1.8;
+  color: #1a1a2e;
+  direction: rtl;
+  text-align: right;
+  background: #fff;
+  padding: 20mm 18mm;
+}
+.page-border {
+  border: 2pt solid #1a3a5c;
+  border-radius: 3pt;
+  padding: 8mm 10mm;
+  position: relative;
+}
+.watermark {
+  text-align: center;
+  font-size: 48pt;
+  font-weight: bold;
+  color: #1a3a5c;
+  opacity: 0.04;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.header-band {
+  background: #1a3a5c;
+  margin: -8mm -10mm 6mm;
+  padding: 5mm 10mm 4mm;
+  color: #fff;
+}
+.header-band h1 {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.header-band .clinic-name {
+  font-size: 9pt;
+  opacity: 0.8;
+  margin-top: 0.5mm;
+}
+table.meta {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f4f6f9;
+  border: 1px solid #d6dce5;
+  border-radius: 3pt;
+  margin-bottom: 5mm;
+}
+table.meta td {
+  text-align: center;
+  padding: 3mm 4mm;
+  width: 33.33%;
+}
+table.meta td + td {
+  border-right: 1px solid #d6dce5;
+}
+.meta-label {
+  font-size: 7pt;
+  color: #7a8a9e;
+}
+.meta-value {
+  font-size: 9.5pt;
+  font-weight: bold;
+  color: #1a3a5c;
+}
+.card {
+  background: #fafbfc;
+  border: 1px solid #e2e6ed;
+  border-radius: 4pt;
+  padding: 3.5mm 5mm;
+  margin-bottom: 3.5mm;
+  border-right: 5px solid #2d7d9a;
+}
+.card-doctor { border-right-color: #1a3a5c; }
+.card-patient { border-right-color: #2d7d9a; }
+.card-title {
+  font-size: 11.5pt;
+  font-weight: bold;
+  color: #1a3a5c;
+  margin-bottom: 2mm;
+  padding-bottom: 0.8mm;
+  border-bottom: 1px solid #e2e6ed;
+}
+.field-label {
+  font-size: 7.5pt;
+  color: #7a8a9e;
+}
+.field-value {
+  font-size: 10.5pt;
+  color: #1a1a2e;
+}
+.medical-block {
+  border: 1px solid #e2e6ed;
+  border-radius: 4pt;
+  margin-bottom: 3mm;
+}
+.medical-block-header {
+  font-size: 9.5pt;
+  font-weight: bold;
+  color: #fff;
+  padding: 1.2mm 4mm;
+}
+.block-diagnosis .medical-block-header { background: #c0392b; }
+.block-treatment .medical-block-header { background: #2d7d9a; }
+.block-recommendations .medical-block-header { background: #27ae60; }
+.block-notes .medical-block-header { background: #7f8c8d; }
+.medical-block-body {
+  padding: 2.5mm 4mm;
+  font-size: 10.5pt;
+  line-height: 1.9;
+  background: #fff;
+}
+.footer-area {
+  margin-top: 10mm;
+  padding-top: 3mm;
+  border-top: 1px solid #d6dce5;
+  text-align: center;
+}
+.signature-area {
+  margin-top: 8mm;
+  text-align: center;
+  width: 130pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signature-area .sig-label {
+  font-size: 7.5pt;
+  color: #7a8a9e;
+  margin-bottom: 0.8mm;
+}
+.signature-area .sig-line {
+  border: none;
+  border-top: 1px solid #1a1a2e;
+  width: 100%;
+  margin: 0;
+}
+.signature-area .sig-name {
+  font-size: 8.5pt;
+  color: #1a3a5c;
+  margin-top: 1mm;
+}
+.footer-note {
+  text-align: center;
+  font-size: 7pt;
+  color: #b0b8c4;
+  margin-top: 5mm;
+}
+</style>
+</head>
+<body>
+<div class="page-border">
+
+<div class="watermark">تقرير طبي</div>
+
+<div class="header-band">
+  <h1>تقرير طبي</h1>
+  <div class="clinic-name">عيادة —</div>
+</div>
+
+<table class="meta">
+  <tr>
+    <td><div class="meta-label">تاريخ التقرير</div><div class="meta-value">{{ report_date }}</div></td>
+    <td><div class="meta-label">رقم التقرير</div><div class="meta-value">#{{ report.id }}</div></td>
+    <td><div class="meta-label">تاريخ الإنشاء</div><div class="meta-value">{{ generated_at }}</div></td>
+  </tr>
+</table>
+
+<div class="card card-doctor">
+  <div class="card-title">معلومات الطبيب</div>
+  <div class="field-label">اسم الطبيب</div>
+  <div class="field-value">{{ doctor_name }}</div>
+  {% if doctor_specialty %}
+  <div style="margin-top:1mm"><span class="field-label">التخصص: </span><span class="field-value">{{ doctor_specialty }}</span></div>
+  {% endif %}
+  {% if doctor_phone %}
+  <div style="margin-top:1mm"><span class="field-label">الهاتف: </span><span class="field-value">{{ doctor_phone }}</span></div>
+  {% endif %}
+</div>
+
+<div class="card card-patient">
+  <div class="card-title">معلومات المريض</div>
+  <div class="field-label">الاسم الكامل للمريض</div>
+  <div class="field-value">{{ patient_name }}</div>
+  {% if patient_id %}
+  <div style="margin-top:1mm"><span class="field-label">رقم الهوية: </span><span class="field-value">{{ patient_id }}</span></div>
+  {% endif %}
+</div>
+
+<div class="medical-block block-diagnosis">
+  <div class="medical-block-header">التشخيص</div>
+  <div class="medical-block-body">
+    {% if diagnosis %}{{ diagnosis|linebreaksbr }}{% else %}<span style="color:#b0b8c4">لا يوجد</span>{% endif %}
+  </div>
+</div>
+
+<div class="medical-block block-treatment">
+  <div class="medical-block-header">العلاج الموصوف</div>
+  <div class="medical-block-body">
+    {% if treatment %}{{ treatment|linebreaksbr }}{% else %}<span style="color:#b0b8c4">لا يوجد</span>{% endif %}
+  </div>
+</div>
+
+<div class="medical-block block-recommendations">
+  <div class="medical-block-header">التوصيات</div>
+  <div class="medical-block-body">
+    {% if recommendations %}{{ recommendations|linebreaksbr }}{% else %}<span style="color:#b0b8c4">لا يوجد</span>{% endif %}
+  </div>
+</div>
+
+<div class="medical-block block-notes">
+  <div class="medical-block-header">ملاحظات إضافية</div>
+  <div class="medical-block-body">
+    {% if notes %}{{ notes|linebreaksbr }}{% else %}<span style="color:#b0b8c4">لا يوجد</span>{% endif %}
+  </div>
+</div>
+
+<div class="footer-area">
+  <div class="signature-area">
+    <div class="sig-label">توقيع الطبيب</div>
+    <hr class="sig-line">
+    <div class="sig-name">{{ doctor_name }}</div>
+  </div>
+  <div class="footer-note">هذا المستند منشأ آلياً</div>
+</div>
+
+</div>
+</body>
+</html>
