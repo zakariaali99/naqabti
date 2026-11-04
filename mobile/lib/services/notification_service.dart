@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io' show Platform;
 import 'package:firebase_core/firebase_core.dart';
@@ -41,8 +42,9 @@ class NotificationService extends GetxService {
     // Initialize listeners
     _setupListeners();
     
-    // Initialize FCM
-    await _initializeFCM();
+    // FCM registration needs the network (and on iOS the APNs token), so it
+    // runs in the background instead of holding the app's first frame.
+    unawaited(_initializeFCM());
 
     // Fetch initial unread count
     fetchUnreadCount();

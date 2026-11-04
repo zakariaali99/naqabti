@@ -30,9 +30,8 @@ class AuthService extends GetxService {
     _authClient = AuthApiClient(dioClient.dio);
     _userClient = UserApiClient(dioClient.dio);
 
-    // Load saved user data
-    await _loadUser();
-
+    // The splash page restores the session (tryRestoreSession); doing it
+    // here too held the first frame on network calls.
     return this;
   }
 
@@ -43,26 +42,6 @@ class AuthService extends GetxService {
       currentUser.value = user;
     } catch (e) {
       rethrow;
-    }
-  }
-
-  /// Load user from storage
-  Future<void> _loadUser() async {
-    final accessToken = await getAccessToken();
-    if (accessToken != null) {
-      try {
-        final user = await _userClient.getCurrentUser();
-        currentUser.value = user;
-        isAuthenticated.value = true;
-      } catch (e) {
-        // Token might be expired, try to refresh
-        final refreshToken = await getRefreshToken();
-        if (refreshToken != null) {
-          await refreshAccessToken(refreshToken);
-        } else {
-          await logout();
-        }
-      }
     }
   }
 

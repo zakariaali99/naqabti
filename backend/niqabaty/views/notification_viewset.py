@@ -13,6 +13,15 @@ from niqabaty.utils.notifications import send_notification
 import niqabaty.utils.firebase as firebase
 from niqabaty.models import User
 
+def visible_to(user):
+    """Notifications a member sees: their own, plus broadcasts sent since
+    their account was created (not the whole history before they joined)."""
+    return (
+        Q(user=user, send_to_all_devices=False)
+        | Q(send_to_all_devices=True, created_at__gte=user.date_joined)
+    )
+
+
 class NotificationViewSet(viewsets.ModelViewSet):
     queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
@@ -28,7 +37,7 @@ class NotificationViewSet(viewsets.ModelViewSet):
         """Filter notifications for the current user, or all if superuser."""
         queryset = Notification.objects.all()
         if not self.request.user.is_superuser:
-            queryset = queryset.filter(Q(user=self.request.user) | Q(send_to_all_devices=True))
+            queryset = queryset.filter(visible_to(self.request.user))
         
         # Filter by source: system vs manual
         source = self.request.query_params.get('source')
@@ -145,27 +154,23 @@ class NotificationViewSet(viewsets.ModelViewSet):
         """
         Mark all unread notifications for the current user as read.
         """
-        unread_notifications = Notification.objects.filter(
-            user=request.user,
-            is_read=False
+        # Broadcasts are read per member through SeenNotification, so they
+        # need a record too, not only the member's own notifications.
+        notification_ids = list(
+            Notification.objects.filter(visible_to(request.user))
+            .exclude(seen_by__user=request.user)
+            .values_list('id', flat=True)
         )
-        
-        # Collect IDs before update (queryset re-evaluates after update)
-        notification_ids = list(unread_notifications.values_list('id', flat=True))
         count = len(notification_ids)
-        
-        # Update all unread notifications
-        unread_notifications.update(
+
+        Notification.objects.filter(user=request.user, is_read=False).update(
             is_read=True,
             read_at=timezone.now()
         )
-        
-        # Create SeenNotification records for all of them using stored IDs
-        for nid in notification_ids:
-            SeenNotification.objects.get_or_create(
-                user=request.user,
-                notification_id=nid
-            )
+        SeenNotification.objects.bulk_create(
+            [SeenNotification(user=request.user, notification_id=nid) for nid in notification_ids],
+            ignore_conflicts=True,
+        )
         
         return Response(
             {
@@ -192,7 +197,7 @@ class NotificationViewSet(viewsets.ModelViewSet):
         # 2. Broadcast to all devices (send_to_all_devices=True)
         # And exclude those that have been seen
         unread_count = Notification.objects.filter(
-            Q(user=request.user) | Q(send_to_all_devices=True)
+            visible_to(request.user)
         ).exclude(
             id__in=seen_notification_ids
         ).count()
