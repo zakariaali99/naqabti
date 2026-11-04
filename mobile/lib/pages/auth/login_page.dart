@@ -10,7 +10,6 @@ import '../../services/settings_service.dart';
 import '../../utils/profile_completion.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import '../../utils/app_snackbar.dart';
-import '../../utils/phone_utils.dart';
 import '../../widgets/language_toggle_button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -154,9 +153,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             );
           } else {
-            if (isPhoneWithoutCountryCode(_usernameController.text)) {
-              errorMessage = '$errorMessage\n${l10n.phoneLoginHint}';
-            }
             AppSnackbar.error(
               l10n.loginFailed,
               errorMessage,

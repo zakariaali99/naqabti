@@ -76,7 +76,7 @@
   "resendEmail": "إعادة إرسال البريد الإلكتروني",
   "welcome": "مرحباً",
   "loginFailed": "فشل تسجيل الدخول",
-  "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+  "invalidCredentials": "البريد أو رقم الهاتف أو اسم المستخدم أو كلمة المرور غير صحيحة",
   "home": "الرئيسية",
   "payments": "المدفوعات",
   "certifications": "الشهادات",
@@ -980,6 +980,5 @@
   "membershipRenewalRequested": "تم إرسال طلب التجديد",
   "membershipRenewalFailed": "تعذّر إرسال طلب التجديد. يرجى المحاولة مرة أخرى.",
   "notificationNotFound": "الإشعار غير موجود",
-  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على",
-  "phoneLoginHint": "إذا كنت تدخل برقم الهاتف، فاكتبه مع رمز الدولة، مثل ‎+218912345678."
+  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على"
 }
