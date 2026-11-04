@@ -6,6 +6,7 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../models/medical_report.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/app_snackbar.dart';
 
 class MedicalReportFormPage extends StatefulWidget {
   final MedicalReport? report;
@@ -91,18 +92,14 @@ class _MedicalReportFormPageState extends State<MedicalReportFormPage> {
         );
       }
       if (mounted) Get.back();
-      Get.snackbar(
+      AppSnackbar.success(
         l10n.success,
         l10n.dataSavedSuccessfully,
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
       );
     } catch (e) {
-      Get.snackbar(
+      AppSnackbar.error(
         l10n.error,
         e.toString(),
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
       );
     } finally {
       setState(() => _isSaving = false);

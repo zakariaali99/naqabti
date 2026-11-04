@@ -2845,6 +2845,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'By creating an account you agree to the'**
   String get byRegisteringYouAgreeTo;
+
+  /// No description provided for @phoneLoginHint.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are signing in with your phone number, write it with the country code, for example +218912345678.'**
+  String get phoneLoginHint;
 }
 
 class _AppLocalizationsDelegate

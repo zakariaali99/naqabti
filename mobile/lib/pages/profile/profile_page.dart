@@ -5,6 +5,7 @@ import '../../models/user.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 import '../../utils/profile_completion.dart';
 import 'edit_profile_page.dart';
+import '../../utils/app_snackbar.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -503,21 +504,15 @@ class _ProfilePageState extends State<ProfilePage> {
     if (confirm == true) {
       try {
         await _authService.deleteAccount();
-        Get.snackbar(
+        AppSnackbar.success(
           l10n.deleteAccount,
           l10n.deleteAccountSuccess,
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: colorScheme.errorContainer,
-          colorText: colorScheme.onErrorContainer,
         );
       } catch (e) {
         debugPrint('Delete account failed: $e');
-        Get.snackbar(
+        AppSnackbar.error(
           l10n.deleteAccount,
           l10n.deleteAccountFailed,
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: colorScheme.errorContainer,
-          colorText: colorScheme.onErrorContainer,
         );
       }
     }

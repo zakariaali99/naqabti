@@ -115,7 +115,8 @@ class AuthRegistrationUniquenessTests(TestCase):
         response = self.client.post("/api/auth/register/", payload, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        user = User.objects.get(phone_number="0923333333")
+        # Stored in the international format.
+        user = User.objects.get(phone_number="+218923333333")
         self.assertIsNone(user.email)
 
     def test_register_phone_only_twice_succeeds(self):

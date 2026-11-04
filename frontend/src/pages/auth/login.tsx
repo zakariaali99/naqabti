@@ -11,6 +11,7 @@ import { Logo } from "@/components/icons";
 import { useLanguageStore } from "@/stores/languageStore";
 import { useUserStore } from "@/stores/userStore";
 import AuthLayout from "@/layouts/auth";
+import { isPhoneWithoutCountryCode } from "@/utils/phone";
 
 export default function LoginPage() {
   const { t } = useTranslation();
@@ -152,6 +153,11 @@ export default function LoginPage() {
                         ),
                       })}
                     </p>
+                    {isPhoneWithoutCountryCode(formData.username) && (
+                      <p className="mt-1 text-danger-600">
+                        {t("auth.phoneLoginHint")}
+                      </p>
+                    )}
                   </div>
                 </div>
               )}

@@ -15,6 +15,7 @@ from niqabaty.serializers.auth import (
 from niqabaty.serializers.user import UserSerializer
 from niqabaty.utils.email_utils import send_verification_email, is_verification_code_valid, send_password_reset_email
 from niqabaty.models import Device
+from niqabaty.utils.phone import phone_variants
 
 User = get_user_model()
 
@@ -56,8 +57,7 @@ class RegisterView(APIView):
         if email and User.objects.filter(email__iexact=email.strip()).exists():
             errors['email'] = ['Email already registered']
         if phone_number:
-            clean_phone = phone_number.strip()
-            if clean_phone and User.objects.filter(phone_number=clean_phone).exists():
+            if User.objects.filter(phone_number__in=phone_variants(phone_number)).exists():
                 errors['phone_number'] = ['Phone number already registered']
 
         if errors:

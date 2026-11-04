@@ -9,6 +9,9 @@ import '../../services/notification_service.dart';
 import '../../services/settings_service.dart';
 import '../../utils/profile_completion.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import '../../utils/app_snackbar.dart';
+import '../../utils/phone_utils.dart';
+import '../../widgets/language_toggle_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -80,14 +83,9 @@ class _LoginPageState extends State<LoginPage> {
 
           if (mounted) {
             final l10n = AppLocalizations.of(context)!;
-            Get.snackbar(
+            AppSnackbar.success(
               l10n.loginSuccessful,
-              'Welcome, ${user.fullName ?? user.username}!',
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.green.withValues(alpha: 0.8),
-              colorText: Colors.white,
-              duration: const Duration(seconds: 3),
-              icon: const Icon(Icons.check_circle, color: Colors.white),
+              '${l10n.welcome}, ${user.fullName ?? user.username}!',
             );
           }
 
@@ -107,7 +105,8 @@ class _LoginPageState extends State<LoginPage> {
         }
       } catch (e) {
         if (mounted) {
-          String errorMessage = 'Invalid username or password';
+          final l10n = AppLocalizations.of(context)!;
+          String errorMessage = l10n.invalidCredentials;
           bool isInactive = false;
 
           if (e is dio.DioException && e.response != null) {
@@ -136,14 +135,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
             );
           } else {
-            Get.snackbar(
-              'Login Failed',
+            if (isPhoneWithoutCountryCode(_usernameController.text)) {
+              errorMessage = '$errorMessage\n${l10n.phoneLoginHint}';
+            }
+            AppSnackbar.error(
+              l10n.loginFailed,
               errorMessage,
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.red.withValues(alpha: 0.8),
-              colorText: Colors.white,
-              duration: const Duration(seconds: 3),
-              icon: const Icon(Icons.error, color: Colors.white),
             );
           }
         }
@@ -166,6 +163,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         actions: [
+          const LanguageToggleButton(),
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
             onPressed: _toggleTheme,

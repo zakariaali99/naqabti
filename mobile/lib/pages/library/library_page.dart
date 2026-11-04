@@ -5,6 +5,7 @@ import '../../models/library_item.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../utils/external_links.dart';
+import '../../utils/app_snackbar.dart';
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({super.key});
@@ -79,7 +80,10 @@ class _LibraryPageState extends State<LibraryPage> with SingleTickerProviderStat
       final urlString = item.fileUrl ?? item.externalLink;
       if (urlString != null) {
         if (!await ExternalLinks.open(ExternalLinks.mediaUri(urlString))) {
-          Get.snackbar(l10n.error, l10n.couldNotOpenResource);
+          AppSnackbar.error(
+            l10n.error,
+            l10n.couldNotOpenResource,
+          );
         }
       }
     } catch (e) {

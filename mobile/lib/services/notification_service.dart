@@ -10,6 +10,7 @@ import 'api_service.dart';
 import 'auth_service.dart';
 import 'device_service.dart';
 import '../routes/app_routes.dart';
+import '../utils/app_snackbar.dart';
 
 class NotificationService extends GetxService {
   final _logger = Logger();
@@ -111,12 +112,10 @@ class NotificationService extends GetxService {
         );
 
         // Show a snackbar or dialog
-        Get.snackbar(
+        AppSnackbar.info(
           message.notification?.title ?? 'Notification',
           message.notification?.body ?? '',
-          snackPosition: SnackPosition.TOP,
-          backgroundColor: Get.theme.colorScheme.primaryContainer,
-          colorText: Get.theme.colorScheme.onPrimaryContainer,
+          position: SnackPosition.TOP,
         );
 
         // Show local notification as well to ensure it appears in system tray

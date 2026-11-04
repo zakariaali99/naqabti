@@ -7,6 +7,7 @@ from niqabaty.serializers.city import CitySerializer
 from niqabaty.serializers.institution import InstitutionSerializer
 from niqabaty.serializers.dynamic_field import UserDynamicFieldValueSerializer
 from niqabaty.serializers.academic_degree import AcademicDegreeSerializer
+from niqabaty.utils.phone import normalize_phone, phone_variants
 
 
 class NationalityField(serializers.Field):
@@ -169,9 +170,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     def validate_phone_number(self, value):
         if value:
-            clean_value = value.strip()
+            clean_value = normalize_phone(value)
             if clean_value:
-                query = User.objects.filter(phone_number=clean_value)
+                query = User.objects.filter(phone_number__in=phone_variants(value))
                 if self.instance:
                     query = query.exclude(id=self.instance.id)
                 if query.exists():
