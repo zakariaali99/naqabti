@@ -5,6 +5,7 @@ import '../../services/api_service.dart';
 import '../../services/auth_service.dart';
 import '../../models/doctors_membership.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
+import '../../widgets/general_app_bar.dart';
 
 class MembershipsPage extends StatefulWidget {
   const MembershipsPage({super.key});
@@ -65,8 +66,9 @@ class _MembershipsPageState extends State<MembershipsPage> {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.myMemberships),
+      appBar: GeneralAppBar(
+        title: l10n.myMemberships,
+        showBackButton: true,
       ),
       body: RefreshIndicator(
         onRefresh: _loadMemberships,

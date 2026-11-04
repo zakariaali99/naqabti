@@ -95,7 +95,7 @@ class _LibraryPageState extends State<LibraryPage> with SingleTickerProviderStat
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.electronicLibrary,
-        showDrawerButton: false,
+        showBackButton: true,
       ),
       body: Column(
         children: [

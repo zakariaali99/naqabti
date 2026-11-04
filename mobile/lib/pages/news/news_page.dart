@@ -20,6 +20,7 @@ class _NewsPageState extends State<NewsPage> {
   String? _errorMessage;
   int _currentPage = 1;
   bool _hasMore = true;
+  bool _requestHandled = false;
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -64,6 +65,7 @@ class _NewsPageState extends State<NewsPage> {
         _currentPage = 1;
         _isLoading = false;
       });
+      _openRequestedPost();
     } catch (e) {
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
@@ -416,6 +418,24 @@ class _NewsPageState extends State<NewsPage> {
         ),
       ),
     );
+  }
+
+  /// Opens the post a notification pointed at (route argument `id`) once
+  /// the first page has loaded. Older items stay reachable from the list.
+  void _openRequestedPost() {
+    if (_requestHandled) return;
+    _requestHandled = true;
+    final args = Get.arguments;
+    final id = args is Map ? args['id'] : null;
+    if (id == null) return;
+    for (final item in _posts) {
+      if (item.id == id) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _openPost(item);
+        });
+        return;
+      }
+    }
   }
 
   void _openPost(Post post) {

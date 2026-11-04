@@ -17,6 +17,7 @@ import 'widgets/profile_completion_card.dart';
 import 'widgets/profile_summary_card.dart';
 import 'widgets/quick_actions_grid.dart';
 import 'widgets/welcome_section.dart';
+import 'home_tab_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,6 +33,8 @@ class _HomePageState extends State<HomePage>
   final NotificationService _notificationService =
       Get.find<NotificationService>();
   late TabController _tabController;
+  final BottomBarController _bottomBarController = BottomBarController();
+  final HomeTabController _homeTabs = Get.put(HomeTabController());
 
   User? _currentUser;
   DoctorsMembership? _membership;
@@ -44,8 +47,11 @@ class _HomePageState extends State<HomePage>
     _tabController = TabController(length: 2, vsync: this);
     _tabController.index = 0; // Start at Home
     _tabController.addListener(() {
+      // The bar may be hidden from scrolling the other tab; bring it back.
+      _bottomBarController.show();
       setState(() {});
     });
+    _homeTabs.attach(_tabController);
     _loadData();
     _requestNotificationPermission();
     // Fetch notifications count on home load
@@ -58,6 +64,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   void dispose() {
+    _homeTabs.detach(_tabController);
     _tabController.dispose();
     super.dispose();
   }
@@ -117,24 +124,22 @@ class _HomePageState extends State<HomePage>
       child: Scaffold(
         appBar: GeneralAppBar(
           title: _getAppBarTitle(l10n),
-          showDrawerButton: true,
+          // The menu lives on the Home tab; Profile gets a way back to Home.
+          showDrawerButton: _tabController.index == 0,
+          showBackButton: _tabController.index != 0,
+          onBackPressed: () => _tabController.animateTo(0),
           actions: _buildAppBarActions(context),
         ),
         drawer: const AppDrawer(),
         body: BottomBar(
+          controller: _bottomBarController,
           showIcon: true,
           icon:
               (width, height) => Center(
                 child: IconButton(
                   padding: EdgeInsets.zero,
-                  onPressed: () {
-                    final primary = PrimaryScrollController.of(context);
-                    primary.animateTo(
-                      0,
-                      duration: const Duration(milliseconds: 400),
-                      curve: Curves.easeOut,
-                    );
-                  },
+                  // Scrolls whichever tab was scrolled last.
+                  onPressed: _bottomBarController.scrollToStart,
                   icon: Icon(
                     Icons.arrow_upward_rounded,
                     color: Colors.white,
@@ -155,9 +160,13 @@ class _HomePageState extends State<HomePage>
             slideStart: Offset(0, 2),
             slideEnd: Offset.zero,
           ),
+          // showAtStart: the iOS bounce at the top reads as a downward
+          // scroll and used to hide the bar, leaving the arrow stuck there.
           scrollBehavior: const BottomBarScrollBehavior(
             hideOnScroll: true,
             reverse: false,
+            deltaThreshold: 16,
+            showAtStart: true,
           ),
           theme: BottomBarThemeData(
             barDecoration: barDecoration,
@@ -215,9 +224,14 @@ class _HomePageState extends State<HomePage>
           width: 24,
           height: 24,
           child: Center(
+            // Shows the language the button switches to.
             child: Text(
-              currentLocale == 'ar' ? '🇸🇦' : '🇺🇸',
-              style: const TextStyle(fontSize: 20, height: 1.0),
+              currentLocale == 'ar' ? 'EN' : 'ع',
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                height: 1.0,
+              ),
             ),
           ),
         ),

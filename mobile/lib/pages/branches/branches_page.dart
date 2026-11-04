@@ -4,7 +4,6 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../models/branch.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
-import '../../widgets/app_drawer.dart';
 import '../../utils/external_links.dart';
 
 class BranchesPage extends StatefulWidget {
@@ -57,9 +56,8 @@ class _BranchesPageState extends State<BranchesPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.branches,
-        showDrawerButton: true,
+        showBackButton: true,
       ),
-      drawer: const AppDrawer(),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _errorMessage != null

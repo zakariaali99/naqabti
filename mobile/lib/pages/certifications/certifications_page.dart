@@ -6,7 +6,6 @@ import '../../models/certification.dart';
 import '../../services/api_service.dart';
 import '../../services/auth_service.dart';
 import '../../widgets/general_app_bar.dart';
-import '../../widgets/app_drawer.dart';
 import '../../utils/external_links.dart';
 
 class CertificationsPage extends StatefulWidget {
@@ -69,9 +68,8 @@ class _CertificationsPageState extends State<CertificationsPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.certifications,
-        showDrawerButton: true,
+        showBackButton: true,
       ),
-      drawer: const AppDrawer(),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _errorMessage != null

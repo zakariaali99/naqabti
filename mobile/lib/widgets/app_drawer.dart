@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 import '../services/auth_service.dart';
-import '../pages/settings/settings_page.dart';
+import '../pages/home/home_tab_controller.dart';
+import '../routes/app_routes.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -376,54 +377,45 @@ class AppDrawer extends StatelessWidget {
     }
   }
 
+  static const Map<int, String> _destinations = {
+    1: Routes.payments,
+    2: Routes.certifications,
+    3: Routes.memberships,
+    4: Routes.profileEdit,
+    5: Routes.settings,
+    7: Routes.complaints,
+    8: Routes.library,
+    9: Routes.medicalReports,
+    10: Routes.news,
+    11: Routes.events,
+    12: Routes.branches,
+    13: Routes.announcements,
+    14: Routes.courses,
+  };
+
   void _onDestinationSelected(BuildContext context, int index) {
     Navigator.pop(context); // Close drawer first
-    switch (index) {
-      case 0:
-        if (Get.currentRoute != '/home') Get.offAllNamed('/home');
-        break;
-      case 1:
-        if (Get.currentRoute != '/payments') Get.toNamed('/payments');
-        break;
-      case 2:
-        if (Get.currentRoute != '/certifications') Get.toNamed('/certifications');
-        break;
-      case 3:
-        if (Get.currentRoute != '/memberships') Get.toNamed('/memberships');
-        break;
-      case 4:
-        if (Get.currentRoute != '/profile/edit') Get.toNamed('/profile/edit');
-        break;
-      case 5:
-        if (Get.currentRoute != '/settings') Get.to(() => const SettingsPage());
-        break;
-      case 6:
-        _showAboutDialog(context);
-        break;
-      case 7:
-        Get.toNamed('/complaints');
-        break;
-      case 8:
-        Get.toNamed('/library');
-        break;
-      case 9:
-        Get.toNamed('/medical-reports');
-        break;
-      case 10:
-        Get.toNamed('/news');
-        break;
-      case 11:
-        Get.toNamed('/events');
-        break;
-      case 12:
-        Get.toNamed('/branches');
-        break;
-      case 13:
-        Get.toNamed('/announcements');
-        break;
-      case 14:
-        Get.toNamed('/courses');
-        break;
+    if (index == 0) {
+      _goHome();
+    } else if (index == 6) {
+      _showAboutDialog(context);
+    } else {
+      final route = _destinations[index]!;
+      if (Get.currentRoute == route) return;
+      // Open every page directly above Home so the stack never grows and
+      // back always returns to Home.
+      Get.offNamedUntil(route, (r) => r.settings.name == Routes.home);
+    }
+  }
+
+  /// Returns to the Home tab, also when Home is already open on Profile.
+  void _goHome() {
+    if (Get.currentRoute != Routes.home) {
+      Get.until((r) => r.settings.name == Routes.home || r.isFirst);
+      if (Get.currentRoute != Routes.home) Get.offAllNamed(Routes.home);
+    }
+    if (Get.isRegistered<HomeTabController>()) {
+      Get.find<HomeTabController>().showHome();
     }
   }
 
