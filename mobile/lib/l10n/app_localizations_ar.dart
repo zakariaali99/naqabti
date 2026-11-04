@@ -248,7 +248,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginFailed => 'فشل تسجيل الدخول';
 
   @override
-  String get invalidCredentials => 'اسم المستخدم أو كلمة المرور غير صحيحة';
+  String get invalidCredentials =>
+      'البريد أو رقم الهاتف أو اسم المستخدم أو كلمة المرور غير صحيحة';
 
   @override
   String get home => 'الرئيسية';
@@ -1449,8 +1450,4 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get byRegisteringYouAgreeTo => 'بإنشاء حساب فإنك توافق على';
-
-  @override
-  String get phoneLoginHint =>
-      'إذا كنت تدخل برقم الهاتف، فاكتبه مع رمز الدولة، مثل ‎+218912345678.';
 }

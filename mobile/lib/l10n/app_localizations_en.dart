@@ -251,7 +251,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginFailed => 'Login Failed';
 
   @override
-  String get invalidCredentials => 'Invalid username or password';
+  String get invalidCredentials =>
+      'Incorrect email, phone number, username or password';
 
   @override
   String get home => 'Home';
@@ -1474,8 +1475,4 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get byRegisteringYouAgreeTo =>
       'By creating an account you agree to the';
-
-  @override
-  String get phoneLoginHint =>
-      'If you are signing in with your phone number, write it with the country code, for example +218912345678.';
 }
