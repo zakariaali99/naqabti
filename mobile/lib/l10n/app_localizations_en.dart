@@ -1475,4 +1475,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get byRegisteringYouAgreeTo =>
       'By creating an account you agree to the';
+
+  @override
+  String get passwordTooCommon =>
+      'This password is too common. Choose a harder one.';
+
+  @override
+  String get passwordTooSimilar =>
+      'The password is too close to your personal details.';
 }

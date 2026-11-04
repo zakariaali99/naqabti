@@ -55,8 +55,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
       );
     } catch (e) {
       if (!mounted) return;
+      final passwordError = passwordServerError(e, l10n);
       final message = apiErrorMessage(e);
-      if (message == 'Current password is incorrect') {
+      if (passwordError != null) {
+        setState(() => _newPasswordServerError = passwordError);
+      } else if (message == 'Current password is incorrect') {
         setState(() => _currentPasswordError = l10n.currentPasswordIncorrect);
       } else if (message != null) {
         setState(() => _newPasswordServerError = message);

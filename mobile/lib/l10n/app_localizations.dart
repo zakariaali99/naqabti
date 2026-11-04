@@ -2869,6 +2869,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'By creating an account you agree to the'**
   String get byRegisteringYouAgreeTo;
+
+  /// No description provided for @passwordTooCommon.
+  ///
+  /// In en, this message translates to:
+  /// **'This password is too common. Choose a harder one.'**
+  String get passwordTooCommon;
+
+  /// No description provided for @passwordTooSimilar.
+  ///
+  /// In en, this message translates to:
+  /// **'The password is too close to your personal details.'**
+  String get passwordTooSimilar;
 }
 
 class _AppLocalizationsDelegate

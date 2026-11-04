@@ -9,6 +9,7 @@ import { FiEye, FiEyeOff } from 'react-icons/fi';
 import AuthLayout from '@/layouts/auth';
 import AuthAPI from '@/api/auth';
 import { useUserStore } from '@/stores/userStore';
+import { passwordErrorText } from '@/utils/passwordErrors';
 
 
 type Step = 'request' | 'verify' | 'reset';
@@ -208,7 +209,7 @@ export default function ResetPasswordPage() {
       navigate("/auth/login?reset=success");
     } catch (err: any) {
       setError(
-        err.response?.data?.error ||
+        passwordErrorText(err.response?.data, t) ||
           t("auth.resetFailed", "Failed to reset password"),
       );
     } finally {
@@ -231,7 +232,7 @@ export default function ResetPasswordPage() {
       </div>
 
       {error && (
-        <div className="p-3 text-sm text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
+        <div className="p-3 text-sm text-start whitespace-pre-line text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
           {error}
         </div>
       )}
@@ -292,7 +293,7 @@ export default function ResetPasswordPage() {
       </div>
 
       {error && (
-        <div className="p-3 text-sm text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
+        <div className="p-3 text-sm text-start whitespace-pre-line text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
           {error}
         </div>
       )}
@@ -362,7 +363,7 @@ export default function ResetPasswordPage() {
       </div>
 
       {error && (
-        <div className="p-3 text-sm text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
+        <div className="p-3 text-sm text-start whitespace-pre-line text-danger bg-danger-50 border border-danger-200 rounded-lg mb-4">
           {error}
         </div>
       )}

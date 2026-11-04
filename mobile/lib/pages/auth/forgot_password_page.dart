@@ -105,8 +105,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       );
     } catch (e) {
       if (!mounted) return;
+      final passwordError = passwordServerError(e, l10n);
       final message = apiErrorMessage(e);
-      if (message != null && message.toLowerCase().contains('code')) {
+      if (passwordError != null) {
+        setState(() => _passwordServerError = passwordError);
+      } else if (message != null && message.toLowerCase().contains('code')) {
         setState(() => _codeError = l10n.invalidOrExpiredCode);
       } else if (message != null) {
         setState(() => _passwordServerError = message);

@@ -208,4 +208,10 @@ export default {
   resetFailed: "Failed to reset password",
   backToLogin: "Back to Login",
   invalidRequest: "Invalid request",
+  passwordErrors: {
+    password_too_common: "This password is too common. Choose a harder one.",
+    password_entirely_numeric: "The password can't be only numbers.",
+    password_too_short: "The password is too short. Use at least 8 characters.",
+    password_too_similar: "The password is too close to your personal details.",
+  },
 } as const;

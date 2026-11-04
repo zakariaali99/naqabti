@@ -1450,4 +1450,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get byRegisteringYouAgreeTo => 'بإنشاء حساب فإنك توافق على';
+
+  @override
+  String get passwordTooCommon => 'كلمة المرور هذه شائعة جداً، اختر كلمة أصعب.';
+
+  @override
+  String get passwordTooSimilar => 'كلمة المرور قريبة جداً من بياناتك الشخصية.';
 }

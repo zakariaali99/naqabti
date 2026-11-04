@@ -1863,5 +1863,7 @@
   "byRegisteringYouAgreeTo": "By creating an account you agree to the",
   "@byRegisteringYouAgreeTo": {
     "description": "Text before the privacy policy link on registration"
-  }
+  },
+  "passwordTooCommon": "This password is too common. Choose a harder one.",
+  "passwordTooSimilar": "The password is too close to your personal details."
 }
