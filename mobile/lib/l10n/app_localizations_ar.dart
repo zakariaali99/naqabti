@@ -1211,6 +1211,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmDeleteNotification => 'هل أنت متأكد من حذف هذا الإشعار؟';
 
   @override
+  String get notificationDeleted => 'تم حذف الإشعار';
+
+  @override
+  String get failedToDeleteNotification => 'تعذّر حذف الإشعار. حاول مرة أخرى.';
+
+  @override
   String get branches => 'النقابات والفروع';
 
   @override

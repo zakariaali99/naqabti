@@ -814,6 +814,8 @@
     "description": "Delete button text"
   },
   "confirmDeleteNotification": "هل أنت متأكد من حذف هذا الإشعار؟",
+  "notificationDeleted": "تم حذف الإشعار",
+  "failedToDeleteNotification": "تعذّر حذف الإشعار. حاول مرة أخرى.",
   "@confirmDeleteNotification": {
     "description": "Confirmation message for deleting a notification"
   },

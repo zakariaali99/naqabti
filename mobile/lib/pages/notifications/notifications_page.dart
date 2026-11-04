@@ -5,6 +5,7 @@ import '../../services/api_service.dart';
 import '../../models/notification.dart';
 import '../../services/notification_service.dart';
 import '../../routes/app_routes.dart';
+import '../../utils/app_snackbar.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
 
 class NotificationsPage extends StatefulWidget {
@@ -161,12 +162,20 @@ class _NotificationsPageState extends State<NotificationsPage> {
             ),
             child: const Icon(Icons.delete_outline, color: Colors.white),
           ),
-          onDismissed: (direction) {
-            final id = notification.id;
+          onDismissed: (direction) async {
+            final l10n = AppLocalizations.of(context)!;
             setState(() {
               _notifications.removeAt(index);
             });
-            Get.find<NotificationService>().deleteNotification(id);
+            try {
+              await Get.find<NotificationService>().deleteNotification(notification.id);
+            } catch (_) {
+              if (!mounted) return;
+              setState(() {
+                _notifications.insert(index.clamp(0, _notifications.length), notification);
+              });
+              AppSnackbar.error(l10n.error, l10n.failedToDeleteNotification);
+            }
           },
           confirmDismiss: (direction) async {
             final l10n = AppLocalizations.of(context)!;

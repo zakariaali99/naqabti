@@ -1235,6 +1235,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Are you sure you want to delete this notification?';
 
   @override
+  String get notificationDeleted => 'Notification deleted';
+
+  @override
+  String get failedToDeleteNotification =>
+      'Couldn\'t delete the notification. Try again.';
+
+  @override
   String get branches => 'Syndicates & Branches';
 
   @override

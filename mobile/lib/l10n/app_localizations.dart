@@ -2420,6 +2420,18 @@ abstract class AppLocalizations {
   /// **'Are you sure you want to delete this notification?'**
   String get confirmDeleteNotification;
 
+  /// Shown after a notification is deleted
+  ///
+  /// In en, this message translates to:
+  /// **'Notification deleted'**
+  String get notificationDeleted;
+
+  /// Shown when deleting a notification fails
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the notification. Try again.'**
+  String get failedToDeleteNotification;
+
   /// Title for branches and syndicates page
   ///
   /// In en, this message translates to:

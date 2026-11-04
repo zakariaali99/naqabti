@@ -1543,6 +1543,14 @@
   "@confirmDeleteNotification": {
     "description": "Confirmation message for deleting a notification"
   },
+  "notificationDeleted": "Notification deleted",
+  "@notificationDeleted": {
+    "description": "Shown after a notification is deleted"
+  },
+  "failedToDeleteNotification": "Couldn't delete the notification. Try again.",
+  "@failedToDeleteNotification": {
+    "description": "Shown when deleting a notification fails"
+  },
   "branches": "Syndicates & Branches",
   "@branches": {
     "description": "Title for branches and syndicates page"

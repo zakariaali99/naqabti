@@ -267,12 +267,12 @@ class _NotificationDetailPageState extends State<NotificationDetailPage> {
         Get.back();
         AppSnackbar.success(
           l10n.success,
-          'Notification deleted',
+          l10n.notificationDeleted,
         );
       } catch (e) {
         AppSnackbar.error(
           l10n.error,
-          'Failed to delete notification',
+          l10n.failedToDeleteNotification,
         );
       }
     }
