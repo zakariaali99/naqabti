@@ -32,6 +32,7 @@ import {
   FiX, FiSend,
   FiFilter,
   FiRefreshCw,
+  FiRotateCcw,
 } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import toast, { Toaster } from "react-hot-toast";
@@ -51,6 +52,36 @@ import {
 
 const getCompletionColor = (percentage: number) =>
   percentage >= 80 ? "success" : percentage >= 50 ? "warning" : "danger";
+
+/** Status-filter value that lists accounts waiting for staff to erase them. */
+const DELETION_FILTER = "deletion_requested";
+
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+const daysUntilDeletion = (doctor: UserEntity) =>
+  doctor.deletion_due_at
+    ? Math.ceil((new Date(doctor.deletion_due_at).getTime() - Date.now()) / MS_PER_DAY)
+    : 0;
+
+const isDeletionDue = (doctor: UserEntity) => daysUntilDeletion(doctor) <= 0;
+
+const DeletionChip = ({ doctor }: { doctor: UserEntity }) => {
+  const { t } = useTranslation();
+  const due = isDeletionDue(doctor);
+
+  return (
+    <Chip
+      className="border-none gap-1 rounded-xl"
+      color={due ? "danger" : "warning"}
+      size="md"
+      variant="flat"
+    >
+      {due
+        ? t("doctors.deletion.due")
+        : t("doctors.deletion.daysLeft", { count: daysUntilDeletion(doctor) })}
+    </Chip>
+  );
+};
 
 const DoctorsPage = () => {
   const { t } = useTranslation();
@@ -121,7 +152,13 @@ const DoctorsPage = () => {
         specialty: spec || undefined,
         graduation_year: grad || undefined,
         ordering: ord || undefined,
-        approval_status: approvalStatus || undefined,
+        // "deletion_requested" is a pseudo status: accounts awaiting erasure
+        approval_status:
+          approvalStatus && approvalStatus !== DELETION_FILTER
+            ? approvalStatus
+            : undefined,
+        deletion_requested:
+          approvalStatus === DELETION_FILTER ? true : undefined,
         page_size: 10,
       };
 
@@ -183,6 +220,17 @@ const DoctorsPage = () => {
       setSelectedItem(null);
     } catch (error) {
       console.error("Error deleting doctor:", error);
+    }
+  };
+
+  const handleCancelDeletion = async (doctor: UserEntity) => {
+    try {
+      await usersApi.cancelDeletion(doctor.id);
+      toast.success(t("doctors.deletion.cancelSuccess"));
+      fetchDoctors(currentPage, searchTerm);
+    } catch (error) {
+      console.error("Error cancelling deletion request:", error);
+      toast.error(t("doctors.deletion.cancelError"));
     }
   };
 
@@ -322,6 +370,7 @@ const DoctorsPage = () => {
                 <SelectItem key="pending">{t("doctors.status.pending")}</SelectItem>
                 <SelectItem key="approved">{t("doctors.status.approved")}</SelectItem>
                 <SelectItem key="rejected">{t("doctors.status.rejected")}</SelectItem>
+                <SelectItem key={DELETION_FILTER}>{t("doctors.deletion.filter")}</SelectItem>
               </Select>
               <div className="flex gap-2">
                 <Button
@@ -559,6 +608,9 @@ const DoctorsPage = () => {
                           {completion.percentage}%
                         </Chip>
                       </Tooltip>
+                      {doctor.deletion_requested_at && (
+                        <DeletionChip doctor={doctor} />
+                      )}
                       {doctor.approval_status && doctor.approval_status !== "approved" && (
                         <Chip
                           className="capitalize border-none gap-1 rounded-xl"
@@ -689,6 +741,16 @@ const DoctorsPage = () => {
                             </DropdownItem>
                           ) : null}
 
+                          {doctor.deletion_requested_at ? (
+                            <DropdownItem
+                              key="cancel-deletion"
+                              startContent={<FiRotateCcw />}
+                              onPress={() => handleCancelDeletion(doctor)}
+                            >
+                              {t("doctors.deletion.cancel")}
+                            </DropdownItem>
+                          ) : null}
+
                           <DropdownItem
                             key="delete"
                             className="text-danger"
@@ -696,7 +758,9 @@ const DoctorsPage = () => {
                             startContent={<FiTrash2 />}
                             onPress={() => openDeleteModal(doctor)}
                           >
-                            {t("common.delete")}
+                            {doctor.deletion_requested_at
+                              ? t("doctors.deletion.finalDelete")
+                              : t("common.delete")}
                           </DropdownItem>
                         </DropdownMenu>
                       </Dropdown>
@@ -743,6 +807,15 @@ const DoctorsPage = () => {
                 </strong>
                 ? {t("common.deleteWarning")}
               </p>
+              <p className="text-sm text-default-500">
+                {t("doctors.deletion.finalDeleteWarning")}
+              </p>
+              {selectedItem?.deletion_requested_at &&
+                !isDeletionDue(selectedItem) && (
+                  <p className="text-sm text-warning-600">
+                    {t("doctors.deletion.earlyWarning")}
+                  </p>
+                )}
             </ModalBody>
             <ModalFooter>
               <Button variant="light" onPress={onDeleteClose}>

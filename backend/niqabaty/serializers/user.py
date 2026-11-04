@@ -7,6 +7,7 @@ from niqabaty.serializers.city import CitySerializer
 from niqabaty.serializers.institution import InstitutionSerializer
 from niqabaty.serializers.dynamic_field import UserDynamicFieldValueSerializer
 from niqabaty.serializers.academic_degree import AcademicDegreeSerializer
+from niqabaty.utils.phone import normalize_phone, phone_variants
 
 
 class NationalityField(serializers.Field):
@@ -91,6 +92,7 @@ class UserSerializer(serializers.ModelSerializer):
     nationality = NationalityField(required=False, allow_null=True)
     current_degree = AcademicDegreeField(required=False, allow_null=True)
     current_degree_detail = AcademicDegreeSerializer(source='current_degree', read_only=True)
+    deletion_due_at = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = User
@@ -100,6 +102,8 @@ class UserSerializer(serializers.ModelSerializer):
             "email",
             "email_verified",
             "approval_status",
+            "deletion_requested_at",
+            "deletion_due_at",
             "full_name",
             # Arabic name fields
             "first_name_field",
@@ -151,7 +155,7 @@ class UserSerializer(serializers.ModelSerializer):
             "gender",
             "public_profile_fields",
         ]
-        read_only_fields = ['email_verified', 'approval_status', 'id', 'date_joined', 'last_login', 'group_permissions', 'group_names', 'full_doctor_number', 'full_name_from_parts', 'city_detail']
+        read_only_fields = ['email_verified', 'approval_status', 'deletion_requested_at', 'deletion_due_at', 'id', 'date_joined', 'last_login', 'group_permissions', 'group_names', 'full_doctor_number', 'full_name_from_parts', 'city_detail']
 
     def validate_email(self, value):
         if value:
@@ -169,9 +173,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     def validate_phone_number(self, value):
         if value:
-            clean_value = value.strip()
+            clean_value = normalize_phone(value)
             if clean_value:
-                query = User.objects.filter(phone_number=clean_value)
+                query = User.objects.filter(phone_number__in=phone_variants(value))
                 if self.instance:
                     query = query.exclude(id=self.instance.id)
                 if query.exists():

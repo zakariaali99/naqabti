@@ -26,6 +26,7 @@ def _validate_passport_file(value):
             raise ValidationError('Only JPEG, PNG, WebP images and PDF files are accepted.')
     return value
 from niqabaty.models import Nationality, AcademicDegree, Notification
+from niqabaty.utils.phone import normalize_phone, phone_variants
 
 User = get_user_model()
 
@@ -42,13 +43,16 @@ class LoginSerializer(Serializer):
         
         if not username or not password:
             raise ValidationError('Provide username and password')
-            
+
+        # Phone numbers are matched in any usual format (09..., +218...).
+        phones = phone_variants(username)
+        
         # Try to resolve user by username, email, or phone number
         try:
             user_obj = User.objects.get(
                 Q(username__iexact=username) |
                 Q(email__iexact=username) |
-                Q(phone_number=username)
+                Q(phone_number__in=phones)
             )
         except User.DoesNotExist:
             raise ValidationError('Invalid credentials')
@@ -57,7 +61,7 @@ class LoginSerializer(Serializer):
             user_obj = (
                 User.objects.filter(username__iexact=username).first() or
                 User.objects.filter(email__iexact=username).first() or
-                User.objects.filter(phone_number=username).first()
+                User.objects.filter(phone_number__in=phones).first()
             )
             if not user_obj:
                 raise ValidationError('Invalid credentials')
@@ -73,6 +77,14 @@ class LoginSerializer(Serializer):
 
         if not user:
              raise ValidationError('Invalid credentials')
+
+        if user.deletion_requested_at:
+            raise ValidationError({
+                'deletion_requested': [
+                    'This account is scheduled for deletion. Contact the '
+                    'syndicate within 30 days to cancel the request.'
+                ]
+            })
 
         # Logic for unverified email
         if not user.is_active and not user.email_verified:
@@ -132,8 +144,8 @@ class RegisterSerializer(Serializer):
 
     def validate_phone_number(self, value):
         if value:
-            clean_value = value.strip()
-            if clean_value and User.objects.filter(phone_number=clean_value).exists():
+            clean_value = normalize_phone(value)
+            if clean_value and User.objects.filter(phone_number__in=phone_variants(value)).exists():
                 raise ValidationError('Phone number already registered')
             return clean_value
         return value
@@ -301,8 +313,8 @@ class RegisterSerializer(Serializer):
         # Create welcome notification
         Notification.objects.create(
             user=user,
-            title="Welcome to Niqabaty",
-            message="Your account has been created successfully. Welcome aboard!",
+            title="مرحباً بك في نقابتي",
+            message="تم إنشاء حسابك بنجاح. أهلاً بك!",
             notification_type="success",
         )
 

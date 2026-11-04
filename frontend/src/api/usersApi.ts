@@ -35,6 +35,10 @@ class UsersApiClient extends BaseApiClient<
     return this.action(id, "toggle_active", {});
   }
 
+  async cancelDeletion(id: number) {
+    return this.action(id, "cancel_deletion", {});
+  }
+
   async verifyEmail(id: number) {
     return this.action(id, "verify_email", {});
   }

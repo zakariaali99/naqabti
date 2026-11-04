@@ -19,7 +19,7 @@ def generate_verification_code():
     return ''.join([str(random.randint(0, 9)) for _ in range(6)])
 
 
-def _build_html_message(title, user, code):
+def _build_html_message(title, user, code, expires_in='24 hours'):
     """Build an HTML email template for better deliverability."""
     return f'''
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -33,7 +33,7 @@ def _build_html_message(title, user, code):
     <div style="text-align: center; margin: 30px 0;">
       <span style="font-size: 32px; letter-spacing: 8px; font-weight: bold; color: #0066cc; background: white; padding: 15px 30px; border-radius: 8px; display: inline-block;">{code}</span>
     </div>
-    <p style="color: #888; font-size: 14px;">This code expires in 24 hours.</p>
+    <p style="color: #888; font-size: 14px;">This code expires in {expires_in}.</p>
     <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
     <p style="color: #aaa; font-size: 12px;">If you didn't request this, please ignore this email.</p>
   </div>
@@ -105,12 +105,17 @@ Naqabti Team
     return code
 
 
-def is_verification_code_valid(user):
-    """Check if verification code is still valid (24 hours)."""
+# Email verification codes last a day; password reset codes are short-lived.
+EMAIL_CODE_TTL = timedelta(hours=24)
+PASSWORD_RESET_CODE_TTL = timedelta(minutes=30)
+
+
+def is_verification_code_valid(user, ttl=EMAIL_CODE_TTL):
+    """Check if the user's emailed code is younger than ``ttl``."""
     if not user.verification_code_created:
         return False
 
-    expiry_time = user.verification_code_created + timedelta(hours=24)
+    expiry_time = user.verification_code_created + ttl
     return timezone.now() < expiry_time
 
 
@@ -128,14 +133,14 @@ Hello {user.full_name or user.username},
 
 You requested a password reset. Your verification code is: {code}
 
-This code will expire in 24 hours.
+This code will expire in 30 minutes.
 
 If you didn't request this, please ignore this email.
 
 Best regards,
 Naqabti Team
         '''
-        html_message = _build_html_message('Password Reset', user, code)
+        html_message = _build_html_message('Password Reset', user, code, expires_in='30 minutes')
 
         threading.Thread(
             target=_send_email_async,

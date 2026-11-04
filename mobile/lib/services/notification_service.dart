@@ -10,6 +10,7 @@ import 'api_service.dart';
 import 'auth_service.dart';
 import 'device_service.dart';
 import '../routes/app_routes.dart';
+import '../utils/app_snackbar.dart';
 
 class NotificationService extends GetxService {
   final _logger = Logger();
@@ -111,12 +112,10 @@ class NotificationService extends GetxService {
         );
 
         // Show a snackbar or dialog
-        Get.snackbar(
+        AppSnackbar.info(
           message.notification?.title ?? 'Notification',
           message.notification?.body ?? '',
-          snackPosition: SnackPosition.TOP,
-          backgroundColor: Get.theme.colorScheme.primaryContainer,
-          colorText: Get.theme.colorScheme.onPrimaryContainer,
+          position: SnackPosition.TOP,
         );
 
         // Show local notification as well to ensure it appears in system tray
@@ -149,11 +148,12 @@ class NotificationService extends GetxService {
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
     
+    // Don't prompt on launch; requestPermission() asks after sign-in.
     const DarwinInitializationSettings initializationSettingsIOS =
         DarwinInitializationSettings(
-      requestSoundPermission: true,
-      requestBadgePermission: true,
-      requestAlertPermission: true,
+      requestSoundPermission: false,
+      requestBadgePermission: false,
+      requestAlertPermission: false,
     );
     
     const InitializationSettings initializationSettings = InitializationSettings(
@@ -308,15 +308,8 @@ class NotificationService extends GetxService {
     final deviceService = Get.find<DeviceService>();
 
     try {
-      // Request permission for iOS
-      if (Platform.isIOS) {
-        NotificationSettings settings = await _messaging.requestPermission(
-          alert: true,
-          badge: true,
-          sound: true,
-        );
-        _logger.i('User granted permission: ${settings.authorizationStatus}');
-      }
+      // The permission prompt is shown after sign-in (requestPermission),
+      // not on the first launch over an empty screen.
 
       // Get FCM token
       String? token = await _messaging.getToken();

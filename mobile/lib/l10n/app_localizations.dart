@@ -116,6 +116,18 @@ abstract class AppLocalizations {
   /// **'Username'**
   String get username;
 
+  /// No description provided for @loginIdentifier.
+  ///
+  /// In en, this message translates to:
+  /// **'Email, phone or username'**
+  String get loginIdentifier;
+
+  /// No description provided for @loginIdentifierHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email, phone number or username'**
+  String get loginIdentifierHint;
+
   /// Username field hint
   ///
   /// In en, this message translates to:
@@ -2699,13 +2711,13 @@ abstract class AppLocalizations {
   /// Message warning user about account deletion
   ///
   /// In en, this message translates to:
-  /// **'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.'**
+  /// **'Are you sure you want to delete your account? It will be disabled right away and you will not be able to sign in; your personal data (name, contact details, photo and documents) is permanently deleted within 30 days. To withdraw the request during that time, contact the syndicate.'**
   String get deleteAccountConfirmationMessage;
 
   /// Success message after deleting account
   ///
   /// In en, this message translates to:
-  /// **'Your account has been deleted successfully'**
+  /// **'Your deletion request was received; your account will be deleted within 30 days'**
   String get deleteAccountSuccess;
 
   /// Forgot password first step description
@@ -2804,6 +2816,18 @@ abstract class AppLocalizations {
   /// **'We could not delete your account. Please try again.'**
   String get deleteAccountFailed;
 
+  /// No description provided for @accountDeletionPendingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account scheduled for deletion'**
+  String get accountDeletionPendingTitle;
+
+  /// No description provided for @accountDeletionPendingMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You asked to delete this account. It will be permanently deleted within 30 days of your request. To cancel, contact the syndicate.'**
+  String get accountDeletionPendingMessage;
+
   /// Privacy policy link
   ///
   /// In en, this message translates to:
@@ -2845,6 +2869,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'By creating an account you agree to the'**
   String get byRegisteringYouAgreeTo;
+
+  /// No description provided for @phoneLoginHint.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are signing in with your phone number, write it with the country code, for example +218912345678.'**
+  String get phoneLoginHint;
 }
 
 class _AppLocalizationsDelegate

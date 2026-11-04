@@ -18,6 +18,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get username => 'Username';
 
   @override
+  String get loginIdentifier => 'Email, phone or username';
+
+  @override
+  String get loginIdentifierHint =>
+      'Enter your email, phone number or username';
+
+  @override
   String get enterYourUsername => 'Enter your username';
 
   @override
@@ -1378,11 +1385,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteAccountConfirmationMessage =>
-      'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.';
+      'Are you sure you want to delete your account? It will be disabled right away and you will not be able to sign in; your personal data (name, contact details, photo and documents) is permanently deleted within 30 days. To withdraw the request during that time, contact the syndicate.';
 
   @override
   String get deleteAccountSuccess =>
-      'Your account has been deleted successfully';
+      'Your deletion request was received; your account will be deleted within 30 days';
 
   @override
   String get forgotPasswordCodeDescription =>
@@ -1439,6 +1446,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'We could not delete your account. Please try again.';
 
   @override
+  String get accountDeletionPendingTitle => 'Account scheduled for deletion';
+
+  @override
+  String get accountDeletionPendingMessage =>
+      'You asked to delete this account. It will be permanently deleted within 30 days of your request. To cancel, contact the syndicate.';
+
+  @override
   String get privacyPolicy => 'Privacy Policy';
 
   @override
@@ -1460,4 +1474,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get byRegisteringYouAgreeTo =>
       'By creating an account you agree to the';
+
+  @override
+  String get phoneLoginHint =>
+      'If you are signing in with your phone number, write it with the country code, for example +218912345678.';
 }

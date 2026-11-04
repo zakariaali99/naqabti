@@ -110,6 +110,8 @@ class User(BaseModel, AbstractUser):
         ('rejected', 'Rejected'),
     ]
     approval_status = models.CharField(max_length=10, choices=APPROVAL_STATUS_CHOICES, default='approved')
+    # Set when the member asks to delete the account; staff erase it later.
+    deletion_requested_at = models.DateTimeField(null=True, blank=True)
 
     # Education / professional fields
     university_name = models.CharField(max_length=255, blank=True, null=True)
@@ -236,6 +238,44 @@ class User(BaseModel, AbstractUser):
         'area_longitude', 'fcm_token', 'verification_code',
         'verification_code_created',
     )
+
+    # Days a deletion request waits before syndicate staff erase the account.
+    DELETION_GRACE_DAYS = 30
+
+    @property
+    def deletion_due_at(self):
+        if not self.deletion_requested_at:
+            return None
+        from datetime import timedelta
+        return self.deletion_requested_at + timedelta(days=self.DELETION_GRACE_DAYS)
+
+    def request_deletion(self):
+        """Record a member's request to delete their account.
+
+        The account is disabled right away (no login, sessions revoked, push
+        devices dropped) but personal data is kept until syndicate staff erase
+        it with delete() after the grace period, or cancel the request.
+        """
+        from django.db import transaction
+        from django.utils import timezone
+        from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
+        from niqabaty.models.device import Device
+
+        with transaction.atomic():
+            if not self.deletion_requested_at:
+                self.deletion_requested_at = timezone.now()
+            self.is_active = False
+            self.fcm_token = None
+            self.save(update_fields=['deletion_requested_at', 'is_active', 'fcm_token'])
+            Device.objects.filter(user=self).delete()
+            for token in OutstandingToken.objects.filter(user=self):
+                BlacklistedToken.objects.get_or_create(token=token)
+
+    def cancel_deletion_request(self):
+        """Undo request_deletion() during the grace period."""
+        self.deletion_requested_at = None
+        self.is_active = True
+        self.save(update_fields=['deletion_requested_at', 'is_active'])
 
     def delete(self, using=None, keep_parents=False):
         """Soft delete the account and anonymize its personal data.

@@ -6,6 +6,7 @@ import '../../models/notification.dart';
 import '../../services/notification_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../routes/app_routes.dart';
+import '../../utils/app_snackbar.dart';
 
 class NotificationDetailPage extends StatefulWidget {
   const NotificationDetailPage({super.key});
@@ -264,20 +265,14 @@ class _NotificationDetailPageState extends State<NotificationDetailPage> {
       try {
         await Get.find<NotificationService>().deleteNotification(_notification!.id);
         Get.back();
-        Get.snackbar(
+        AppSnackbar.success(
           l10n.success,
           'Notification deleted',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.green,
-          colorText: Colors.white,
         );
       } catch (e) {
-        Get.snackbar(
+        AppSnackbar.error(
           l10n.error,
           'Failed to delete notification',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.red,
-          colorText: Colors.white,
         );
       }
     }

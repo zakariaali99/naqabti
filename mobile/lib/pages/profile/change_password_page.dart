@@ -4,6 +4,7 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../services/auth_service.dart';
 import '../../utils/password_rules.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/app_snackbar.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({super.key});
@@ -48,10 +49,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
       );
       if (!mounted) return;
       Get.back();
-      Get.snackbar(
+      AppSnackbar.success(
         l10n.success,
         l10n.passwordChangedSuccess,
-        snackPosition: SnackPosition.BOTTOM,
       );
     } catch (e) {
       if (!mounted) return;
@@ -61,12 +61,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
       } else if (message != null) {
         setState(() => _newPasswordServerError = message);
       } else {
-        Get.snackbar(
+        AppSnackbar.error(
           l10n.error,
           isConnectionError(e)
               ? l10n.checkInternetConnection
               : l10n.somethingWentWrong,
-          snackPosition: SnackPosition.BOTTOM,
         );
       }
     } finally {

@@ -7,6 +7,7 @@ import '../../services/api_service.dart';
 import '../../services/auth_service.dart';
 import '../../widgets/general_app_bar.dart';
 import '../../utils/external_links.dart';
+import '../../utils/app_snackbar.dart';
 
 class CertificationsPage extends StatefulWidget {
   const CertificationsPage({super.key});
@@ -360,7 +361,10 @@ class _CertificationsPageState extends State<CertificationsPage> {
                           ExternalLinks.mediaUri(certification.document!),
                         );
                         if (!opened) {
-                          Get.snackbar(l10n.error, l10n.couldNotOpenResource);
+                          AppSnackbar.error(
+                            l10n.error,
+                            l10n.couldNotOpenResource,
+                          );
                         }
                       },
                       icon: const Icon(Icons.file_present),

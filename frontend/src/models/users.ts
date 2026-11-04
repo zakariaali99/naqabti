@@ -9,6 +9,8 @@ export interface UserEntity {
   email: string;
   email_verified: boolean;
   approval_status?: "pending" | "approved" | "rejected";
+  deletion_requested_at?: string | null;
+  deletion_due_at?: string | null;
   full_name: string;
   // Arabic name fields
   first_name_field?: string;
