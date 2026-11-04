@@ -309,8 +309,8 @@ class RegisterSerializer(Serializer):
         # Create welcome notification
         Notification.objects.create(
             user=user,
-            title="Welcome to Niqabaty",
-            message="Your account has been created successfully. Welcome aboard!",
+            title="مرحباً بك في نقابتي",
+            message="تم إنشاء حسابك بنجاح. أهلاً بك!",
             notification_type="success",
         )
 

@@ -116,6 +116,18 @@ abstract class AppLocalizations {
   /// **'Username'**
   String get username;
 
+  /// No description provided for @loginIdentifier.
+  ///
+  /// In en, this message translates to:
+  /// **'Email, phone or username'**
+  String get loginIdentifier;
+
+  /// No description provided for @loginIdentifierHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email, phone number or username'**
+  String get loginIdentifierHint;
+
   /// Username field hint
   ///
   /// In en, this message translates to:

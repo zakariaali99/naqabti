@@ -13,7 +13,12 @@ from niqabaty.serializers.auth import (
     ResetPasswordSerializer,
 )
 from niqabaty.serializers.user import UserSerializer
-from niqabaty.utils.email_utils import send_verification_email, is_verification_code_valid, send_password_reset_email
+from niqabaty.utils.email_utils import (
+    PASSWORD_RESET_CODE_TTL,
+    is_verification_code_valid,
+    send_password_reset_email,
+    send_verification_email,
+)
 from niqabaty.models import Device
 
 User = get_user_model()
@@ -341,7 +346,7 @@ class VerifyPasswordResetView(APIView):
             }, status=status.HTTP_404_NOT_FOUND)
         
         # Check if code is valid
-        if not is_verification_code_valid(user):
+        if not is_verification_code_valid(user, PASSWORD_RESET_CODE_TTL):
             return Response({
                 'error': 'Verification code has expired'
             }, status=status.HTTP_400_BAD_REQUEST)
@@ -388,7 +393,7 @@ class ConfirmPasswordResetView(APIView):
             }, status=status.HTTP_404_NOT_FOUND)
         
         # Check if code is valid
-        if not is_verification_code_valid(user):
+        if not is_verification_code_valid(user, PASSWORD_RESET_CODE_TTL):
             return Response({
                 'error': 'Verification code has expired'
             }, status=status.HTTP_400_BAD_REQUEST)

@@ -8,6 +8,8 @@
     "description": "Login page subtitle"
   },
   "username": "Username",
+  "loginIdentifier": "Email, phone or username",
+  "loginIdentifierHint": "Enter your email, phone number or username",
   "@username": {
     "description": "Username field label"
   },

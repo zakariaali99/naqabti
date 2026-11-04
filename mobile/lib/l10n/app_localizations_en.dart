@@ -18,6 +18,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get username => 'Username';
 
   @override
+  String get loginIdentifier => 'Email, phone or username';
+
+  @override
+  String get loginIdentifierHint =>
+      'Enter your email, phone number or username';
+
+  @override
   String get enterYourUsername => 'Enter your username';
 
   @override

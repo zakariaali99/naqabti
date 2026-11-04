@@ -18,6 +18,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get username => 'اسم المستخدم';
 
   @override
+  String get loginIdentifier => 'البريد أو الهاتف أو اسم المستخدم';
+
+  @override
+  String get loginIdentifierHint => 'أدخل بريدك أو رقم هاتفك أو اسم المستخدم';
+
+  @override
   String get enterYourUsername => 'أدخل اسم المستخدم';
 
   @override

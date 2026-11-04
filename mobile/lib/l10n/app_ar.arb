@@ -2,6 +2,8 @@
   "appTitle": "نقابتي",
   "signInToContinue": "قم بتسجيل الدخول للمتابعة",
   "username": "اسم المستخدم",
+  "loginIdentifier": "البريد أو الهاتف أو اسم المستخدم",
+  "loginIdentifierHint": "أدخل بريدك أو رقم هاتفك أو اسم المستخدم",
   "enterYourUsername": "أدخل اسم المستخدم",
   "pleaseEnterYourUsername": "الرجاء إدخال اسم المستخدم",
   "password": "كلمة المرور",
