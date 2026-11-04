@@ -271,7 +271,7 @@
   "@loginFailed": {
     "description": "Login error title"
   },
-  "invalidCredentials": "Invalid username or password",
+  "invalidCredentials": "Incorrect email, phone number, username or password",
   "@invalidCredentials": {
     "description": "Invalid credentials error message"
   },
@@ -1863,6 +1863,5 @@
   "byRegisteringYouAgreeTo": "By creating an account you agree to the",
   "@byRegisteringYouAgreeTo": {
     "description": "Text before the privacy policy link on registration"
-  },
-  "phoneLoginHint": "If you are signing in with your phone number, write it with the country code, for example +218912345678."
+  }
 }

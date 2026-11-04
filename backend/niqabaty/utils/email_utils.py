@@ -2,7 +2,7 @@ import random
 import logging
 import threading
 import time
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.utils import timezone
 from datetime import timedelta
@@ -43,6 +43,20 @@ def _build_html_message(title, user, code, expires_in='24 hours'):
 </div>'''
 
 
+def send_mail(subject, message, from_email, recipient_list, html_message=None):
+    """Like Django's send_mail, but replies go to the support address."""
+    email = EmailMultiAlternatives(
+        subject,
+        message,
+        from_email,
+        recipient_list,
+        reply_to=[settings.EMAIL_REPLY_TO],
+    )
+    if html_message:
+        email.attach_alternative(html_message, 'text/html')
+    email.send(fail_silently=False)
+
+
 def _send_with_retry(subject, message, from_email, recipient_list, html_message=None, max_retries=3):
     """Send email with retry logic and exponential backoff."""
     for attempt in range(max_retries):
@@ -53,7 +67,6 @@ def _send_with_retry(subject, message, from_email, recipient_list, html_message=
                 from_email,
                 recipient_list,
                 html_message=html_message,
-                fail_silently=False,
             )
             return True
         except Exception as e:
