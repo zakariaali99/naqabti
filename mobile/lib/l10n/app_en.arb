@@ -1,5 +1,5 @@
 {
-  "appTitle": "Niqabaty",
+  "appTitle": "Naqabti",
   "@appTitle": {
     "description": "Application title"
   },
@@ -63,7 +63,7 @@
   "@createAccount": {
     "description": "Create account page title"
   },
-  "joinNiqabaty": "Join Niqabaty",
+  "joinNiqabaty": "Join Naqabti",
   "@joinNiqabaty": {
     "description": "Register page heading"
   },
@@ -309,7 +309,7 @@
   "@naqabti": {
     "description": "Application name"
   },
-  "applicationVersion": "1.0.0",
+  "applicationVersion": "1.0.4",
   "@applicationVersion": {
     "description": "Application version"
   },
@@ -942,7 +942,7 @@
   "@submit": {
     "description": "Submit button"
   },
-  "welcomeToNiqabaty": "Welcome to Niqabaty!",
+  "welcomeToNiqabaty": "Welcome to Naqabti!",
   "@welcomeToNiqabaty": {
     "description": "Welcome page title"
   },
@@ -1760,12 +1760,104 @@
   "@deleteAccountConfirmationTitle": {
     "description": "Title of delete account confirmation dialog"
   },
-  "deleteAccountConfirmationMessage": "Are you sure you want to delete your account? This action cannot be undone and your account will be deactivated.",
+  "deleteAccountConfirmationMessage": "Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.",
   "@deleteAccountConfirmationMessage": {
     "description": "Message warning user about account deletion"
   },
   "deleteAccountSuccess": "Your account has been deleted successfully",
   "@deleteAccountSuccess": {
     "description": "Success message after deleting account"
+  },
+  "forgotPasswordCodeDescription": "Enter your email and we will send you a 6-digit code to reset your password.",
+  "@forgotPasswordCodeDescription": {
+    "description": "Forgot password first step description"
+  },
+  "sendResetCode": "Send Code",
+  "@sendResetCode": {
+    "description": "Button that requests a password reset code"
+  },
+  "resetCodeSentDescription": "We sent a 6-digit code to your email. Enter it below and choose a new password.",
+  "@resetCodeSentDescription": {
+    "description": "Second step of password reset"
+  },
+  "verificationCode": "Verification code",
+  "@verificationCode": {
+    "description": "Label for the emailed verification code"
+  },
+  "pleaseEnterVerificationCode": "Please enter the 6-digit code",
+  "@pleaseEnterVerificationCode": {
+    "description": "Validation for empty verification code"
+  },
+  "resendCode": "Resend code",
+  "@resendCode": {
+    "description": "Button to send the reset code again"
+  },
+  "resetCodeNotSent": "If an account exists for this email, a code will arrive shortly. Check the address and try again.",
+  "@resetCodeNotSent": {
+    "description": "Shown when the reset request did not identify an account"
+  },
+  "invalidOrExpiredCode": "The code is invalid or has expired",
+  "@invalidOrExpiredCode": {
+    "description": "Error for a wrong or expired reset code"
+  },
+  "passwordResetSuccess": "Your password has been reset. You can now sign in.",
+  "@passwordResetSuccess": {
+    "description": "Shown after a successful password reset"
+  },
+  "currentPassword": "Current Password",
+  "@currentPassword": {
+    "description": "Label for the current password field"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for the new password field"
+  },
+  "currentPasswordIncorrect": "Current password is incorrect",
+  "@currentPasswordIncorrect": {
+    "description": "Error when the current password is wrong"
+  },
+  "passwordChangedSuccess": "Your password has been changed",
+  "@passwordChangedSuccess": {
+    "description": "Shown after changing the password"
+  },
+  "somethingWentWrong": "Something went wrong. Please try again.",
+  "@somethingWentWrong": {
+    "description": "Generic error message"
+  },
+  "checkInternetConnection": "Check your internet connection and try again.",
+  "@checkInternetConnection": {
+    "description": "Network error message"
+  },
+  "deleteAccountFailed": "We could not delete your account. Please try again.",
+  "@deleteAccountFailed": {
+    "description": "Shown when account deletion fails"
+  },
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy link"
+  },
+  "callBranch": "Call",
+  "@callBranch": {
+    "description": "Button to call a branch"
+  },
+  "openInMaps": "Open in Maps",
+  "@openInMaps": {
+    "description": "Button to open an address in maps"
+  },
+  "membershipRenewalRequested": "Your renewal request has been sent",
+  "@membershipRenewalRequested": {
+    "description": "Shown after requesting a membership renewal"
+  },
+  "membershipRenewalFailed": "We could not send your renewal request. Please try again.",
+  "@membershipRenewalFailed": {
+    "description": "Shown when a renewal request fails"
+  },
+  "notificationNotFound": "Notification not found",
+  "@notificationNotFound": {
+    "description": "Shown when a notification cannot be loaded"
+  },
+  "byRegisteringYouAgreeTo": "By creating an account you agree to the",
+  "@byRegisteringYouAgreeTo": {
+    "description": "Text before the privacy policy link on registration"
   }
 }

@@ -84,7 +84,7 @@
   "logout": "تسجيل الخروج",
   "user": "مستخدم",
   "naqabti": "نقابتي",
-  "applicationVersion": "1.0.0",
+  "applicationVersion": "1.0.4",
   "allRightsReserved": "© 2025 نقابتي. جميع الحقوق محفوظة.",
   "comprehensiveMembershipManagement": "نظام إدارة عضويات شامل للأطباء والمهنيين الطبيين.",
   "logoutTitle": "تسجيل الخروج",
@@ -946,12 +946,35 @@
   "@deleteAccountConfirmationTitle": {
     "description": "Title of delete account confirmation dialog"
   },
-  "deleteAccountConfirmationMessage": "هل أنت متأكد من رغبتك في حذف حسابك؟ سيتم تعطيل حسابك ولن تتمكن من تسجيل الدخول به مرة أخرى.",
+  "deleteAccountConfirmationMessage": "هل أنت متأكد من حذف حسابك؟ سيتم حذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً ولن تتمكن من تسجيل الدخول مرة أخرى. لا يمكن التراجع عن هذا الإجراء.",
   "@deleteAccountConfirmationMessage": {
     "description": "Message warning user about account deletion"
   },
   "deleteAccountSuccess": "تم حذف حسابك بنجاح",
   "@deleteAccountSuccess": {
     "description": "Success message after deleting account"
-  }
+  },
+  "forgotPasswordCodeDescription": "أدخل بريدك الإلكتروني وسنرسل لك رمزاً من 6 أرقام لإعادة تعيين كلمة المرور.",
+  "sendResetCode": "إرسال الرمز",
+  "resetCodeSentDescription": "أرسلنا رمزاً من 6 أرقام إلى بريدك الإلكتروني. أدخله أدناه واختر كلمة مرور جديدة.",
+  "verificationCode": "رمز التحقق",
+  "pleaseEnterVerificationCode": "يرجى إدخال الرمز المكوّن من 6 أرقام",
+  "resendCode": "إعادة إرسال الرمز",
+  "resetCodeNotSent": "إذا كان هناك حساب مرتبط بهذا البريد فسيصلك الرمز قريباً. تحقق من العنوان وحاول مرة أخرى.",
+  "invalidOrExpiredCode": "الرمز غير صحيح أو انتهت صلاحيته",
+  "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور. يمكنك الآن تسجيل الدخول.",
+  "currentPassword": "كلمة المرور الحالية",
+  "newPassword": "كلمة المرور الجديدة",
+  "currentPasswordIncorrect": "كلمة المرور الحالية غير صحيحة",
+  "passwordChangedSuccess": "تم تغيير كلمة المرور",
+  "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+  "checkInternetConnection": "تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
+  "deleteAccountFailed": "تعذّر حذف حسابك. يرجى المحاولة مرة أخرى.",
+  "privacyPolicy": "سياسة الخصوصية",
+  "callBranch": "اتصال",
+  "openInMaps": "فتح في الخرائط",
+  "membershipRenewalRequested": "تم إرسال طلب التجديد",
+  "membershipRenewalFailed": "تعذّر إرسال طلب التجديد. يرجى المحاولة مرة أخرى.",
+  "notificationNotFound": "الإشعار غير موجود",
+  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على"
 }

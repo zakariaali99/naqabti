@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class GeneralAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
-  final bool showBackButton;
+  /// Null shows a back button whenever this route can be popped and no
+  /// drawer button is requested; pass false to hide it explicitly.
+  final bool? showBackButton;
   final VoidCallback? onBackPressed;
   final List<Widget>? actions;
   final bool showDrawerButton;
@@ -11,7 +13,7 @@ class GeneralAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GeneralAppBar({
     super.key,
     this.title,
-    this.showBackButton = false,
+    this.showBackButton,
     this.onBackPressed,
     this.actions,
     this.showDrawerButton = false,
@@ -21,6 +23,8 @@ class GeneralAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     // Custom styled header matching NotificationsPage
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final showBackButton = this.showBackButton ??
+        (!showDrawerButton && (ModalRoute.of(context)?.canPop ?? false));
     
     return SafeArea(
       child: Padding(

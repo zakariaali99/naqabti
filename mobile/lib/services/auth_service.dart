@@ -214,28 +214,31 @@ class AuthService extends GetxService {
     }
   }
 
-  /// Delete current user account (soft delete)
+  /// Delete the current account (soft delete + anonymization on the server)
   Future<void> deleteAccount() async {
-    try {
-      final user = currentUser.value;
-      if (user != null) {
-        await _userClient.deleteUser(user.id);
-      }
-    } finally {
-      await clearTokens();
-      currentUser.value = null;
-      isAuthenticated.value = false;
+    final user = currentUser.value;
+    if (user == null) {
+      throw StateError('No signed-in user to delete');
+    }
 
-      // Navigate to login page only if GetX is ready
-      try {
-        if (Get.currentRoute != '/login') {
-          Get.offAllNamed('/login');
-        }
-      } catch (e) {
-        // Navigation not available yet, ignore
+    // Only sign out once the server confirmed the deletion, so a failed
+    // request never looks like a deleted account.
+    await _userClient.deleteUser(user.id);
+
+    await clearTokens();
+    currentUser.value = null;
+    isAuthenticated.value = false;
+
+    // Navigate to login page only if GetX is ready
+    try {
+      if (Get.currentRoute != '/login') {
+        Get.offAllNamed('/login');
       }
+    } catch (e) {
+      // Navigation not available yet, ignore
     }
   }
+
 
   /// Refresh access token.
   ///
@@ -269,13 +272,38 @@ class AuthService extends GetxService {
     }
   }
 
-  /// Request password reset
-  Future<void> requestPasswordReset(String email) async {
-    try {
-      await _authClient.requestPasswordReset({'email': email});
-    } catch (e) {
-      rethrow;
-    }
+  /// Request a password reset code by email.
+  /// Returns the account id the code was issued for, or null when no
+  /// account matched the email.
+  Future<int?> requestPasswordReset(String email) async {
+    final response = await _authClient.requestPasswordReset({'email': email});
+    return response.userId;
+  }
+
+  /// Set a new password using a verified reset code.
+  Future<void> confirmPasswordReset(
+    int userId,
+    String code,
+    String newPassword,
+  ) async {
+    await _authClient.confirmPasswordReset({
+      'user_id': userId,
+      'code': code,
+      'new_password': newPassword,
+      'confirm_password': newPassword,
+    });
+  }
+
+  /// Change the password of the signed-in user.
+  Future<void> changePassword(
+    String currentPassword,
+    String newPassword,
+  ) async {
+    await _authClient.changePassword({
+      'current_password': currentPassword,
+      'new_password': newPassword,
+      'confirm_password': newPassword,
+    });
   }
 
   /// Save tokens to storage

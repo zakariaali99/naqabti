@@ -6,7 +6,7 @@ import '../../models/certification.dart';
 import '../../services/api_service.dart';
 import '../../services/auth_service.dart';
 import '../../widgets/general_app_bar.dart';
-import '../../widgets/app_drawer.dart';
+import '../../utils/external_links.dart';
 
 class CertificationsPage extends StatefulWidget {
   const CertificationsPage({super.key});
@@ -68,9 +68,8 @@ class _CertificationsPageState extends State<CertificationsPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.certifications,
-        showDrawerButton: true,
+        showBackButton: true,
       ),
-      drawer: const AppDrawer(),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _errorMessage != null
@@ -350,19 +349,26 @@ class _CertificationsPageState extends State<CertificationsPage> {
                   _buildDetailRow(l10n.expiryDate, _formatDate(certification.expiryDate!)),
                 if (certification.issuedFrom != null)
                   _buildDetailRow(l10n.issuedFrom, certification.issuedFrom!),
+                if (certification.document != null &&
+                    certification.document!.isNotEmpty) ...[
                   const SizedBox(height: 16),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                        // TODO: Open document viewer
+                      onPressed: () async {
+                        final opened = await ExternalLinks.open(
+                          ExternalLinks.mediaUri(certification.document!),
+                        );
+                        if (!opened) {
+                          Get.snackbar(l10n.error, l10n.couldNotOpenResource);
+                        }
                       },
                       icon: const Icon(Icons.file_present),
                       label: Text(l10n.viewDocument),
                     ),
                   ),
                 ],
-              
+              ],
             ),
           ),
         ),

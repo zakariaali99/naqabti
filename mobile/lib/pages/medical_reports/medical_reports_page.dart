@@ -4,7 +4,6 @@ import 'package:naqabti/l10n/app_localizations.dart';
 import '../../models/medical_report.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
-import '../../widgets/app_drawer.dart';
 import 'medical_report_form_page.dart';
 
 class MedicalReportsPage extends StatefulWidget {
@@ -54,9 +53,8 @@ class _MedicalReportsPageState extends State<MedicalReportsPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.medicalReports,
-        showDrawerButton: true,
+        showBackButton: true,
       ),
-      drawer: const AppDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.to(() => const MedicalReportFormPage())?.then((_) => _loadReports()),
         child: const Icon(Icons.add),

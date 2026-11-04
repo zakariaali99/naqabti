@@ -3,14 +3,13 @@ import 'package:retrofit/retrofit.dart';
 import '../models/doctors_membership.dart';
 import '../models/membership_type.dart';
 import '../models/paginated_response.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'membership_api_client.g.dart';
 
 /// Membership API Client
 /// Handles membership and membership type operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class MembershipApiClient extends BaseApiClient {
   factory MembershipApiClient(Dio dio, {String? baseUrl}) = _MembershipApiClient;
 

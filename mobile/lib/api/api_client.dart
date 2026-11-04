@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:naqabti/config/api_config.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/user.dart';
 import '../models/doctors_membership.dart';
@@ -12,7 +11,7 @@ import '../models/notification.dart';
 
 part 'api_client.g.dart';
 
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class ApiClient {
   factory ApiClient(Dio dio, {String? baseUrl}) = _ApiClient;
 

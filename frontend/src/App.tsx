@@ -17,6 +17,9 @@ const DoctorsPage = lazy(() => import("@/pages/doctors/index"));
 const DoctorsFormPage = lazy(() => import("@/pages/doctors/form"));
 const DoctorDetailPage = lazy(() => import("@/pages/doctors/detail"));
 const DoctorRouteDispatcher = lazy(() => import("@/pages/public/DoctorProfile/DoctorRouteDispatcher"));
+const LegalPage = lazy(() => import("@/pages/public/Legal/LegalPage"));
+
+const PUBLIC_LEGAL_PATHS = ["/privacy", "/account-deletion"];
 const StudentsPage = lazy(() => import("@/pages/students/index"));
 const StudentFormPage = lazy(() => import("@/pages/students/form"));
 const StudentDetailPage = lazy(() => import("@/pages/students/detail"));
@@ -107,8 +110,9 @@ function App() {
         location.pathname.startsWith("/doctors/") &&
         !location.pathname.endsWith("/add") &&
         !location.pathname.endsWith("/edit");
+      const isLegalPage = PUBLIC_LEGAL_PATHS.includes(location.pathname);
 
-      if (!isAuthPage && !isPublicDoctorPage) {
+      if (!isAuthPage && !isPublicDoctorPage && !isLegalPage) {
         navigate("/auth/login");
       }
 
@@ -161,6 +165,12 @@ function App() {
         <Route element={<RegisterPage />} path="/auth/register" />
         <Route element={<VerifyEmailPage />} path="/auth/verify-email" />
         <Route element={<ResetPasswordPage />} path="/auth/reset-password" />
+        {/* Public legal pages, linked from the mobile app and store listings */}
+        <Route element={<LegalPage page="privacy" />} path="/privacy" />
+        <Route
+          element={<LegalPage page="accountDeletion" />}
+          path="/account-deletion"
+        />
         {/* Public Doctor Profile Route (accessible without login) */}
         <Route element={<DoctorRouteDispatcher />} path="/doctors/:username" />
         <Route element={<ProtectedView />}>

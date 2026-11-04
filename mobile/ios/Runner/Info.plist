@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Mobile</string>
+	<string>Naqabti</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>mobile</string>
+	<string>Naqabti</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,20 +26,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSBonjourServices</key>
-	<array>
-		<string>_ipp._tcp</string>
-	</array>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>We need to load information from the web</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to let you upload profile pictures and documents.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need permission to save images to your photo library.</string>
+	<string>Naqabti uses your photo library so you can choose a profile picture or attach documents to your membership.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to let you take photos for your profile and documents.</string>
+	<string>Naqabti uses the camera only if you choose to take a photo for your profile or documents.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>We need access to your microphone for video recording features.</string>
+	<string>Naqabti does not record audio. The microphone is never used.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -70,8 +62,10 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

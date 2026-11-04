@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/city.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'city_api_client.g.dart';
 
 /// City API Client
 /// Handles city CRUD operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class CityApiClient extends BaseApiClient {
   factory CityApiClient(Dio dio, {String? baseUrl}) = _CityApiClient;
 

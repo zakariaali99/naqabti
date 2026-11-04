@@ -50,6 +50,8 @@ from niqabaty.views import (
     EventViewSet,
     VerifyPasswordResetView,
     ConfirmPasswordResetView,
+    ChangePasswordView,
+    SafeTokenRefreshView,
     ComplaintViewSet,
     LibraryItemViewSet,
     MedicalReportViewSet,
@@ -63,7 +65,7 @@ from niqabaty.views import (
     PublicDoctorProfileView,
 )
 from niqabaty.views.permission_viewset import PermissionViewSet, UserGroupViewSet
-from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
+from rest_framework_simplejwt.views import TokenVerifyView
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -108,7 +110,8 @@ urlpatterns = [
     path('api/auth/reset-password/', ResetPasswordView.as_view(), name='reset-password'),
     path('api/auth/verify-password-reset/', VerifyPasswordResetView.as_view(), name='verify-password-reset'),
     path('api/auth/confirm-password-reset/', ConfirmPasswordResetView.as_view(), name='confirm-password-reset'),
-    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/auth/change-password/', ChangePasswordView.as_view(), name='change-password'),
+    path('api/auth/token/refresh/', SafeTokenRefreshView.as_view(), name='token_refresh'),
     path('api/auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/dashboard/summary/', DashboardSummaryView.as_view(), name='dashboard-summary'),
     path('api/dashboard/doctor-distribution/', DoctorDistributionView.as_view(), name='doctor-distribution'),

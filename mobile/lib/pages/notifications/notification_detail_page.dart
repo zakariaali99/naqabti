@@ -125,7 +125,7 @@ class _NotificationDetailPageState extends State<NotificationDetailPage> {
     }
 
     if (_notification == null) {
-      return const Center(child: Text('Notification not found'));
+      return Center(child: Text(AppLocalizations.of(context)!.notificationNotFound));
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;

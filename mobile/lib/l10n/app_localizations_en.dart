@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Niqabaty';
+  String get appTitle => 'Naqabti';
 
   @override
   String get signInToContinue => 'Sign in to continue';
@@ -58,7 +58,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createAccount => 'Create Account';
 
   @override
-  String get joinNiqabaty => 'Join Niqabaty';
+  String get joinNiqabaty => 'Join Naqabti';
 
   @override
   String get createYourAccountToGetStarted =>
@@ -274,7 +274,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get naqabti => 'Naqabti';
 
   @override
-  String get applicationVersion => '1.0.0';
+  String get applicationVersion => '1.0.4';
 
   @override
   String get allRightsReserved => '© 2025 Naqabti. All rights reserved.';
@@ -767,7 +767,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get submit => 'Submit';
 
   @override
-  String get welcomeToNiqabaty => 'Welcome to Niqabaty!';
+  String get welcomeToNiqabaty => 'Welcome to Naqabti!';
 
   @override
   String get yourDoctorAccountCreatedSuccessfully =>
@@ -1378,9 +1378,86 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteAccountConfirmationMessage =>
-      'Are you sure you want to delete your account? This action cannot be undone and your account will be deactivated.';
+      'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.';
 
   @override
   String get deleteAccountSuccess =>
       'Your account has been deleted successfully';
+
+  @override
+  String get forgotPasswordCodeDescription =>
+      'Enter your email and we will send you a 6-digit code to reset your password.';
+
+  @override
+  String get sendResetCode => 'Send Code';
+
+  @override
+  String get resetCodeSentDescription =>
+      'We sent a 6-digit code to your email. Enter it below and choose a new password.';
+
+  @override
+  String get verificationCode => 'Verification code';
+
+  @override
+  String get pleaseEnterVerificationCode => 'Please enter the 6-digit code';
+
+  @override
+  String get resendCode => 'Resend code';
+
+  @override
+  String get resetCodeNotSent =>
+      'If an account exists for this email, a code will arrive shortly. Check the address and try again.';
+
+  @override
+  String get invalidOrExpiredCode => 'The code is invalid or has expired';
+
+  @override
+  String get passwordResetSuccess =>
+      'Your password has been reset. You can now sign in.';
+
+  @override
+  String get currentPassword => 'Current Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get currentPasswordIncorrect => 'Current password is incorrect';
+
+  @override
+  String get passwordChangedSuccess => 'Your password has been changed';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong. Please try again.';
+
+  @override
+  String get checkInternetConnection =>
+      'Check your internet connection and try again.';
+
+  @override
+  String get deleteAccountFailed =>
+      'We could not delete your account. Please try again.';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get callBranch => 'Call';
+
+  @override
+  String get openInMaps => 'Open in Maps';
+
+  @override
+  String get membershipRenewalRequested => 'Your renewal request has been sent';
+
+  @override
+  String get membershipRenewalFailed =>
+      'We could not send your renewal request. Please try again.';
+
+  @override
+  String get notificationNotFound => 'Notification not found';
+
+  @override
+  String get byRegisteringYouAgreeTo =>
+      'By creating an account you agree to the';
 }

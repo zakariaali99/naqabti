@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:naqabti/l10n/app_localizations.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../models/library_item.dart';
 import '../../services/api_service.dart';
 import '../../widgets/general_app_bar.dart';
+import '../../utils/external_links.dart';
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({super.key});
@@ -78,10 +78,7 @@ class _LibraryPageState extends State<LibraryPage> with SingleTickerProviderStat
       
       final urlString = item.fileUrl ?? item.externalLink;
       if (urlString != null) {
-        final uri = Uri.parse(urlString);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri, mode: LaunchMode.externalApplication);
-        } else {
+        if (!await ExternalLinks.open(ExternalLinks.mediaUri(urlString))) {
           Get.snackbar(l10n.error, l10n.couldNotOpenResource);
         }
       }
@@ -98,7 +95,7 @@ class _LibraryPageState extends State<LibraryPage> with SingleTickerProviderStat
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.electronicLibrary,
-        showDrawerButton: false,
+        showBackButton: true,
       ),
       body: Column(
         children: [

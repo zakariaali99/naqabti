@@ -54,7 +54,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.complaints,
-        showDrawerButton: false,
+        showBackButton: true,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {

@@ -84,7 +84,7 @@ class _ComplaintFormPageState extends State<ComplaintFormPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: l10n.addComplaint,
-        showDrawerButton: false,
+        showBackButton: true,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

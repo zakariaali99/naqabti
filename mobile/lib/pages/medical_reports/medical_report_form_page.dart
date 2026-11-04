@@ -117,6 +117,7 @@ class _MedicalReportFormPageState extends State<MedicalReportFormPage> {
     return Scaffold(
       appBar: GeneralAppBar(
         title: isEdit ? l10n.medicalReportDetails : l10n.createMedicalReport,
+        showBackButton: true,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

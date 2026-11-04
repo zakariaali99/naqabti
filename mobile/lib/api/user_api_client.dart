@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/user.dart';
-import '../config/api_config.dart';
 import 'base_api_client.dart';
 
 part 'user_api_client.g.dart';
 
 /// User API Client
 /// Handles user CRUD operations
-@RestApi(baseUrl: ApiConfig.baseUrl)
+@RestApi()
 abstract class UserApiClient extends BaseApiClient {
   factory UserApiClient(Dio dio, {String? baseUrl}) = _UserApiClient;
 

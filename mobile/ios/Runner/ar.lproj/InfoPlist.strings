@@ -1,1 +1,4 @@
-"CFBundleDisplayName" = "نفابتي";
+"CFBundleDisplayName" = "نقابتي";
+"NSPhotoLibraryUsageDescription" = "يستخدم تطبيق نقابتي مكتبة الصور لتختار صورة ملفك الشخصي أو ترفق مستندات عضويتك.";
+"NSCameraUsageDescription" = "يستخدم تطبيق نقابتي الكاميرا فقط إذا اخترت التقاط صورة لملفك الشخصي أو مستنداتك.";
+"NSMicrophoneUsageDescription" = "لا يسجّل تطبيق نقابتي أي صوت، ولا يستخدم الميكروفون.";

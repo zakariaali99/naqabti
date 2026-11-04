@@ -272,7 +272,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get naqabti => 'نقابتي';
 
   @override
-  String get applicationVersion => '1.0.0';
+  String get applicationVersion => '1.0.4';
 
   @override
   String get allRightsReserved => '© 2025 نقابتي. جميع الحقوق محفوظة.';
@@ -1355,8 +1355,84 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteAccountConfirmationMessage =>
-      'هل أنت متأكد من رغبتك في حذف حسابك؟ سيتم تعطيل حسابك ولن تتمكن من تسجيل الدخول به مرة أخرى.';
+      'هل أنت متأكد من حذف حسابك؟ سيتم حذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً ولن تتمكن من تسجيل الدخول مرة أخرى. لا يمكن التراجع عن هذا الإجراء.';
 
   @override
   String get deleteAccountSuccess => 'تم حذف حسابك بنجاح';
+
+  @override
+  String get forgotPasswordCodeDescription =>
+      'أدخل بريدك الإلكتروني وسنرسل لك رمزاً من 6 أرقام لإعادة تعيين كلمة المرور.';
+
+  @override
+  String get sendResetCode => 'إرسال الرمز';
+
+  @override
+  String get resetCodeSentDescription =>
+      'أرسلنا رمزاً من 6 أرقام إلى بريدك الإلكتروني. أدخله أدناه واختر كلمة مرور جديدة.';
+
+  @override
+  String get verificationCode => 'رمز التحقق';
+
+  @override
+  String get pleaseEnterVerificationCode =>
+      'يرجى إدخال الرمز المكوّن من 6 أرقام';
+
+  @override
+  String get resendCode => 'إعادة إرسال الرمز';
+
+  @override
+  String get resetCodeNotSent =>
+      'إذا كان هناك حساب مرتبط بهذا البريد فسيصلك الرمز قريباً. تحقق من العنوان وحاول مرة أخرى.';
+
+  @override
+  String get invalidOrExpiredCode => 'الرمز غير صحيح أو انتهت صلاحيته';
+
+  @override
+  String get passwordResetSuccess =>
+      'تمت إعادة تعيين كلمة المرور. يمكنك الآن تسجيل الدخول.';
+
+  @override
+  String get currentPassword => 'كلمة المرور الحالية';
+
+  @override
+  String get newPassword => 'كلمة المرور الجديدة';
+
+  @override
+  String get currentPasswordIncorrect => 'كلمة المرور الحالية غير صحيحة';
+
+  @override
+  String get passwordChangedSuccess => 'تم تغيير كلمة المرور';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get checkInternetConnection =>
+      'تحقق من اتصالك بالإنترنت وحاول مرة أخرى.';
+
+  @override
+  String get deleteAccountFailed => 'تعذّر حذف حسابك. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get callBranch => 'اتصال';
+
+  @override
+  String get openInMaps => 'فتح في الخرائط';
+
+  @override
+  String get membershipRenewalRequested => 'تم إرسال طلب التجديد';
+
+  @override
+  String get membershipRenewalFailed =>
+      'تعذّر إرسال طلب التجديد. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get notificationNotFound => 'الإشعار غير موجود';
+
+  @override
+  String get byRegisteringYouAgreeTo => 'بإنشاء حساب فإنك توافق على';
 }

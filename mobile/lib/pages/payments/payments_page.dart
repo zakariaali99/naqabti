@@ -23,6 +23,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
   String? _errorMessage;
   int _currentPage = 1;
   bool _hasMore = true;
+  bool _requestHandled = false;
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -75,6 +76,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
         _currentPage = 1;
         _isLoading = false;
       });
+      _openRequestedPayment();
     } catch (e) {
       setState(() {
         _errorMessage = e.toString();
@@ -397,6 +399,24 @@ class _PaymentsPageState extends State<PaymentsPage> {
         ),
       ),
     );
+  }
+
+  /// Opens the payment a notification pointed at (route argument `id`) once
+  /// the first page has loaded. Older items stay reachable from the list.
+  void _openRequestedPayment() {
+    if (_requestHandled) return;
+    _requestHandled = true;
+    final args = Get.arguments;
+    final id = args is Map ? args['id'] : null;
+    if (id == null) return;
+    for (final item in _payments) {
+      if (item.id == id) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _openPaymentDetail(item);
+        });
+        return;
+      }
+    }
   }
 
   void _openPaymentDetail(Payment payment) {
