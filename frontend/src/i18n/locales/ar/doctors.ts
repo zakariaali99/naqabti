@@ -49,6 +49,19 @@ export default {
     approved: "مقبول",
     rejected: "مرفوض",
   },
+  deletion: {
+    filter: "طلبات حذف الحساب",
+    requested: "طلب حذف",
+    daysLeft: "يُحذف بعد {{count}} يوم",
+    due: "الحذف مستحق",
+    cancel: "إلغاء طلب الحذف",
+    cancelSuccess: "تم إلغاء طلب الحذف وأُعيد تفعيل الحساب",
+    cancelError: "فشل إلغاء طلب الحذف",
+    finalDelete: "حذف نهائي",
+    finalDeleteWarning:
+      "سيتم مسح البيانات الشخصية (الاسم والبريد والهاتف والصور) نهائياً، وتبقى سجلات العضوية والمدفوعات بلا هوية.",
+    earlyWarning: "لم تنتهِ مهلة الثلاثين يوماً بعد.",
+  },
   fields: {
     user: "المستخدم",
     specialty: "التخصص",

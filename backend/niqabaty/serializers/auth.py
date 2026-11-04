@@ -74,6 +74,14 @@ class LoginSerializer(Serializer):
         if not user:
              raise ValidationError('Invalid credentials')
 
+        if user.deletion_requested_at:
+            raise ValidationError({
+                'deletion_requested': [
+                    'This account is scheduled for deletion. Contact the '
+                    'syndicate within 30 days to cancel the request.'
+                ]
+            })
+
         # Logic for unverified email
         if not user.is_active and not user.email_verified:
             # Allow to proceed so view can handle the 403

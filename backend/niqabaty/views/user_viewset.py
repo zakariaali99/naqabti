@@ -123,6 +123,13 @@ class UserViewSet(viewsets.ModelViewSet):
         if user_type:
             queryset = queryset.filter(user_type=user_type)
 
+        # Accounts waiting for staff to complete a deletion request
+        deletion_requested = self.request.query_params.get('deletion_requested')
+        if deletion_requested is not None:
+            queryset = queryset.filter(
+                deletion_requested_at__isnull=deletion_requested.lower() not in ['true', '1', 'yes']
+            )
+
         # Approval status filter (pending/approved/rejected)
         approval_status = self.request.query_params.get('approval_status')
         if approval_status:
@@ -297,14 +304,44 @@ class UserViewSet(viewsets.ModelViewSet):
 
         return super().partial_update(request, *args, **kwargs)
 
+    @staticmethod
+    def _deletion_request_response(user):
+        return Response(
+            {
+                'detail': 'Account deletion requested.',
+                'deletion_requested_at': user.deletion_requested_at,
+                'deletion_due_at': user.deletion_due_at,
+            },
+            status=status.HTTP_202_ACCEPTED,
+        )
+
     def destroy(self, request, *args, **kwargs):
+        """Staff erase the account; a member deleting their own account only
+        files a request that staff complete after the grace period."""
         instance = self.get_object()
-        if instance.id != request.user.id and not request.user.is_staff:
+        if request.user.is_staff:
+            return super().destroy(request, *args, **kwargs)
+        if instance.id != request.user.id:
             return Response(
                 {'detail': 'Not permitted'},
                 status=status.HTTP_403_FORBIDDEN,
             )
-        return super().destroy(request, *args, **kwargs)
+        instance.request_deletion()
+        return self._deletion_request_response(instance)
+
+    @action(detail=True, methods=['post'], url_path='cancel_deletion')
+    def cancel_deletion(self, request, pk=None):
+        """Staff cancel a pending deletion request and re-activate the account."""
+        if not request.user.is_staff:
+            return Response({'detail': 'Not permitted'}, status=status.HTTP_403_FORBIDDEN)
+        target = self.get_object()
+        if not target.deletion_requested_at:
+            return Response(
+                {'detail': 'No deletion request for this account.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        target.cancel_deletion_request()
+        return Response(self.get_serializer(target).data)
 
     @action(detail=True, methods=['post'], url_path='verify_email')
     def verify_email(self, request, pk=None):
@@ -341,7 +378,10 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response({'detail': 'Not permitted to change this user'}, status=status.HTTP_403_FORBIDDEN)
 
         target.is_active = not target.is_active
-        target.save(update_fields=['is_active'])
+        if target.is_active and target.deletion_requested_at:
+            # Re-activating by hand also cancels a pending deletion request.
+            target.deletion_requested_at = None
+        target.save(update_fields=['is_active', 'deletion_requested_at'])
         return Response({'id': target.id, 'is_active': target.is_active})
 
     @action(detail=True, methods=['post'], url_path='approve')
@@ -511,11 +551,8 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
 
         elif request.method == 'DELETE':
-            user.delete()
-            return Response(
-                {'detail': 'Account deleted successfully.'},
-                status=status.HTTP_204_NO_CONTENT,
-            )
+            user.request_deletion()
+            return self._deletion_request_response(user)
 
     @action(detail=False, methods=['post'], url_path='update-fcm-token', permission_classes=[permissions.IsAuthenticated])
     def update_fcm_token(self, request):

@@ -1355,10 +1355,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteAccountConfirmationMessage =>
-      'هل أنت متأكد من حذف حسابك؟ سيتم حذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً ولن تتمكن من تسجيل الدخول مرة أخرى. لا يمكن التراجع عن هذا الإجراء.';
+      'هل أنت متأكد من حذف حسابك؟ سيُعطَّل حسابك فوراً ولن تتمكن من تسجيل الدخول، وتُحذف بياناتك الشخصية (الاسم وبيانات التواصل والصورة والمستندات) نهائياً خلال 30 يوماً. للتراجع خلال هذه المدة تواصل مع النقابة.';
 
   @override
-  String get deleteAccountSuccess => 'تم حذف حسابك بنجاح';
+  String get deleteAccountSuccess =>
+      'تم استلام طلب حذف حسابك، وسيُحذف خلال 30 يوماً';
 
   @override
   String get forgotPasswordCodeDescription =>
@@ -1413,6 +1414,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteAccountFailed => 'تعذّر حذف حسابك. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get accountDeletionPendingTitle => 'الحساب قيد الحذف';
+
+  @override
+  String get accountDeletionPendingMessage =>
+      'طلبت حذف هذا الحساب، وسيُحذف نهائياً خلال 30 يوماً من تاريخ الطلب. لإلغاء الطلب تواصل مع النقابة.';
 
   @override
   String get privacyPolicy => 'سياسة الخصوصية';

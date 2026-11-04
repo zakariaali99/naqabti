@@ -75,7 +75,7 @@ export const privacyPolicy: Record<Lang, LegalDocument> = {
         heading: "5. مدة الاحتفاظ وحذف الحساب",
         paragraphs: [
           "نحتفظ ببياناتك طالما حسابك قائم. يمكنك حذف حسابك في أي وقت من التطبيق (الملف الشخصي ← حذف الحساب) أو من بوابة الأعضاء.",
-          "عند الحذف: تُحذف بياناتك الشخصية نهائياً (الاسم، البريد، الهاتف، العنوان، تاريخ الميلاد، الصورة، صورة الجواز، النبذة، والحقول الإضافية)، وتُلغى كل جلسات الدخول ورموز الإشعارات، وتُحذف النسخ السابقة من سجل التعديلات.",
+          "عند طلب الحذف يُعطَّل حسابك فوراً وتُلغى كل جلسات الدخول ورموز الإشعارات. خلال 30 يوماً تحذف النقابة بياناتك الشخصية نهائياً (الاسم، البريد، الهاتف، العنوان، تاريخ الميلاد، الصورة، صورة الجواز، النبذة، والحقول الإضافية)، وتُحذف النسخ السابقة من سجل التعديلات. للتراجع عن الطلب خلال هذه المدة تواصل مع النقابة.",
           "تحتفظ النقابة بسجلات العضوية والدفعات والشهادات والشكاوى والتقارير المرفوعة إليها بقدر ما يلزمها القانون والأنظمة المهنية، لكنها لا تعود مرتبطة باسمك أو بيانات تواصلك.",
         ],
       },
@@ -161,7 +161,7 @@ export const privacyPolicy: Record<Lang, LegalDocument> = {
         heading: "5. Retention and account deletion",
         paragraphs: [
           "We keep your data while your account exists. You can delete your account at any time in the app (Profile → Delete Account) or in the member portal.",
-          "When you delete your account, your personal data is permanently removed (name, email, phone, address, date of birth, photo, passport image, bio and extra fields), every sign-in session and notification token is revoked, and earlier copies in the edit history are deleted.",
+          "When you request deletion, your account is disabled immediately and every sign-in session and notification token is revoked. Within 30 days the syndicate permanently removes your personal data (name, email, phone, address, date of birth, photo, passport image, bio and extra fields) and earlier copies in the edit history. To withdraw the request during that time, contact the syndicate.",
           "The Syndicate keeps membership, payment, certification, complaint and submitted report records only as far as the law and professional regulations require, and they are no longer linked to your name or contact details.",
         ],
       },
@@ -213,7 +213,7 @@ export const accountDeletion: Record<Lang, LegalDocument> = {
         bullets: [
           "سجّل الدخول وافتح الملف الشخصي.",
           'اضغط "حذف الحساب" في أسفل الصفحة.',
-          "أكّد الحذف. سيتم تسجيل خروجك فوراً.",
+          "أكّد الطلب. يُعطَّل حسابك ويتم تسجيل خروجك فوراً.",
         ],
       },
       {
@@ -231,9 +231,15 @@ export const accountDeletion: Record<Lang, LegalDocument> = {
         ],
       },
       {
+        heading: "مهلة الثلاثين يوماً",
+        paragraphs: [
+          "بعد تأكيد الطلب يبقى حسابك معطّلاً، ويحذف موظفو النقابة بياناتك الشخصية نهائياً خلال 30 يوماً. إن غيّرت رأيك خلال هذه المدة، تواصل مع النقابة لإلغاء الطلب وإعادة تفعيل الحساب.",
+        ],
+      },
+      {
         heading: "ما الذي يُحذف وما الذي يُحتفظ به",
         bullets: [
-          "يُحذف فوراً ونهائياً: الاسم، البريد، الهاتف، العنوان، تاريخ الميلاد، الصورة، صورة الجواز، النبذة، الحقول الإضافية، جلسات الدخول، ورموز الإشعارات.",
+          "يُحذف نهائياً خلال 30 يوماً: الاسم، البريد، الهاتف، العنوان، تاريخ الميلاد، الصورة، صورة الجواز، النبذة، الحقول الإضافية، جلسات الدخول، ورموز الإشعارات (تُلغى الجلسات ورموز الإشعارات فوراً عند الطلب).",
           "يُحتفظ به دون بياناتك الشخصية: سجلات العضوية والدفعات والشهادات والشكاوى والتقارير المرفوعة إلى النقابة، بقدر ما يلزمه القانون والأنظمة المهنية.",
         ],
       },
@@ -249,7 +255,7 @@ export const accountDeletion: Record<Lang, LegalDocument> = {
         bullets: [
           "Sign in and open your Profile.",
           'Tap "Delete Account" at the bottom of the page.',
-          "Confirm. You are signed out immediately.",
+          "Confirm. Your account is disabled and you are signed out immediately.",
         ],
       },
       {
@@ -267,9 +273,15 @@ export const accountDeletion: Record<Lang, LegalDocument> = {
         ],
       },
       {
+        heading: "The 30-day period",
+        paragraphs: [
+          "After you confirm, your account stays disabled and syndicate staff permanently delete your personal data within 30 days. If you change your mind during that time, contact the syndicate to cancel the request and re-activate your account.",
+        ],
+      },
+      {
         heading: "What is deleted and what is kept",
         bullets: [
-          "Deleted immediately and permanently: name, email, phone, address, date of birth, photo, passport image, bio, extra fields, sign-in sessions and notification tokens.",
+          "Deleted permanently within 30 days: name, email, phone, address, date of birth, photo, passport image, bio, extra fields, sign-in sessions and notification tokens (sessions and notification tokens are revoked right away).",
           "Kept without your personal details: membership, payment, certification, complaint and submitted report records, only as far as the law and professional regulations require.",
         ],
       },

@@ -49,6 +49,19 @@ export default {
     approved: "Approved",
     rejected: "Rejected",
   },
+  deletion: {
+    filter: "Account deletion requests",
+    requested: "Deletion requested",
+    daysLeft: "Deleted in {{count}} days",
+    due: "Deletion due",
+    cancel: "Cancel deletion request",
+    cancelSuccess: "Deletion request cancelled and account re-activated",
+    cancelError: "Failed to cancel the deletion request",
+    finalDelete: "Delete permanently",
+    finalDeleteWarning:
+      "Personal data (name, email, phone, images) will be erased permanently; membership and payment records stay without identity.",
+    earlyWarning: "The 30-day grace period has not ended yet.",
+  },
   fields: {
     user: "User",
     specialty: "Specialty",

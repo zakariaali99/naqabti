@@ -25,7 +25,7 @@ After signing in:
 - Menu → News, Events, Announcements, Library, Courses, Branches: public syndicate content.
 - Menu → Complaints, Medical Reports: forms sent privately to the syndicate.
 - Profile → Edit Profile → Change Password.
-- Profile → Delete Account: permanently deletes the account and its personal data.
+- Profile → Delete Account: the account is disabled and signed out immediately, and its personal data is permanently deleted by syndicate staff within 30 days (the member can contact the syndicate to cancel during that period). The same steps are described at the account-deletion link below.
 
 New accounts can be created with "Create account" on the sign-in screen. Registration requires an email verification code. New physician accounts are marked "pending review" until the syndicate approves the documents, so please use the demo account to see all features.
 

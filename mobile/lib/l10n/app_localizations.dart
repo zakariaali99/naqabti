@@ -2699,13 +2699,13 @@ abstract class AppLocalizations {
   /// Message warning user about account deletion
   ///
   /// In en, this message translates to:
-  /// **'Are you sure you want to delete your account? Your personal data (name, contact details, photo and documents) will be permanently deleted and you will not be able to sign in again. This cannot be undone.'**
+  /// **'Are you sure you want to delete your account? It will be disabled right away and you will not be able to sign in; your personal data (name, contact details, photo and documents) is permanently deleted within 30 days. To withdraw the request during that time, contact the syndicate.'**
   String get deleteAccountConfirmationMessage;
 
   /// Success message after deleting account
   ///
   /// In en, this message translates to:
-  /// **'Your account has been deleted successfully'**
+  /// **'Your deletion request was received; your account will be deleted within 30 days'**
   String get deleteAccountSuccess;
 
   /// Forgot password first step description
@@ -2803,6 +2803,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'We could not delete your account. Please try again.'**
   String get deleteAccountFailed;
+
+  /// No description provided for @accountDeletionPendingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account scheduled for deletion'**
+  String get accountDeletionPendingTitle;
+
+  /// No description provided for @accountDeletionPendingMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You asked to delete this account. It will be permanently deleted within 30 days of your request. To cancel, contact the syndicate.'**
+  String get accountDeletionPendingMessage;
 
   /// Privacy policy link
   ///

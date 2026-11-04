@@ -263,10 +263,10 @@ export default {
   // Danger zone / Account deletion
   dangerZone: "Danger Zone",
   deleteAccount: "Delete Account",
-  deleteAccountDesc: "Deleting your account permanently removes your personal data (name, contact details, photo and documents) and signs you out everywhere. Membership and payment records the syndicate must keep are retained without your personal details.",
+  deleteAccountDesc: "Requesting deletion disables your account right away and signs you out everywhere; your personal data (name, contact details, photo and documents) is then permanently removed within 30 days. To withdraw the request during that time, contact the syndicate. Membership and payment records the syndicate must keep are retained without your personal details.",
   deleteAccountConfirmTitle: "Confirm Account Deletion",
-  deleteAccountConfirmMessage: "Are you sure you want to delete your account? Your personal data will be permanently deleted and you will not be able to sign in again. This cannot be undone.",
+  deleteAccountConfirmMessage: "Are you sure you want to delete your account? It will be disabled right away and you will not be able to sign in; your personal data is permanently deleted within 30 days. To withdraw the request during that time, contact the syndicate.",
   confirmDelete: "Delete My Account",
-  deleteSuccess: "Your account has been deleted successfully",
+  deleteSuccess: "Your deletion request was received; your account will be deleted within 30 days",
   deleteError: "Failed to delete account. Please try again later.",
 };
