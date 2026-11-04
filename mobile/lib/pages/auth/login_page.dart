@@ -216,12 +216,12 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          // Username Field
+                          // Username, email or phone (the backend accepts any)
                           TextFormField(
                             controller: _usernameController,
                             decoration: InputDecoration(
-                              labelText: AppLocalizations.of(context)!.username,
-                              hintText: AppLocalizations.of(context)!.enterYourUsername,
+                              labelText: AppLocalizations.of(context)!.loginIdentifier,
+                              hintText: AppLocalizations.of(context)!.loginIdentifierHint,
                               prefixIcon: const Icon(Icons.person_outline, color: Color(0xFF4183D9)),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
