@@ -1235,6 +1235,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Are you sure you want to delete this notification?';
 
   @override
+  String get notificationDeleted => 'Notification deleted';
+
+  @override
+  String get failedToDeleteNotification =>
+      'Couldn\'t delete the notification. Try again.';
+
+  @override
   String get branches => 'Syndicates & Branches';
 
   @override
@@ -1475,4 +1482,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get byRegisteringYouAgreeTo =>
       'By creating an account you agree to the';
+
+  @override
+  String get passwordTooCommon =>
+      'This password is too common. Choose a harder one.';
+
+  @override
+  String get passwordTooSimilar =>
+      'The password is too close to your personal details.';
+
+  @override
+  String get alreadyUsedByAnotherAccount =>
+      'is already used by another account';
 }

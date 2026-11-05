@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io' show Platform;
 import 'package:firebase_core/firebase_core.dart';
@@ -41,8 +42,9 @@ class NotificationService extends GetxService {
     // Initialize listeners
     _setupListeners();
     
-    // Initialize FCM
-    await _initializeFCM();
+    // FCM registration needs the network (and on iOS the APNs token), so it
+    // runs in the background instead of holding the app's first frame.
+    unawaited(_initializeFCM());
 
     // Fetch initial unread count
     fetchUnreadCount();
@@ -94,9 +96,13 @@ class NotificationService extends GetxService {
     _logger.i('User granted permission: ${settings.authorizationStatus}');
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      // Get FCM Token
-      String? token = await _messaging.getToken();
-      _logger.i('FCM Token: $token');
+      // Get FCM Token (fails until iOS has delivered the APNs token)
+      try {
+        final token = await _messaging.getToken();
+        _logger.i('FCM Token: $token');
+      } catch (e) {
+        _logger.w('FCM token not available yet: $e');
+      }
     }
   }
 
@@ -277,21 +283,16 @@ class NotificationService extends GetxService {
     );
   }
 
+  /// Deletes the notification for this member only. Throws if the server
+  /// call fails, so the caller can tell the member.
   Future<void> deleteNotification(int id) async {
-    try {
-      // Call API to delete/cancel on server
-      await _apiService.notification.cancelNotification(id);
-      
-      // Dismiss local notification if visible
-      await _flutterLocalNotificationsPlugin.cancel(id: id);
-      
-      // Update unread count
-      fetchUnreadCount();
-      
-      _logger.i('Notification $id deleted/cancelled successfully');
-    } catch (e) {
-      _logger.e('Failed to delete notification $id: $e');
-    }
+    await _apiService.notification.hideNotification(id);
+
+    // Dismiss local notification if visible
+    await _flutterLocalNotificationsPlugin.cancel(id: id);
+
+    // Update unread count
+    fetchUnreadCount();
   }
 
   Future<void> clearAllNotifications() async {

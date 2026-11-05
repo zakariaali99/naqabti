@@ -46,7 +46,7 @@ flutter build appbundle --release
 الملف الناتج: `build/app/outputs/bundle/release/app-release.aab`
 
 ## 4. iOS (App Store)
-1. **في Apple Developer:** افتح App ID `ly.taif.naqabti` وفعّل **Push Notifications**.
+1. **في Apple Developer:** افتح App ID `ly.naqabti.naqabti` وفعّل **Push Notifications**.
 2. **في Firebase Console:** Project settings ← Cloud Messaging ← Apple app ← ارفع **APNs Auth Key (.p8)**.
 3. **ابنِ الحزمة:**
 

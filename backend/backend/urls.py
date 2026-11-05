@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from django.urls import re_path
-from django.conf.urls.static import static
+from django.conf import settings as django_settings
+from django.views.static import serve
 from . import settings
 from niqabaty.views.home import HomeView
 from niqabaty.views import (
@@ -119,7 +120,20 @@ urlpatterns = [
     path('api/public/doctors/<str:username>/', PublicDoctorProfileView.as_view(), name='public-doctor-profile'),
     path('', HomeView.as_view(), name='home'),
     re_path(r'^(?!api/|assets/|media/).*$', HomeView.as_view(), name='fallback-home'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
-# Serve media files during development (profile images etc.)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# The shared host has no web server serving files in front of Django, so
+# Django serves the site's assets and uploaded media itself, with DEBUG off
+# too (django.conf.urls.static.static() only works with DEBUG on).
+def _serve_asset(request, path):
+    return serve(request, path, document_root=django_settings.STATIC_ROOT)
+
+
+def _serve_media(request, path):
+    return serve(request, path, document_root=django_settings.MEDIA_ROOT)
+
+
+urlpatterns += [
+    re_path(r'^assets/(?P<path>.*)$', _serve_asset),
+    re_path(r'^media/(?P<path>.*)$', _serve_media),
+]

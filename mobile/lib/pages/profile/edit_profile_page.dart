@@ -15,6 +15,7 @@ import '../../models/academic_degree.dart';
 import '../../utils/profile_completion.dart';
 import 'change_password_page.dart';
 import '../../utils/app_snackbar.dart';
+import '../../utils/profile_errors.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -468,8 +469,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
     } catch (e) {
       if (mounted) {
         AppSnackbar.error(
-          l10n.error,
-          '${l10n.failedToUpdateProfile}: ${e.toString()}',
+          l10n.failedToUpdateProfile,
+          profileSaveErrorMessage(e, l10n),
         );
       }
     } finally {

@@ -5,6 +5,7 @@ import '../models/notification.dart';
 import '../services/api_service.dart';
 import '../services/notification_service.dart';
 import '../routes/app_routes.dart';
+import '../utils/app_snackbar.dart';
 
 class NotificationPopup {
   static Future<void> show(BuildContext context) async {
@@ -74,7 +75,11 @@ class _NotificationSheetState extends State<_NotificationSheet> {
       await _apiService.notification.markAllNotificationsAsRead();
       _notificationService.fetchUnreadCount();
       await _loadNotifications(silent: true);
-    } catch (_) {}
+    } catch (_) {
+      if (!mounted) return;
+      final l10n = AppLocalizations.of(context)!;
+      AppSnackbar.error(l10n.error, l10n.somethingWentWrong);
+    }
   }
 
   Future<void> _openNotification(AppNotification notification) async {

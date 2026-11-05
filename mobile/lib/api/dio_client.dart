@@ -74,6 +74,11 @@ class DioClient {
                 // Retry the original request once with the new token
                 error.requestOptions.headers['Authorization'] = 'Bearer $newAccessToken';
                 error.requestOptions.extra['retried'] = true;
+                // A sent FormData can't be sent again (uploads would fail).
+                final data = error.requestOptions.data;
+                if (data is FormData) {
+                  error.requestOptions.data = data.clone();
+                }
 
                 final response = await _dio.fetch(error.requestOptions);
                 return handler.resolve(response);

@@ -55,6 +55,8 @@ class SeenNotification(models.Model):
         related_name='seen_by'
     )
     seen_at = models.DateTimeField(auto_now_add=True)
+    # Set when the member deletes the notification: hidden for them only.
+    hidden_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         unique_together = ('user', 'notification')

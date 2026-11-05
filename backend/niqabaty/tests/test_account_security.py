@@ -129,3 +129,12 @@ class ChangePasswordTests(TestCase):
         self.client.force_authenticate(user=None)
         response = self.client.post(self.url, {}, format="json")
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+
+class SessionLifetimeTests(TestCase):
+    def test_access_token_lasts_an_hour(self):
+        # One minute made every request after a short pause fail with 401
+        # first, and resending an upload after that failed.
+        from datetime import timedelta
+        from django.conf import settings
+        self.assertEqual(settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME'], timedelta(minutes=60))

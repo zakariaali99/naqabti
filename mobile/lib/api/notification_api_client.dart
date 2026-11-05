@@ -27,8 +27,9 @@ abstract class NotificationApiClient extends BaseApiClient {
   @POST('notifications/mark_all_as_read/')
   Future<void> markAllNotificationsAsRead();
 
-  @POST('notifications/{id}/cancel/')
-  Future<void> cancelNotification(@Path('id') int id);
+  /// Deletes the notification for the signed-in member only.
+  @POST('notifications/{id}/hide/')
+  Future<void> hideNotification(@Path('id') int id);
 
   @GET('notifications/unread_count/')
   Future<UnreadCountResponse> getUnreadCount();

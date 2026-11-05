@@ -814,6 +814,8 @@
     "description": "Delete button text"
   },
   "confirmDeleteNotification": "هل أنت متأكد من حذف هذا الإشعار؟",
+  "notificationDeleted": "تم حذف الإشعار",
+  "failedToDeleteNotification": "تعذّر حذف الإشعار. حاول مرة أخرى.",
   "@confirmDeleteNotification": {
     "description": "Confirmation message for deleting a notification"
   },
@@ -980,5 +982,8 @@
   "membershipRenewalRequested": "تم إرسال طلب التجديد",
   "membershipRenewalFailed": "تعذّر إرسال طلب التجديد. يرجى المحاولة مرة أخرى.",
   "notificationNotFound": "الإشعار غير موجود",
-  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على"
+  "byRegisteringYouAgreeTo": "بإنشاء حساب فإنك توافق على",
+  "passwordTooCommon": "كلمة المرور هذه شائعة جداً، اختر كلمة أصعب.",
+  "passwordTooSimilar": "كلمة المرور قريبة جداً من بياناتك الشخصية.",
+  "alreadyUsedByAnotherAccount": "مستخدم في حساب آخر"
 }

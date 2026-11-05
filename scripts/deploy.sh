@@ -70,8 +70,14 @@ ssh -p ${DEPLOY_PORT} "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p ${DEPLOY_PATH} &
 # - node_modules, __pycache__, *.pyc/.pyo/.pyd: local/build cruft not needed on the server
 # - .git, .github: Git repository data
 # - .DS_Store: macOS metadata files
+# - db.sqlite3*, media, data_dump*: the server's own database, uploaded files
+#   and data exports. Shipping the local copies would overwrite live data.
 tar czf - -C backend \
   --exclude=".env" \
+  --exclude="db.sqlite3*" \
+  --exclude="media" \
+  --exclude="data_dump*" \
+  --exclude="._*" \
   --exclude="node_modules" \
   --exclude="__pycache__" \
   --exclude="*.pyc" \
