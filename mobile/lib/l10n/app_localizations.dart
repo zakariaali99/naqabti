@@ -2420,6 +2420,18 @@ abstract class AppLocalizations {
   /// **'Are you sure you want to delete this notification?'**
   String get confirmDeleteNotification;
 
+  /// Shown after a notification is deleted
+  ///
+  /// In en, this message translates to:
+  /// **'Notification deleted'**
+  String get notificationDeleted;
+
+  /// Shown when deleting a notification fails
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the notification. Try again.'**
+  String get failedToDeleteNotification;
+
   /// Title for branches and syndicates page
   ///
   /// In en, this message translates to:
@@ -2869,6 +2881,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'By creating an account you agree to the'**
   String get byRegisteringYouAgreeTo;
+
+  /// No description provided for @passwordTooCommon.
+  ///
+  /// In en, this message translates to:
+  /// **'This password is too common. Choose a harder one.'**
+  String get passwordTooCommon;
+
+  /// No description provided for @passwordTooSimilar.
+  ///
+  /// In en, this message translates to:
+  /// **'The password is too close to your personal details.'**
+  String get passwordTooSimilar;
+
+  /// No description provided for @alreadyUsedByAnotherAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'is already used by another account'**
+  String get alreadyUsedByAnotherAccount;
 }
 
 class _AppLocalizationsDelegate

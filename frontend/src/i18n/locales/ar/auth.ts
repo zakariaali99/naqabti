@@ -207,4 +207,10 @@ export default {
   resetFailed: "فشل في إعادة تعيين كلمة المرور",
   backToLogin: "العودة لتسجيل الدخول",
   invalidRequest: "طلب غير صالح",
+  passwordErrors: {
+    password_too_common: "كلمة المرور هذه شائعة جداً، اختر كلمة أصعب.",
+    password_entirely_numeric: "لا يمكن أن تكون كلمة المرور أرقاماً فقط.",
+    password_too_short: "كلمة المرور قصيرة، يجب أن تكون 8 أحرف على الأقل.",
+    password_too_similar: "كلمة المرور قريبة جداً من بياناتك الشخصية.",
+  },
 } as const;

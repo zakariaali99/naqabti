@@ -1543,6 +1543,14 @@
   "@confirmDeleteNotification": {
     "description": "Confirmation message for deleting a notification"
   },
+  "notificationDeleted": "Notification deleted",
+  "@notificationDeleted": {
+    "description": "Shown after a notification is deleted"
+  },
+  "failedToDeleteNotification": "Couldn't delete the notification. Try again.",
+  "@failedToDeleteNotification": {
+    "description": "Shown when deleting a notification fails"
+  },
   "branches": "Syndicates & Branches",
   "@branches": {
     "description": "Title for branches and syndicates page"
@@ -1863,5 +1871,8 @@
   "byRegisteringYouAgreeTo": "By creating an account you agree to the",
   "@byRegisteringYouAgreeTo": {
     "description": "Text before the privacy policy link on registration"
-  }
+  },
+  "passwordTooCommon": "This password is too common. Choose a harder one.",
+  "passwordTooSimilar": "The password is too close to your personal details.",
+  "alreadyUsedByAnotherAccount": "is already used by another account"
 }

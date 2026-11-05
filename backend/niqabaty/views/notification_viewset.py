@@ -2,7 +2,7 @@ import uuid
 from rest_framework import viewsets, status, filters
 from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny, BasePermission
 from django_filters.rest_framework import DjangoFilterBackend
 from django.utils import timezone
 from django.db.models import Count, Q, Max
@@ -12,6 +12,30 @@ from niqabaty.utils.firebase import send_fcm_message, send_fcm_multicast, send_f
 from niqabaty.utils.notifications import send_notification
 import niqabaty.utils.firebase as firebase
 from niqabaty.models import User
+
+def visible_to(user):
+    """Notifications a member sees: their own, plus broadcasts sent since
+    their account was created (not the whole history before they joined)."""
+    return (
+        Q(user=user, send_to_all_devices=False)
+        | Q(send_to_all_devices=True, created_at__gte=user.date_joined)
+    )
+
+
+def hidden_ids(user):
+    """Ids of the notifications the member deleted for themself."""
+    return SeenNotification.objects.filter(
+        user=user, hidden_at__isnull=False
+    ).values('notification_id')
+
+
+class IsSyndicateStaff(BasePermission):
+    """Sending, editing and deleting notifications is for staff only."""
+
+    def has_permission(self, request, view):
+        user = request.user
+        return bool(user and user.is_authenticated and (user.is_superuser or user.is_staff))
+
 
 class NotificationViewSet(viewsets.ModelViewSet):
     queryset = Notification.objects.all()
@@ -23,12 +47,24 @@ class NotificationViewSet(viewsets.ModelViewSet):
     ordering_fields = ['created_at', 'is_read', 'id']
     ordering = ['-created_at', '-id']
 
+    # A member's delete is the `hide` action; these change data for everyone.
+    staff_actions = {
+        'create', 'update', 'partial_update', 'destroy', 'cancel',
+        'send_single', 'send_bulk', 'resend', 'delete_by_batch', 'delivery_status',
+    }
+
+    def get_permissions(self):
+        if self.action in self.staff_actions:
+            return [IsSyndicateStaff()]
+        return super().get_permissions()
 
     def get_queryset(self):
         """Filter notifications for the current user, or all if superuser."""
         queryset = Notification.objects.all()
         if not self.request.user.is_superuser:
-            queryset = queryset.filter(Q(user=self.request.user) | Q(send_to_all_devices=True))
+            queryset = queryset.filter(visible_to(self.request.user)).exclude(
+                id__in=hidden_ids(self.request.user)
+            )
         
         # Filter by source: system vs manual
         source = self.request.query_params.get('source')
@@ -61,8 +97,8 @@ class NotificationViewSet(viewsets.ModelViewSet):
         """
         instance = self.get_object()
         
-        # Mark as read if not already
-        if not instance.is_read:
+        # Mark as read if not already (a broadcast is read per member below)
+        if instance.user_id == request.user.id and not instance.send_to_all_devices and not instance.is_read:
             instance.is_read = True
             instance.read_at = timezone.now()
             instance.save()
@@ -107,10 +143,11 @@ class NotificationViewSet(viewsets.ModelViewSet):
         """
         notification = self.get_object()
         
-        # Mark as read
-        notification.is_read = True
-        notification.read_at = timezone.now()
-        notification.save()
+        # Mark as read (a broadcast is shared, so it is read per member below)
+        if notification.user_id == request.user.id and not notification.send_to_all_devices:
+            notification.is_read = True
+            notification.read_at = timezone.now()
+            notification.save()
         
         # Also mark as seen
         SeenNotification.objects.get_or_create(
@@ -128,9 +165,10 @@ class NotificationViewSet(viewsets.ModelViewSet):
         """
         notification = self.get_object()
         
-        notification.is_read = False
-        notification.read_at = None
-        notification.save()
+        if notification.user_id == request.user.id and not notification.send_to_all_devices:
+            notification.is_read = False
+            notification.read_at = None
+            notification.save()
         
         SeenNotification.objects.filter(
             user=request.user,
@@ -140,32 +178,42 @@ class NotificationViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(notification)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    @action(detail=True, methods=['post'])
+    def hide(self, request, pk=None):
+        """
+        Delete a notification for the current member only. It disappears from
+        their list and unread count; other members still see it.
+        """
+        notification = self.get_object()
+        seen, _ = SeenNotification.objects.get_or_create(
+            user=request.user, notification=notification
+        )
+        seen.hidden_at = timezone.now()
+        seen.save(update_fields=['hidden_at'])
+        return Response({'status': 'success'}, status=status.HTTP_200_OK)
+
     @action(detail=False, methods=['post'])
     def mark_all_as_read(self, request):
         """
         Mark all unread notifications for the current user as read.
         """
-        unread_notifications = Notification.objects.filter(
-            user=request.user,
-            is_read=False
+        # Broadcasts are read per member through SeenNotification, so they
+        # need a record too, not only the member's own notifications.
+        notification_ids = list(
+            Notification.objects.filter(visible_to(request.user))
+            .exclude(id__in=SeenNotification.objects.filter(user=request.user).values('notification_id'))
+            .values_list('id', flat=True)
         )
-        
-        # Collect IDs before update (queryset re-evaluates after update)
-        notification_ids = list(unread_notifications.values_list('id', flat=True))
         count = len(notification_ids)
-        
-        # Update all unread notifications
-        unread_notifications.update(
+
+        Notification.objects.filter(user=request.user, is_read=False).update(
             is_read=True,
             read_at=timezone.now()
         )
-        
-        # Create SeenNotification records for all of them using stored IDs
-        for nid in notification_ids:
-            SeenNotification.objects.get_or_create(
-                user=request.user,
-                notification_id=nid
-            )
+        SeenNotification.objects.bulk_create(
+            [SeenNotification(user=request.user, notification_id=nid) for nid in notification_ids],
+            ignore_conflicts=True,
+        )
         
         return Response(
             {
@@ -191,8 +239,9 @@ class NotificationViewSet(viewsets.ModelViewSet):
         # 1. Sent to the user individually (user=request.user)
         # 2. Broadcast to all devices (send_to_all_devices=True)
         # And exclude those that have been seen
+        # Hidden notifications have a SeenNotification record too.
         unread_count = Notification.objects.filter(
-            Q(user=request.user) | Q(send_to_all_devices=True)
+            visible_to(request.user)
         ).exclude(
             id__in=seen_notification_ids
         ).count()

@@ -21,8 +21,19 @@ from niqabaty.utils.email_utils import (
 )
 from niqabaty.models import Device
 from niqabaty.utils.phone import phone_variants
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError as DjangoValidationError
 
 User = get_user_model()
+
+
+def _password_error_response(error):
+    """400 for a rejected new password: readable text plus the validator
+    codes (e.g. password_too_common) so the apps can show it translated."""
+    return Response({
+        'error': ' '.join(error.messages),
+        'codes': [e.code for e in error.error_list if e.code],
+    }, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -257,14 +268,10 @@ class ChangePasswordView(APIView):
                 'error': 'Passwords do not match'
             }, status=status.HTTP_400_BAD_REQUEST)
 
-        from django.contrib.auth.password_validation import validate_password
-        from django.core.exceptions import ValidationError as DjangoValidationError
         try:
             validate_password(new_password, user)
         except DjangoValidationError as e:
-            return Response({
-                'error': ' '.join(e.messages)
-            }, status=status.HTTP_400_BAD_REQUEST)
+            return _password_error_response(e)
 
         user.set_password(new_password)
         user.save()
@@ -405,13 +412,10 @@ class ConfirmPasswordResetView(APIView):
             }, status=status.HTTP_400_BAD_REQUEST)
         
         # Validate password
-        from django.contrib.auth.password_validation import validate_password
         try:
             validate_password(new_password, user)
-        except Exception as e:
-            return Response({
-                'error': str(e)
-            }, status=status.HTTP_400_BAD_REQUEST)
+        except DjangoValidationError as e:
+            return _password_error_response(e)
         
         # Set new password
         user.set_password(new_password)

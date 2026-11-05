@@ -8,5 +8,5 @@
 PRODUCT_NAME = mobile
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = ly.taif.naqabti
+PRODUCT_BUNDLE_IDENTIFIER = ly.naqabti.naqabti
 PRODUCT_COPYRIGHT = Copyright © 2025 ly.taif. All rights reserved.

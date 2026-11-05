@@ -33,14 +33,14 @@ class FakeAuthService extends AuthService {
   }
 }
 
-DioException badRequest(String message) {
+DioException badRequest(String message, {List<String>? codes}) {
   final options = RequestOptions(path: 'auth/');
   return DioException(
     requestOptions: options,
     response: Response(
       requestOptions: options,
       statusCode: 400,
-      data: {'error': message},
+      data: {'error': message, if (codes != null) 'codes': codes},
     ),
   );
 }
@@ -176,6 +176,23 @@ void main() {
 
       expect(auth.calls, ['change:wrong:NewPass123']);
       expect(find.text('Current password is incorrect'), findsOneWidget);
+    });
+
+    testWidgets('shows a rejected password translated, not raw', (tester) async {
+      auth.changeError = badRequest(
+        "['This password is too common.']",
+        codes: ['password_too_common', 'password_too_similar'],
+      );
+      await open(tester, const ChangePasswordPage());
+
+      await fill(tester, 'old', 'NewPass123', 'NewPass123');
+
+      expect(
+        find.text('This password is too common. Choose a harder one.\n'
+            'The password is too close to your personal details.'),
+        findsOneWidget,
+      );
+      expect(find.textContaining('['), findsNothing);
     });
 
     testWidgets('sends the change when valid', (tester) async {

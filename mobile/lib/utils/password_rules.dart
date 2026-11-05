@@ -30,6 +30,29 @@ String? apiErrorMessage(Object error) {
   return null;
 }
 
+/// A rejected new password, translated from the validator codes the server
+/// sends (e.g. password_too_common), one per line. Null when there are none.
+String? passwordServerError(Object error, AppLocalizations l10n) {
+  if (error is! DioException) return null;
+  final data = error.response?.data;
+  final codes = data is Map ? data['codes'] : null;
+  if (codes is! List || codes.isEmpty) return null;
+
+  final lines = <String>[];
+  for (final code in codes) {
+    final line = switch (code) {
+      'password_too_common' => l10n.passwordTooCommon,
+      'password_entirely_numeric' => l10n.passwordCannotBeEntirelyNumeric,
+      'password_too_short' => l10n.passwordMustBeAtLeast8Characters,
+      'password_too_similar' => l10n.passwordTooSimilar,
+      _ => null,
+    };
+    if (line == null) return null;
+    lines.add(line);
+  }
+  return lines.join('\n');
+}
+
 /// True when the request never got an answer from the server.
 bool isConnectionError(Object error) {
   return error is DioException && error.response == null;

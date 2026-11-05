@@ -11,6 +11,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 import { AuthAPI } from "@/api";
+import { passwordErrorText } from "@/utils/passwordErrors";
 
 interface ChangePasswordModalProps {
   isOpen: boolean;
@@ -42,13 +43,13 @@ export const ChangePasswordModal = ({
     e.preventDefault();
 
     if (formData.new_password !== formData.confirm_password) {
-      setError("New password and confirm password do not match");
+      setError(t("auth.passwordsDoNotMatch"));
 
       return;
     }
 
     if (formData.new_password.length < 8) {
-      setError("New password must be at least 8 characters long");
+      setError(t("auth.passwordErrors.password_too_short"));
 
       return;
     }
@@ -76,7 +77,7 @@ export const ChangePasswordModal = ({
       }, 2000);
     } catch (error: any) {
       const errorMessage =
-        error.response?.data?.error ||
+        passwordErrorText(error.response?.data, t) ||
         error.response?.data?.detail ||
         error.message ||
         t("changePassword.error");
@@ -108,7 +109,7 @@ export const ChangePasswordModal = ({
           <ModalBody>
             <div className="space-y-4">
               {error && (
-                <div className="p-3 text-sm text-red-700 bg-red-100 border border-red-300 rounded-lg dark:bg-red-900/20 dark:text-red-400 dark:border-red-700">
+                <div className="p-3 text-sm text-start whitespace-pre-line text-red-700 bg-red-100 border border-red-300 rounded-lg dark:bg-red-900/20 dark:text-red-400 dark:border-red-700">
                   {error}
                 </div>
               )}
